@@ -16,5 +16,5 @@ public class moduleEntry
     public string shop_st_day;
     public string shop_st_month;
     public string shop_st_year;
-    public int sort_index;
+    public string sort_index;
 }

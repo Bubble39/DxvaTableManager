@@ -88,6 +88,14 @@ namespace DivaTableManager
             }
         }
 
+        private void cosTextBox_TextChanged(object sender, EventArgs e)
+        {
+            if (curModule != null && cosTextBox.Text.Contains("COS_"))
+            {
+                curModule.cos = cosTextBox.Text;
+            }
+        }
+
         private void idTextBox_TextChanged(object sender, EventArgs e)
         {
             idCheckLabel.Text = "";
@@ -139,6 +147,22 @@ namespace DivaTableManager
             }
         }
 
+        private void priceTextBox_TextChanged(object sender, EventArgs e)
+        {
+            if (curModule != null && curModule.shop_price != priceTextBox.Text)
+            {
+                curModule.shop_price = priceTextBox.Text;
+            }
+        }
+
+        private void indexTextBox_TextChanged(object sender, EventArgs e)
+        {
+            if (curModule != null)
+            {
+                curModule.sort_index = indexTextBox.Text;
+            }
+        }
+
         private void dateTimePicker1_ValueChanged(object sender, EventArgs e)
         {
             if (curModule != null)
@@ -173,7 +197,7 @@ namespace DivaTableManager
                 idTextBox.Text = curModule.id;
                 nameTextBox.Text = curModule.name;
                 priceTextBox.Text = curModule.shop_price;
-                indexTextBox.Text = curModule.sort_index.ToString();
+                indexTextBox.Text = curModule.sort_index;
                 ngCheck.Checked = Code.checkNG(curModule.ng);
                 var startDate = new DateTime(Int32.Parse(curModule.shop_st_year), Int32.Parse(curModule.shop_st_month), Int32.Parse(curModule.shop_st_day));
                 var endDate = new DateTime(Int32.Parse(curModule.shop_ed_year), Int32.Parse(curModule.shop_ed_month), Int32.Parse(curModule.shop_ed_day));
@@ -203,6 +227,37 @@ namespace DivaTableManager
                 listBox1.SelectedIndex = indexStore - 1;
             }
             else { MessageBox.Show("Please open a table file before editing the list.", "Error"); }
+        }
+
+        //WinForms is a bitch sometimes so I need to have these here...
+        private void saveToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Code.SaveButton_Click();
+        }
+
+        private void exitToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            FormExtras.exitToolStripMenuItem_Click();
+        }
+
+        private void moduleTableHelpToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            FormExtras.moduleTableHelpToolStripMenuItem_Click();
+        }
+
+        private void characterItemTableHelpToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            FormExtras.characterItemTableHelpToolStripMenuItem_Click();
+        }
+
+        private void mentalHelpToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            FormExtras.mentalHelpToolStripMenuItem_Click();
+        }
+
+        private void informationToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            FormExtras.informationToolStripMenuItem_Click();
         }
     }
 }

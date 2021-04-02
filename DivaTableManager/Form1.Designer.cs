@@ -351,6 +351,7 @@ namespace DivaTableManager
             this.cosTextBox.Name = "cosTextBox";
             this.cosTextBox.Size = new System.Drawing.Size(274, 22);
             this.cosTextBox.TabIndex = 5;
+            this.cosTextBox.TextChanged += new System.EventHandler(this.cosTextBox_TextChanged);
             // 
             // indexTextBox
             // 
@@ -358,6 +359,7 @@ namespace DivaTableManager
             this.indexTextBox.Name = "indexTextBox";
             this.indexTextBox.Size = new System.Drawing.Size(274, 22);
             this.indexTextBox.TabIndex = 10;
+            this.indexTextBox.TextChanged += new System.EventHandler(this.indexTextBox_TextChanged);
             // 
             // idTextBox
             // 
@@ -373,6 +375,7 @@ namespace DivaTableManager
             this.priceTextBox.Name = "priceTextBox";
             this.priceTextBox.Size = new System.Drawing.Size(274, 22);
             this.priceTextBox.TabIndex = 9;
+            this.priceTextBox.TextChanged += new System.EventHandler(this.priceTextBox_TextChanged);
             // 
             // nameTextBox
             // 
@@ -442,7 +445,7 @@ namespace DivaTableManager
             // 
             this.openToolStripMenuItem.Name = "openToolStripMenuItem";
             this.openToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.O)));
-            this.openToolStripMenuItem.Size = new System.Drawing.Size(181, 26);
+            this.openToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
             this.openToolStripMenuItem.Text = "Open";
             this.openToolStripMenuItem.Click += new System.EventHandler(this.OpenButton_Click);
             // 
@@ -450,17 +453,17 @@ namespace DivaTableManager
             // 
             this.saveToolStripMenuItem.Name = "saveToolStripMenuItem";
             this.saveToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.S)));
-            this.saveToolStripMenuItem.Size = new System.Drawing.Size(181, 26);
+            this.saveToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
             this.saveToolStripMenuItem.Text = "Save";
-            this.saveToolStripMenuItem.Click += new System.EventHandler(Code.SaveButton_Click);
+            this.saveToolStripMenuItem.Click += new System.EventHandler(this.saveToolStripMenuItem_Click);
             // 
             // exitToolStripMenuItem
             // 
             this.exitToolStripMenuItem.Name = "exitToolStripMenuItem";
             this.exitToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.E)));
-            this.exitToolStripMenuItem.Size = new System.Drawing.Size(181, 26);
+            this.exitToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
             this.exitToolStripMenuItem.Text = "Exit";
-            this.exitToolStripMenuItem.Click += new System.EventHandler(FormExtras.exitToolStripMenuItem_Click);
+            this.exitToolStripMenuItem.Click += new System.EventHandler(this.exitToolStripMenuItem_Click);
             // 
             // aboutToolStripMenuItem
             // 
@@ -479,7 +482,7 @@ namespace DivaTableManager
             this.characterItemTableHelpToolStripMenuItem,
             this.mentalHelpToolStripMenuItem});
             this.helpToolStripMenuItem.Name = "helpToolStripMenuItem";
-            this.helpToolStripMenuItem.Size = new System.Drawing.Size(170, 26);
+            this.helpToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
             this.helpToolStripMenuItem.Text = "Help";
             // 
             // moduleTableHelpToolStripMenuItem
@@ -487,28 +490,28 @@ namespace DivaTableManager
             this.moduleTableHelpToolStripMenuItem.Name = "moduleTableHelpToolStripMenuItem";
             this.moduleTableHelpToolStripMenuItem.Size = new System.Drawing.Size(264, 26);
             this.moduleTableHelpToolStripMenuItem.Text = "Module Table Help";
-            this.moduleTableHelpToolStripMenuItem.Click += new System.EventHandler(FormExtras.moduleTableHelpToolStripMenuItem_Click);
+            this.moduleTableHelpToolStripMenuItem.Click += new System.EventHandler(this.moduleTableHelpToolStripMenuItem_Click);
             // 
             // characterItemTableHelpToolStripMenuItem
             // 
             this.characterItemTableHelpToolStripMenuItem.Name = "characterItemTableHelpToolStripMenuItem";
             this.characterItemTableHelpToolStripMenuItem.Size = new System.Drawing.Size(264, 26);
             this.characterItemTableHelpToolStripMenuItem.Text = "Character Item Table Help";
-            this.characterItemTableHelpToolStripMenuItem.Click += new System.EventHandler(FormExtras.characterItemTableHelpToolStripMenuItem_Click);
+            this.characterItemTableHelpToolStripMenuItem.Click += new System.EventHandler(this.characterItemTableHelpToolStripMenuItem_Click);
             // 
             // mentalHelpToolStripMenuItem
             // 
             this.mentalHelpToolStripMenuItem.Name = "mentalHelpToolStripMenuItem";
             this.mentalHelpToolStripMenuItem.Size = new System.Drawing.Size(264, 26);
             this.mentalHelpToolStripMenuItem.Text = "Mental Help";
-            this.mentalHelpToolStripMenuItem.Click += new System.EventHandler(FormExtras.mentalHelpToolStripMenuItem_Click);
+            this.mentalHelpToolStripMenuItem.Click += new System.EventHandler(this.mentalHelpToolStripMenuItem_Click);
             // 
             // informationToolStripMenuItem
             // 
             this.informationToolStripMenuItem.Name = "informationToolStripMenuItem";
-            this.informationToolStripMenuItem.Size = new System.Drawing.Size(170, 26);
+            this.informationToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
             this.informationToolStripMenuItem.Text = "Information";
-            this.informationToolStripMenuItem.Click += new System.EventHandler(FormExtras.informationToolStripMenuItem_Click);
+            this.informationToolStripMenuItem.Click += new System.EventHandler(this.informationToolStripMenuItem_Click);
             // 
             // byJay39wToolStripMenuItem
             // 
@@ -571,7 +574,6 @@ namespace DivaTableManager
         private System.Windows.Forms.MenuStrip menuStrip1;
         private System.Windows.Forms.ToolStripMenuItem fileToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem openToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem saveToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem exitToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem aboutToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem helpToolStripMenuItem;
@@ -586,6 +588,7 @@ namespace DivaTableManager
         private System.Windows.Forms.Button delModuleEntry;
         private System.Windows.Forms.Button addModuleEntry;
         private System.Windows.Forms.ToolTip toolTip1;
+        public System.Windows.Forms.ToolStripMenuItem saveToolStripMenuItem;
     }
 }
 

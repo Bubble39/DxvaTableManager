@@ -15,7 +15,7 @@ public class Code
 
     // If the module tbl path has been set, run the writing code upon clicking the save button
     // If the module tbl path has not been set, open a messagebox alerting them of the error
-    public static void SaveButton_Click(object sender, EventArgs e)
+    public static void SaveButton_Click()
     {
         if (modulePath != null)
         {
@@ -54,11 +54,12 @@ public class Code
         string[] containString;
         using (StreamReader sr = new StreamReader(modulePath))
         {
+            var readAllLines = File.ReadAllLines(modulePath);
             for (int i = 0; i < 999; i++)
             {
                 var readEntry = new moduleEntry();
                 searchModule = "module." + i.ToString() + ".";
-                foreach (string fileLine in File.ReadAllLines(modulePath))
+                foreach (string fileLine in readAllLines)
                 {
                     if (fileLine.Contains(searchModule))
                     {
@@ -106,7 +107,7 @@ public class Code
                                 readEntry.shop_st_year = containString[3];
                                 break;
                             case "sort_index":
-                                readEntry.sort_index = Int32.Parse(containString[3]);
+                                readEntry.sort_index = containString[3];
                                 Code.moduleEntries.Add(readEntry);
                                 break;
                         }
@@ -256,7 +257,7 @@ public class Code
             dummyEntry.shop_st_day = "3";
             dummyEntry.shop_st_month = "9";
             dummyEntry.shop_st_year = "2009";
-            dummyEntry.sort_index = 999;
+            dummyEntry.sort_index = "999";
             moduleEntries.Add(dummyEntry);
 
     }
