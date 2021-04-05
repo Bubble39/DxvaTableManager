@@ -7,6 +7,7 @@ using System.Globalization;
 using System.Collections;
 using System.Windows.Forms;
 
+
 namespace DivaTableManager
 {
     public partial class Form1 : Form
@@ -19,6 +20,11 @@ namespace DivaTableManager
         public Form1()
         {
             InitializeComponent();
+            if (!DivaTableManager.Properties.Settings.Default.IsReset) 
+            {
+                DivaTableManager.Properties.Settings.Default.Upgrade();
+                DivaTableManager.Properties.Settings.Default.IsReset = true;
+            }
         }
 
         //REGION: Stuff that needs to be here as it impacts form elements
@@ -44,7 +50,7 @@ namespace DivaTableManager
         {
             try
             {
-                ofd.Filter = "Module Table files|gm_module_id.bin|All files (*.*)|*.*";
+                ofd.Filter = "Module Table files|*_module_tbl.farc|All files (*.*)|*.*";
                 if (ofd.ShowDialog() == DialogResult.OK)
                 {
                     if (Code.moduleEntries != null)
@@ -80,8 +86,8 @@ namespace DivaTableManager
             {
                 if (charaComboBox.Text != null && listBox1.SelectedItem.ToString() != (curModule.name + " " + "(" + charaComboBox.Text + ")"))
                 {
-                    int indexStore = listBox1.SelectedIndex;
                     curModule.chara = charaComboBox.Text;
+                    int indexStore = listBox1.SelectedIndex;
                     refreshModuleList();
                     listBox1.SelectedIndex = indexStore;
                 }
@@ -93,28 +99,6 @@ namespace DivaTableManager
             if (curModule != null && cosTextBox.Text.Contains("COS_"))
             {
                 curModule.cos = cosTextBox.Text;
-            }
-        }
-
-        private void idTextBox_TextChanged(object sender, EventArgs e)
-        {
-            idCheckLabel.Text = "";
-            idCheckLabel.ForeColor = System.Drawing.Color.Transparent;
-            idTextBox.Text.DefaultIfEmpty<char>('0');
-            if (curModule != null && idTextBox.Text != curModule.id)
-            {
-                bool checkIDUsage = Code.checkIDuse(idTextBox.Text);
-                if(checkIDUsage || String.IsNullOrEmpty(idTextBox.Text))
-                {
-                    idCheckLabel.Text = "NG";
-                    idCheckLabel.ForeColor = System.Drawing.Color.Red;
-                }   
-                else 
-                { 
-                    curModule.id = idTextBox.Text;
-                    idCheckLabel.Text = "OK";
-                    idCheckLabel.ForeColor = System.Drawing.Color.Lime;
-                }
             }
         }
 
@@ -194,7 +178,7 @@ namespace DivaTableManager
                 attrComboBox.Text = Code.attrCalcText(curModule.attr);
                 charaComboBox.Text = curModule.chara;
                 cosTextBox.Text = curModule.cos;
-                idTextBox.Text = curModule.id;
+                idUpDown.Value = curModule.id;
                 nameTextBox.Text = curModule.name;
                 priceTextBox.Text = curModule.shop_price;
                 indexTextBox.Text = curModule.sort_index;
@@ -203,6 +187,12 @@ namespace DivaTableManager
                 var endDate = new DateTime(Int32.Parse(curModule.shop_ed_year), Int32.Parse(curModule.shop_ed_month), Int32.Parse(curModule.shop_ed_day));
                 dateTimePicker1.Value = startDate;
                 dateTimePicker2.Value = endDate;
+                Code.setPictureBox(curModule.id);
+                pictureBox1.Image = Code.moduleImageBitmap;
+                if (pictureBox1.Image != null)
+                {
+                    pictureBox1.Size = Code.moduleImageBitmap.Size;
+                }
             }
         }
 
@@ -259,5 +249,37 @@ namespace DivaTableManager
         {
             FormExtras.informationToolStripMenuItem_Click();
         }
+
+        private void dDirectoryToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            FormExtras.setDirectory2d();
+        }
+
+        private void mDATA2DDirectoryToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            FormExtras.setDirectory2dMDATA();
+        }
+
+        private void idUpDown_ValueChanged(object sender, EventArgs e)
+        {
+            idCheckLabel.Text = "";
+            idCheckLabel.ForeColor = System.Drawing.Color.Transparent;
+            if (curModule != null && (int)idUpDown.Value != curModule.id)
+            {
+                bool checkIDUsage = Code.checkIDuse((int)idUpDown.Value);
+                if (checkIDUsage)
+                {
+                    idCheckLabel.Text = "NG";
+                    idCheckLabel.ForeColor = System.Drawing.Color.Red;
+                }
+                else
+                {
+                    curModule.id = (int)idUpDown.Value;
+                    idCheckLabel.Text = "OK";
+                    idCheckLabel.ForeColor = System.Drawing.Color.Lime;
+                }
+            }
+        }
+        //STOP
     }
 }

@@ -6,12 +6,20 @@ using System.Text;
 using System.Globalization;
 using System.Collections;
 using System.Windows.Forms;
+using MikuMikuLibrary.IO;
+using MikuMikuLibrary.Sprites;
+using MikuMikuLibrary.Archives;
+using MikuMikuLibrary.Textures.Processing;
+using System.Drawing;
 
 public class Code
 {
     public static List<moduleEntry> moduleEntries = new List<moduleEntry>();
-    public static List<string> usedID = new List<string>();
+    public static List<int> usedID = new List<int>();
     public static string modulePath;
+    public static string outputPath;
+    public static Bitmap moduleImageBitmap;
+
 
     // If the module tbl path has been set, run the writing code upon clicking the save button
     // If the module tbl path has not been set, open a messagebox alerting them of the error
@@ -19,8 +27,11 @@ public class Code
     {
         if (modulePath != null)
         {
+            outputPath = modulePath;
+            var farc = new FarcArchive();
             moduleEntries.OrderBy(x => x.entry);
-            using (TextWriter tw = new StreamWriter(modulePath))
+            MemoryStream outputSource = new MemoryStream();
+            using (StreamWriter tw = new StreamWriter(outputSource))
             {
                 foreach (moduleEntry entry in moduleEntries.OrderBy(x => x.entry))
                 {
@@ -41,6 +52,8 @@ public class Code
                 }
                 tw.WriteLine("module.data_list.length=" + moduleEntries.Count.ToString());
                 Console.WriteLine("Wrote " + moduleEntries.Count + " entries.");
+                farc.Add("gm_module_id.bin", outputSource, true, ConflictPolicy.Replace);
+                farc.Save(outputPath);
             }
         }
         else { MessageBox.Show("Please open a table first.", "Error"); }
@@ -52,69 +65,75 @@ public class Code
     {
         string searchModule;
         string[] containString;
-        using (StreamReader sr = new StreamReader(modulePath))
+        var farc = BinaryFile.Load<FarcArchive>(modulePath);
+        foreach (var fileName in farc)
         {
-            var readAllLines = File.ReadAllLines(modulePath);
-            for (int i = 0; i < 999; i++)
+            var source = farc.Open(fileName, EntryStreamMode.MemoryStream);
+            using (var sr = new StreamReader(source, Encoding.UTF8))
             {
-                var readEntry = new moduleEntry();
-                searchModule = "module." + i.ToString() + ".";
-                foreach (string fileLine in readAllLines)
+                string content = sr.ReadToEnd();
+                for (int i = 0; i < 999; i++)
                 {
-                    if (fileLine.Contains(searchModule))
+                    var readEntry = new moduleEntry();
+                    searchModule = "module." + i.ToString() + ".";
+                    foreach (string fileLine in content.Split(new[] { '\n', '\r' }))
                     {
-                        containString = fileLine.Split('.', '=');
-                        readEntry.entry = containString[1];
-                        switch (containString[2])
+                        if (fileLine.Contains(searchModule))
                         {
-                            case "attr":
-                                readEntry.attr = Int32.Parse(containString[3]);
-                                break;
-                            case "chara":
-                                readEntry.chara = containString[3];
-                                break;
-                            case "cos":
-                                readEntry.cos = containString[3];
-                                break;
-                            case "id":
-                                readEntry.id = containString[3];
-                                break;
-                            case "name":
-                                readEntry.name = containString[3];
-                                break;
-                            case "ng":
-                                readEntry.ng = Int32.Parse(containString[3]);
-                                break;
-                            case "shop_ed_day":
-                                readEntry.shop_ed_day = containString[3];
-                                break;
-                            case "shop_ed_month":
-                                readEntry.shop_ed_month = containString[3];
-                                break;
-                            case "shop_ed_year":
-                                readEntry.shop_ed_year = containString[3];
-                                break;
-                            case "shop_price":
-                                readEntry.shop_price = containString[3];
-                                break;
-                            case "shop_st_day":
-                                readEntry.shop_st_day = containString[3];
-                                break;
-                            case "shop_st_month":
-                                readEntry.shop_st_month = containString[3];
-                                break;
-                            case "shop_st_year":
-                                readEntry.shop_st_year = containString[3];
-                                break;
-                            case "sort_index":
-                                readEntry.sort_index = containString[3];
-                                Code.moduleEntries.Add(readEntry);
-                                break;
+                            containString = fileLine.Split('.', '=');
+                            readEntry.entry = containString[1];
+                            switch (containString[2])
+                            {
+                                case "attr":
+                                    readEntry.attr = Int32.Parse(containString[3]);
+                                    break;
+                                case "chara":
+                                    readEntry.chara = containString[3];
+                                    break;
+                                case "cos":
+                                    readEntry.cos = containString[3];
+                                    break;
+                                case "id":
+                                    readEntry.id = Int32.Parse(containString[3]);
+                                    break;
+                                case "name":
+                                    readEntry.name = containString[3];
+                                    break;
+                                case "ng":
+                                    readEntry.ng = Int32.Parse(containString[3]);
+                                    break;
+                                case "shop_ed_day":
+                                    readEntry.shop_ed_day = containString[3];
+                                    break;
+                                case "shop_ed_month":
+                                    readEntry.shop_ed_month = containString[3];
+                                    break;
+                                case "shop_ed_year":
+                                    readEntry.shop_ed_year = containString[3];
+                                    break;
+                                case "shop_price":
+                                    readEntry.shop_price = containString[3];
+                                    break;
+                                case "shop_st_day":
+                                    readEntry.shop_st_day = containString[3];
+                                    break;
+                                case "shop_st_month":
+                                    readEntry.shop_st_month = containString[3];
+                                    break;
+                                case "shop_st_year":
+                                    readEntry.shop_st_year = containString[3];
+                                    break;
+                                case "sort_index":
+                                    readEntry.sort_index = containString[3];
+                                    Code.moduleEntries.Add(readEntry);
+                                    break;
+                            }
                         }
                     }
                 }
             }
         }
+        farc.Dispose();
     }
 
     public static int calcAttr(string readAttr)
@@ -215,7 +234,7 @@ public class Code
 
     public static bool checkNG(int x)
     {
-        if(x == 0)
+        if (x == 0)
         {
             return false;
         }
@@ -225,10 +244,10 @@ public class Code
         }
     }
 
-    public static bool checkIDuse(string x)
+    public static bool checkIDuse(int x)
     {
         usedID.Clear();
-        foreach(moduleEntry modEn in moduleEntries)
+        foreach (moduleEntry modEn in moduleEntries)
         {
             usedID.Add(modEn.id);
         }
@@ -242,23 +261,93 @@ public class Code
     public static void addDummyEntry()
     {
 
-            var dummyEntry = new moduleEntry();
-            dummyEntry.entry = moduleEntries.Count.ToString();
-            dummyEntry.attr = 0;
-            dummyEntry.chara = "MIKU";
-            dummyEntry.cos = "COS_001";
-            dummyEntry.id = "999";
-            dummyEntry.name = "ダミー";
-            dummyEntry.ng = 0;
-            dummyEntry.shop_ed_day = "3";
-            dummyEntry.shop_ed_month = "9";
-            dummyEntry.shop_ed_year = "2029";
-            dummyEntry.shop_price = "0";
-            dummyEntry.shop_st_day = "3";
-            dummyEntry.shop_st_month = "9";
-            dummyEntry.shop_st_year = "2009";
-            dummyEntry.sort_index = "999";
-            moduleEntries.Add(dummyEntry);
+        var dummyEntry = new moduleEntry();
+        dummyEntry.entry = moduleEntries.Count.ToString();
+        dummyEntry.attr = 0;
+        dummyEntry.chara = "MIKU";
+        dummyEntry.cos = "COS_001";
+        dummyEntry.id = 999;
+        dummyEntry.name = "ダミー";
+        dummyEntry.ng = 0;
+        dummyEntry.shop_ed_day = "3";
+        dummyEntry.shop_ed_month = "9";
+        dummyEntry.shop_ed_year = "2029";
+        dummyEntry.shop_price = "0";
+        dummyEntry.shop_st_day = "3";
+        dummyEntry.shop_st_month = "9";
+        dummyEntry.shop_st_year = "2009";
+        dummyEntry.sort_index = "999";
+        moduleEntries.Add(dummyEntry);
 
+    }
+
+    public static void setPictureBox(int id)
+    {
+        string idString = "000";
+        if (id < 10)
+        {
+            idString = "00" + id.ToString();
+        }
+        if (id >= 10 && id <= 99)
+        {
+            idString = "0" + id;
+        }
+        if (id > 99)
+        {
+            idString = id.ToString();
+        }
+        string searchModule = "spr_sel_md" + idString + "cmn.farc";
+        string mdataFoldersPath = DivaTableManager.Properties.Settings.Default.userDirectoryModulePreviewMDATA + "/";
+        string[] dirs = Directory.GetDirectories(mdataFoldersPath);
+        string pathName = (DivaTableManager.Properties.Settings.Default.userDirectoryModulePreview + "/" + searchModule);
+        try
+        {
+            if (pathName != null)
+            {
+                var farc = BinaryFile.Load<FarcArchive>(pathName);
+                if (farc != null)
+                {
+                    foreach (var fileName in farc)
+                    {
+                        var source = farc.Open(fileName, EntryStreamMode.MemoryStream);
+                        var sprite = BinaryFile.Load<SpriteSet>(source);
+                        var cropSprite = SpriteCropper.Crop(sprite.Sprites[0], sprite);
+                        moduleImageBitmap = cropSprite;
+                    }
+                }
+            }
+        }
+        catch (FileNotFoundException)
+        {
+            moduleImageBitmap = null;
+            if (mdataFoldersPath != null)
+            {
+                foreach (string dir in dirs)
+                {
+                    try
+                    {
+                        string MDATAPath = dir + "/rom/2d/" + searchModule;
+                        var farcMdata = BinaryFile.Load<FarcArchive>(MDATAPath);
+                        if (farcMdata != null)
+                        {
+                            foreach (var fileName in farcMdata)
+                            {
+                                var source = farcMdata.Open(fileName, EntryStreamMode.MemoryStream);
+                                var sprite = BinaryFile.Load<SpriteSet>(source);
+                                var cropSprite = SpriteCropper.Crop(sprite.Sprites[0], sprite);
+                                moduleImageBitmap = cropSprite;
+                                return;
+                            }
+                        }
+                    }
+                    catch (FileNotFoundException)
+                    {
+                    }
+                    catch (DirectoryNotFoundException)
+                    {
+                    }
+                }
+            }
+        }
     }
 }

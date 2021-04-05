@@ -9,6 +9,7 @@ using System.Windows.Forms;
 
 public class FormExtras
 {
+    public static string userDirectory2D;
     public static void exitToolStripMenuItem_Click()
     {
         System.Windows.Forms.Application.Exit();
@@ -16,7 +17,7 @@ public class FormExtras
 
     public static void informationToolStripMenuItem_Click()
     {
-        MessageBox.Show("DivaTableManager by Jay39w" + Environment.NewLine + "Thanks to all who helped me with learning C#!" + Environment.NewLine + "Current Version: v1.1 (02/04/2021)", "About DTM");
+        MessageBox.Show("DivaTableManager by Jay39w" + Environment.NewLine + "Thanks to all who helped me with learning C#!" + Environment.NewLine + "Current Version: v1.2 (05/04/2021)", "About DTM");
     }
 
     public static void moduleTableHelpToolStripMenuItem_Click()
@@ -35,5 +36,28 @@ public class FormExtras
     public static void characterItemTableHelpToolStripMenuItem_Click()
     {
         MessageBox.Show("This function is not yet implemented." + Environment.NewLine + "Please wait patiently.", "Help");
+    }
+
+    public static void setDirectory2d()
+    {
+        FolderBrowserDialog fbd = new FolderBrowserDialog();
+        fbd.Description = "Please select your rom/2d folder";
+        fbd.ShowDialog();
+        if(fbd.SelectedPath != null)
+        {
+            DivaTableManager.Properties.Settings.Default.userDirectoryModulePreview = fbd.SelectedPath;
+            DivaTableManager.Properties.Settings.Default.Save();
+        }
+    }
+    public static void setDirectory2dMDATA()
+    {
+        FolderBrowserDialog fbd = new FolderBrowserDialog();
+        fbd.Description = "Please select your MDATA folder";
+        fbd.ShowDialog();
+        if (fbd.SelectedPath != null)
+        {
+            DivaTableManager.Properties.Settings.Default.userDirectoryModulePreviewMDATA = fbd.SelectedPath;
+            DivaTableManager.Properties.Settings.Default.Save();
+        }
     }
 }

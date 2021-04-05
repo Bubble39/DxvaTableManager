@@ -36,6 +36,7 @@ namespace DivaTableManager
             this.tabPage1 = new System.Windows.Forms.TabPage();
             this.ModuleListLabel = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.delModuleEntry = new System.Windows.Forms.Button();
             this.addModuleEntry = new System.Windows.Forms.Button();
             this.EndLabel = new System.Windows.Forms.Label();
@@ -54,7 +55,6 @@ namespace DivaTableManager
             this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
             this.cosTextBox = new System.Windows.Forms.TextBox();
             this.indexTextBox = new System.Windows.Forms.TextBox();
-            this.idTextBox = new System.Windows.Forms.TextBox();
             this.priceTextBox = new System.Windows.Forms.TextBox();
             this.nameTextBox = new System.Windows.Forms.TextBox();
             this.ngCheck = new System.Windows.Forms.CheckBox();
@@ -65,6 +65,8 @@ namespace DivaTableManager
             this.openToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.saveToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.exitToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.settingsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.dDirectoryToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.aboutToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.helpToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.moduleTableHelpToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -73,20 +75,24 @@ namespace DivaTableManager
             this.informationToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.byJay39wToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
+            this.idUpDown = new System.Windows.Forms.NumericUpDown();
+            this.mDATA2DDirectoryToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.groupBox1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.tabPage2.SuspendLayout();
             this.menuStrip1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.idUpDown)).BeginInit();
             this.SuspendLayout();
             // 
             // listBox1
             // 
             this.listBox1.FormattingEnabled = true;
             this.listBox1.ItemHeight = 16;
-            this.listBox1.Location = new System.Drawing.Point(575, 34);
+            this.listBox1.Location = new System.Drawing.Point(719, 50);
             this.listBox1.Name = "listBox1";
-            this.listBox1.Size = new System.Drawing.Size(244, 356);
+            this.listBox1.Size = new System.Drawing.Size(244, 420);
             this.listBox1.TabIndex = 1;
             this.listBox1.SelectedIndexChanged += new System.EventHandler(this.listBox1_SelectedIndexChanged);
             // 
@@ -94,10 +100,10 @@ namespace DivaTableManager
             // 
             this.tabControl1.Controls.Add(this.tabPage1);
             this.tabControl1.Controls.Add(this.tabPage2);
-            this.tabControl1.Location = new System.Drawing.Point(12, 34);
+            this.tabControl1.Location = new System.Drawing.Point(0, 31);
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.SelectedIndex = 0;
-            this.tabControl1.Size = new System.Drawing.Size(841, 437);
+            this.tabControl1.Size = new System.Drawing.Size(979, 511);
             this.tabControl1.TabIndex = 2;
             // 
             // tabPage1
@@ -108,7 +114,7 @@ namespace DivaTableManager
             this.tabPage1.Location = new System.Drawing.Point(4, 25);
             this.tabPage1.Name = "tabPage1";
             this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage1.Size = new System.Drawing.Size(833, 408);
+            this.tabPage1.Size = new System.Drawing.Size(971, 482);
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "Module Table";
             this.tabPage1.UseVisualStyleBackColor = true;
@@ -117,7 +123,7 @@ namespace DivaTableManager
             // 
             this.ModuleListLabel.AutoSize = true;
             this.ModuleListLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.ModuleListLabel.Location = new System.Drawing.Point(570, 6);
+            this.ModuleListLabel.Location = new System.Drawing.Point(719, 22);
             this.ModuleListLabel.Name = "ModuleListLabel";
             this.ModuleListLabel.Size = new System.Drawing.Size(162, 25);
             this.ModuleListLabel.TabIndex = 14;
@@ -126,6 +132,8 @@ namespace DivaTableManager
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.idUpDown);
+            this.groupBox1.Controls.Add(this.pictureBox1);
             this.groupBox1.Controls.Add(this.delModuleEntry);
             this.groupBox1.Controls.Add(this.addModuleEntry);
             this.groupBox1.Controls.Add(this.EndLabel);
@@ -144,20 +152,27 @@ namespace DivaTableManager
             this.groupBox1.Controls.Add(this.dateTimePicker1);
             this.groupBox1.Controls.Add(this.cosTextBox);
             this.groupBox1.Controls.Add(this.indexTextBox);
-            this.groupBox1.Controls.Add(this.idTextBox);
             this.groupBox1.Controls.Add(this.priceTextBox);
             this.groupBox1.Controls.Add(this.nameTextBox);
             this.groupBox1.Controls.Add(this.ngCheck);
             this.groupBox1.Location = new System.Drawing.Point(6, 6);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(558, 384);
+            this.groupBox1.Size = new System.Drawing.Size(707, 465);
             this.groupBox1.TabIndex = 13;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Module Information";
             // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Location = new System.Drawing.Point(382, 21);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(301, 444);
+            this.pictureBox1.TabIndex = 4;
+            this.pictureBox1.TabStop = false;
+            // 
             // delModuleEntry
             // 
-            this.delModuleEntry.Location = new System.Drawing.Point(217, 297);
+            this.delModuleEntry.Location = new System.Drawing.Point(6, 384);
             this.delModuleEntry.Name = "delModuleEntry";
             this.delModuleEntry.Size = new System.Drawing.Size(198, 81);
             this.delModuleEntry.TabIndex = 23;
@@ -168,7 +183,7 @@ namespace DivaTableManager
             // 
             // addModuleEntry
             // 
-            this.addModuleEntry.Location = new System.Drawing.Point(6, 297);
+            this.addModuleEntry.Location = new System.Drawing.Point(6, 303);
             this.addModuleEntry.Name = "addModuleEntry";
             this.addModuleEntry.Size = new System.Drawing.Size(198, 81);
             this.addModuleEntry.TabIndex = 15;
@@ -183,9 +198,9 @@ namespace DivaTableManager
             this.EndLabel.AutoSize = true;
             this.EndLabel.Location = new System.Drawing.Point(286, 251);
             this.EndLabel.Name = "EndLabel";
-            this.EndLabel.Size = new System.Drawing.Size(124, 17);
+            this.EndLabel.Size = new System.Drawing.Size(67, 17);
             this.EndLabel.TabIndex = 22;
-            this.EndLabel.Text = "End Showing Date";
+            this.EndLabel.Text = "End Date";
             this.toolTip1.SetToolTip(this.EndLabel, "The date on which this module will disappear from the shop.\r\nWhen the date is rea" +
         "ched, the module will no longer be\r\navailable in the shop.\r\n");
             // 
@@ -194,9 +209,9 @@ namespace DivaTableManager
             this.StartLabel.AutoSize = true;
             this.StartLabel.Location = new System.Drawing.Point(286, 223);
             this.StartLabel.Name = "StartLabel";
-            this.StartLabel.Size = new System.Drawing.Size(129, 17);
+            this.StartLabel.Size = new System.Drawing.Size(72, 17);
             this.StartLabel.TabIndex = 21;
-            this.StartLabel.Text = "Start Showing Date";
+            this.StartLabel.Text = "Start Date";
             this.toolTip1.SetToolTip(this.StartLabel, "The date on which this module will appear in the shop.\r\nIf the date is not yet re" +
         "ached, the module will not be\r\navailable in the shop.");
             // 
@@ -361,14 +376,6 @@ namespace DivaTableManager
             this.indexTextBox.TabIndex = 10;
             this.indexTextBox.TextChanged += new System.EventHandler(this.indexTextBox_TextChanged);
             // 
-            // idTextBox
-            // 
-            this.idTextBox.Location = new System.Drawing.Point(6, 109);
-            this.idTextBox.Name = "idTextBox";
-            this.idTextBox.Size = new System.Drawing.Size(274, 22);
-            this.idTextBox.TabIndex = 6;
-            this.idTextBox.TextChanged += new System.EventHandler(this.idTextBox_TextChanged);
-            // 
             // priceTextBox
             // 
             this.priceTextBox.Location = new System.Drawing.Point(6, 165);
@@ -388,7 +395,7 @@ namespace DivaTableManager
             // ngCheck
             // 
             this.ngCheck.AutoSize = true;
-            this.ngCheck.Location = new System.Drawing.Point(434, 328);
+            this.ngCheck.Location = new System.Drawing.Point(6, 277);
             this.ngCheck.Name = "ngCheck";
             this.ngCheck.Size = new System.Drawing.Size(107, 21);
             this.ngCheck.TabIndex = 8;
@@ -404,7 +411,7 @@ namespace DivaTableManager
             this.tabPage2.Location = new System.Drawing.Point(4, 25);
             this.tabPage2.Name = "tabPage2";
             this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage2.Size = new System.Drawing.Size(833, 408);
+            this.tabPage2.Size = new System.Drawing.Size(971, 482);
             this.tabPage2.TabIndex = 1;
             this.tabPage2.Text = "Character Item Table";
             this.tabPage2.UseVisualStyleBackColor = true;
@@ -424,10 +431,11 @@ namespace DivaTableManager
             this.menuStrip1.ImageScalingSize = new System.Drawing.Size(20, 20);
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.fileToolStripMenuItem,
+            this.settingsToolStripMenuItem,
             this.aboutToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(865, 28);
+            this.menuStrip1.Size = new System.Drawing.Size(979, 28);
             this.menuStrip1.TabIndex = 3;
             this.menuStrip1.Text = "menuStrip1";
             // 
@@ -445,7 +453,7 @@ namespace DivaTableManager
             // 
             this.openToolStripMenuItem.Name = "openToolStripMenuItem";
             this.openToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.O)));
-            this.openToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
+            this.openToolStripMenuItem.Size = new System.Drawing.Size(181, 26);
             this.openToolStripMenuItem.Text = "Open";
             this.openToolStripMenuItem.Click += new System.EventHandler(this.OpenButton_Click);
             // 
@@ -453,7 +461,7 @@ namespace DivaTableManager
             // 
             this.saveToolStripMenuItem.Name = "saveToolStripMenuItem";
             this.saveToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.S)));
-            this.saveToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
+            this.saveToolStripMenuItem.Size = new System.Drawing.Size(181, 26);
             this.saveToolStripMenuItem.Text = "Save";
             this.saveToolStripMenuItem.Click += new System.EventHandler(this.saveToolStripMenuItem_Click);
             // 
@@ -461,9 +469,25 @@ namespace DivaTableManager
             // 
             this.exitToolStripMenuItem.Name = "exitToolStripMenuItem";
             this.exitToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.E)));
-            this.exitToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
+            this.exitToolStripMenuItem.Size = new System.Drawing.Size(181, 26);
             this.exitToolStripMenuItem.Text = "Exit";
             this.exitToolStripMenuItem.Click += new System.EventHandler(this.exitToolStripMenuItem_Click);
+            // 
+            // settingsToolStripMenuItem
+            // 
+            this.settingsToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.dDirectoryToolStripMenuItem,
+            this.mDATA2DDirectoryToolStripMenuItem});
+            this.settingsToolStripMenuItem.Name = "settingsToolStripMenuItem";
+            this.settingsToolStripMenuItem.Size = new System.Drawing.Size(76, 24);
+            this.settingsToolStripMenuItem.Text = "Settings";
+            // 
+            // dDirectoryToolStripMenuItem
+            // 
+            this.dDirectoryToolStripMenuItem.Name = "dDirectoryToolStripMenuItem";
+            this.dDirectoryToolStripMenuItem.Size = new System.Drawing.Size(176, 26);
+            this.dDirectoryToolStripMenuItem.Text = "2D Directory";
+            this.dDirectoryToolStripMenuItem.Click += new System.EventHandler(this.dDirectoryToolStripMenuItem_Click);
             // 
             // aboutToolStripMenuItem
             // 
@@ -482,7 +506,7 @@ namespace DivaTableManager
             this.characterItemTableHelpToolStripMenuItem,
             this.mentalHelpToolStripMenuItem});
             this.helpToolStripMenuItem.Name = "helpToolStripMenuItem";
-            this.helpToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
+            this.helpToolStripMenuItem.Size = new System.Drawing.Size(170, 26);
             this.helpToolStripMenuItem.Text = "Help";
             // 
             // moduleTableHelpToolStripMenuItem
@@ -509,7 +533,7 @@ namespace DivaTableManager
             // informationToolStripMenuItem
             // 
             this.informationToolStripMenuItem.Name = "informationToolStripMenuItem";
-            this.informationToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
+            this.informationToolStripMenuItem.Size = new System.Drawing.Size(170, 26);
             this.informationToolStripMenuItem.Text = "Information";
             this.informationToolStripMenuItem.Click += new System.EventHandler(this.informationToolStripMenuItem_Click);
             // 
@@ -520,11 +544,31 @@ namespace DivaTableManager
             this.byJay39wToolStripMenuItem.Size = new System.Drawing.Size(170, 26);
             this.byJay39wToolStripMenuItem.Text = "by Jay39w";
             // 
+            // idUpDown
+            // 
+            this.idUpDown.Location = new System.Drawing.Point(6, 109);
+            this.idUpDown.Maximum = new decimal(new int[] {
+            999,
+            0,
+            0,
+            0});
+            this.idUpDown.Name = "idUpDown";
+            this.idUpDown.Size = new System.Drawing.Size(274, 22);
+            this.idUpDown.TabIndex = 24;
+            this.idUpDown.ValueChanged += new System.EventHandler(this.idUpDown_ValueChanged);
+            // 
+            // mDATA2DDirectoryToolStripMenuItem
+            // 
+            this.mDATA2DDirectoryToolStripMenuItem.Name = "mDATA2DDirectoryToolStripMenuItem";
+            this.mDATA2DDirectoryToolStripMenuItem.Size = new System.Drawing.Size(230, 26);
+            this.mDATA2DDirectoryToolStripMenuItem.Text = "MDATA 2D Directory";
+            this.mDATA2DDirectoryToolStripMenuItem.Click += new System.EventHandler(this.mDATA2DDirectoryToolStripMenuItem_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(865, 481);
+            this.ClientSize = new System.Drawing.Size(979, 539);
             this.Controls.Add(this.tabControl1);
             this.Controls.Add(this.menuStrip1);
             this.ForeColor = System.Drawing.SystemColors.ControlText;
@@ -537,10 +581,12 @@ namespace DivaTableManager
             this.tabPage1.PerformLayout();
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.tabPage2.ResumeLayout(false);
             this.tabPage2.PerformLayout();
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.idUpDown)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -554,7 +600,6 @@ namespace DivaTableManager
         private System.Windows.Forms.ComboBox charaComboBox;
         private System.Windows.Forms.ComboBox attrComboBox;
         private System.Windows.Forms.TextBox cosTextBox;
-        private System.Windows.Forms.TextBox idTextBox;
         private System.Windows.Forms.TextBox nameTextBox;
         private System.Windows.Forms.CheckBox ngCheck;
         private System.Windows.Forms.TextBox priceTextBox;
@@ -589,6 +634,11 @@ namespace DivaTableManager
         private System.Windows.Forms.Button addModuleEntry;
         private System.Windows.Forms.ToolTip toolTip1;
         public System.Windows.Forms.ToolStripMenuItem saveToolStripMenuItem;
+        private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.ToolStripMenuItem settingsToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem dDirectoryToolStripMenuItem;
+        private System.Windows.Forms.NumericUpDown idUpDown;
+        private System.Windows.Forms.ToolStripMenuItem mDATA2DDirectoryToolStripMenuItem;
     }
 }
 

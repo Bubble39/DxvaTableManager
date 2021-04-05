@@ -6,7 +6,7 @@ public class moduleEntry
     public int attr;
     public string chara;
     public string cos;
-    public string id;
+    public int id;
     public string name;
     public int ng;
     public string shop_ed_day;

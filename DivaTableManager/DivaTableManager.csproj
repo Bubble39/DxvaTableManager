@@ -5,7 +5,7 @@
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
     <ProjectGuid>{3863301B-EA55-495F-9666-DF53910F4CAF}</ProjectGuid>
-    <OutputType>Exe</OutputType>
+    <OutputType>WinExe</OutputType>
     <RootNamespace>DivaTableManager</RootNamespace>
     <AssemblyName>DivaTableManager</AssemblyName>
     <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
@@ -36,6 +36,15 @@
     <StartupObject />
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="MikuMikuLibrary">
+      <HintPath>..\..\MikuMikuModel\MikuMikuLibrary.dll</HintPath>
+    </Reference>
+    <Reference Include="MikuMikuLibrary.Native.X64">
+      <HintPath>..\..\MikuMikuModel\MikuMikuLibrary.Native.X64.dll</HintPath>
+    </Reference>
+    <Reference Include="MikuMikuLibrary.Native.X86">
+      <HintPath>..\..\MikuMikuModel\MikuMikuLibrary.Native.X86.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
