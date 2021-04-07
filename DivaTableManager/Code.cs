@@ -33,6 +33,7 @@ public class Code
             MemoryStream outputSource = new MemoryStream();
             using (StreamWriter tw = new StreamWriter(outputSource))
             {
+                tw.AutoFlush = true;
                 foreach (moduleEntry entry in moduleEntries.OrderBy(x => x.entry))
                 {
                     tw.WriteLine("module." + entry.entry + ".attr=" + entry.attr);
@@ -51,9 +52,10 @@ public class Code
                     tw.WriteLine("module." + entry.entry + ".sort_index=" + entry.sort_index);
                 }
                 tw.WriteLine("module.data_list.length=" + moduleEntries.Count.ToString());
-                Console.WriteLine("Wrote " + moduleEntries.Count + " entries.");
+                Console.WriteLine("Wrote " + moduleEntries.Count + " entries and closed the stream.");
                 farc.Add("gm_module_id.bin", outputSource, true, ConflictPolicy.Replace);
                 farc.Save(outputPath);
+                tw.Close();
             }
         }
         else { MessageBox.Show("Please open a table first.", "Error"); }
@@ -80,51 +82,51 @@ public class Code
                     {
                         if (fileLine.Contains(searchModule))
                         {
-                            containString = fileLine.Split('.', '=');
-                            readEntry.entry = containString[1];
-                            switch (containString[2])
+                            readEntry.entry = i.ToString();
+                            containString = fileLine.Split('=');
+                            switch (containString[0])
                             {
-                                case "attr":
-                                    readEntry.attr = Int32.Parse(containString[3]);
+                                case string a when a.Contains("attr"):
+                                    readEntry.attr = Int32.Parse(containString[1]);
                                     break;
-                                case "chara":
-                                    readEntry.chara = containString[3];
+                                case string a when a.Contains("chara"):
+                                    readEntry.chara = containString[1];
                                     break;
-                                case "cos":
-                                    readEntry.cos = containString[3];
+                                case string a when a.Contains("cos"):
+                                    readEntry.cos = containString[1];
                                     break;
-                                case "id":
-                                    readEntry.id = Int32.Parse(containString[3]);
+                                case string a when a.Contains("id"):
+                                    readEntry.id = Int32.Parse(containString[1]);
                                     break;
-                                case "name":
-                                    readEntry.name = containString[3];
+                                case string a when a.Contains("name"):
+                                    readEntry.name = containString[1];
                                     break;
-                                case "ng":
-                                    readEntry.ng = Int32.Parse(containString[3]);
+                                case string a when a.Contains("ng"):
+                                    readEntry.ng = Int32.Parse(containString[1]);
                                     break;
-                                case "shop_ed_day":
-                                    readEntry.shop_ed_day = containString[3];
+                                case string a when a.Contains("shop_ed_day"):
+                                    readEntry.shop_ed_day = containString[1];
                                     break;
-                                case "shop_ed_month":
-                                    readEntry.shop_ed_month = containString[3];
+                                case string a when a.Contains("shop_ed_month"):
+                                    readEntry.shop_ed_month = containString[1];
                                     break;
-                                case "shop_ed_year":
-                                    readEntry.shop_ed_year = containString[3];
+                                case string a when a.Contains("shop_ed_year"):
+                                    readEntry.shop_ed_year = containString[1];
                                     break;
-                                case "shop_price":
-                                    readEntry.shop_price = containString[3];
+                                case string a when a.Contains("shop_price"):
+                                    readEntry.shop_price = containString[1];
                                     break;
-                                case "shop_st_day":
-                                    readEntry.shop_st_day = containString[3];
+                                case string a when a.Contains("shop_st_day"):
+                                    readEntry.shop_st_day = containString[1];
                                     break;
-                                case "shop_st_month":
-                                    readEntry.shop_st_month = containString[3];
+                                case string a when a.Contains("shop_st_month"):
+                                    readEntry.shop_st_month = containString[1];
                                     break;
-                                case "shop_st_year":
-                                    readEntry.shop_st_year = containString[3];
+                                case string a when a.Contains("shop_st_year"):
+                                    readEntry.shop_st_year = containString[1];
                                     break;
-                                case "sort_index":
-                                    readEntry.sort_index = containString[3];
+                                case string a when a.Contains("sort_index"):
+                                    readEntry.sort_index = containString[1];
                                     Code.moduleEntries.Add(readEntry);
                                     break;
                             }
