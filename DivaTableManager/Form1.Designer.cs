@@ -36,6 +36,7 @@ namespace DivaTableManager
             this.tabPage1 = new System.Windows.Forms.TabPage();
             this.ModuleListLabel = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.idUpDown = new System.Windows.Forms.NumericUpDown();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.delModuleEntry = new System.Windows.Forms.Button();
             this.addModuleEntry = new System.Windows.Forms.Button();
@@ -59,7 +60,6 @@ namespace DivaTableManager
             this.nameTextBox = new System.Windows.Forms.TextBox();
             this.ngCheck = new System.Windows.Forms.CheckBox();
             this.tabPage2 = new System.Windows.Forms.TabPage();
-            this.label11 = new System.Windows.Forms.Label();
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.fileToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.openToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -67,6 +67,7 @@ namespace DivaTableManager
             this.exitToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.settingsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.dDirectoryToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.mDATA2DDirectoryToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.aboutToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.helpToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.moduleTableHelpToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -75,15 +76,31 @@ namespace DivaTableManager
             this.informationToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.byJay39wToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
-            this.idUpDown = new System.Windows.Forms.NumericUpDown();
-            this.mDATA2DDirectoryToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.tabControl2 = new System.Windows.Forms.TabControl();
+            this.tabPage3 = new System.Windows.Forms.TabPage();
+            this.tabPage4 = new System.Windows.Forms.TabPage();
+            this.tabPage5 = new System.Windows.Forms.TabPage();
+            this.tabPage6 = new System.Windows.Forms.TabPage();
+            this.tabPage7 = new System.Windows.Forms.TabPage();
+            this.tabPage8 = new System.Windows.Forms.TabPage();
+            this.tabPage9 = new System.Windows.Forms.TabPage();
+            this.tabPage10 = new System.Windows.Forms.TabPage();
+            this.tabPage11 = new System.Windows.Forms.TabPage();
+            this.tabPage12 = new System.Windows.Forms.TabPage();
+            this.EditTextBox = new System.Windows.Forms.TextBox();
+            this.label1 = new System.Windows.Forms.Label();
+            this.SleeveTextBox = new System.Windows.Forms.TextBox();
+            this.label2 = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
+            this.modCount = new System.Windows.Forms.Label();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.groupBox1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.idUpDown)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.tabPage2.SuspendLayout();
             this.menuStrip1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.idUpDown)).BeginInit();
+            this.tabControl2.SuspendLayout();
             this.SuspendLayout();
             // 
             // listBox1
@@ -113,7 +130,7 @@ namespace DivaTableManager
             this.tabPage1.Controls.Add(this.listBox1);
             this.tabPage1.Location = new System.Drawing.Point(4, 25);
             this.tabPage1.Name = "tabPage1";
-            this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPage1.Padding = new System.Windows.Forms.Padding(3, 3, 3, 3);
             this.tabPage1.Size = new System.Drawing.Size(971, 482);
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "Module Table";
@@ -132,6 +149,12 @@ namespace DivaTableManager
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.modCount);
+            this.groupBox1.Controls.Add(this.label3);
+            this.groupBox1.Controls.Add(this.label2);
+            this.groupBox1.Controls.Add(this.SleeveTextBox);
+            this.groupBox1.Controls.Add(this.label1);
+            this.groupBox1.Controls.Add(this.EditTextBox);
             this.groupBox1.Controls.Add(this.idUpDown);
             this.groupBox1.Controls.Add(this.pictureBox1);
             this.groupBox1.Controls.Add(this.delModuleEntry);
@@ -162,19 +185,32 @@ namespace DivaTableManager
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Module Information";
             // 
+            // idUpDown
+            // 
+            this.idUpDown.Location = new System.Drawing.Point(6, 134);
+            this.idUpDown.Maximum = new decimal(new int[] {
+            999,
+            0,
+            0,
+            0});
+            this.idUpDown.Name = "idUpDown";
+            this.idUpDown.Size = new System.Drawing.Size(274, 22);
+            this.idUpDown.TabIndex = 24;
+            this.idUpDown.ValueChanged += new System.EventHandler(this.idUpDown_ValueChanged);
+            // 
             // pictureBox1
             // 
-            this.pictureBox1.Location = new System.Drawing.Point(382, 21);
+            this.pictureBox1.Location = new System.Drawing.Point(359, 64);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(301, 444);
+            this.pictureBox1.Size = new System.Drawing.Size(352, 400);
             this.pictureBox1.TabIndex = 4;
             this.pictureBox1.TabStop = false;
             // 
             // delModuleEntry
             // 
-            this.delModuleEntry.Location = new System.Drawing.Point(6, 384);
+            this.delModuleEntry.Location = new System.Drawing.Point(2, 396);
             this.delModuleEntry.Name = "delModuleEntry";
-            this.delModuleEntry.Size = new System.Drawing.Size(198, 81);
+            this.delModuleEntry.Size = new System.Drawing.Size(198, 48);
             this.delModuleEntry.TabIndex = 23;
             this.delModuleEntry.Text = "Delete Selected Entry";
             this.toolTip1.SetToolTip(this.delModuleEntry, "Removes the selected entry from the list.");
@@ -183,9 +219,9 @@ namespace DivaTableManager
             // 
             // addModuleEntry
             // 
-            this.addModuleEntry.Location = new System.Drawing.Point(6, 303);
+            this.addModuleEntry.Location = new System.Drawing.Point(2, 342);
             this.addModuleEntry.Name = "addModuleEntry";
-            this.addModuleEntry.Size = new System.Drawing.Size(198, 81);
+            this.addModuleEntry.Size = new System.Drawing.Size(198, 48);
             this.addModuleEntry.TabIndex = 15;
             this.addModuleEntry.Text = "Add Dummy Entry \r\n(At End of List)";
             this.toolTip1.SetToolTip(this.addModuleEntry, "Adds a dummy entry with default values to the end of the list.\r\nOnce the entry is" +
@@ -196,7 +232,7 @@ namespace DivaTableManager
             // EndLabel
             // 
             this.EndLabel.AutoSize = true;
-            this.EndLabel.Location = new System.Drawing.Point(286, 251);
+            this.EndLabel.Location = new System.Drawing.Point(286, 304);
             this.EndLabel.Name = "EndLabel";
             this.EndLabel.Size = new System.Drawing.Size(67, 17);
             this.EndLabel.TabIndex = 22;
@@ -207,7 +243,7 @@ namespace DivaTableManager
             // StartLabel
             // 
             this.StartLabel.AutoSize = true;
-            this.StartLabel.Location = new System.Drawing.Point(286, 223);
+            this.StartLabel.Location = new System.Drawing.Point(286, 276);
             this.StartLabel.Name = "StartLabel";
             this.StartLabel.Size = new System.Drawing.Size(72, 17);
             this.StartLabel.TabIndex = 21;
@@ -227,7 +263,7 @@ namespace DivaTableManager
             // IndexLabel
             // 
             this.IndexLabel.AutoSize = true;
-            this.IndexLabel.Location = new System.Drawing.Point(286, 195);
+            this.IndexLabel.Location = new System.Drawing.Point(286, 248);
             this.IndexLabel.Name = "IndexLabel";
             this.IndexLabel.Size = new System.Drawing.Size(71, 17);
             this.IndexLabel.TabIndex = 19;
@@ -237,7 +273,7 @@ namespace DivaTableManager
             // PriceLabel
             // 
             this.PriceLabel.AutoSize = true;
-            this.PriceLabel.Location = new System.Drawing.Point(286, 167);
+            this.PriceLabel.Location = new System.Drawing.Point(286, 192);
             this.PriceLabel.Name = "PriceLabel";
             this.PriceLabel.Size = new System.Drawing.Size(72, 17);
             this.PriceLabel.TabIndex = 18;
@@ -249,7 +285,7 @@ namespace DivaTableManager
             // NameLabel
             // 
             this.NameLabel.AutoSize = true;
-            this.NameLabel.Location = new System.Drawing.Point(286, 139);
+            this.NameLabel.Location = new System.Drawing.Point(286, 164);
             this.NameLabel.Name = "NameLabel";
             this.NameLabel.Size = new System.Drawing.Size(45, 17);
             this.NameLabel.TabIndex = 17;
@@ -260,7 +296,7 @@ namespace DivaTableManager
             // ModIDLabel
             // 
             this.ModIDLabel.AutoSize = true;
-            this.ModIDLabel.Location = new System.Drawing.Point(286, 111);
+            this.ModIDLabel.Location = new System.Drawing.Point(286, 136);
             this.ModIDLabel.Name = "ModIDLabel";
             this.ModIDLabel.Size = new System.Drawing.Size(21, 17);
             this.ModIDLabel.TabIndex = 16;
@@ -325,7 +361,7 @@ namespace DivaTableManager
             // 
             // dateTimePicker2
             // 
-            this.dateTimePicker2.Location = new System.Drawing.Point(6, 249);
+            this.dateTimePicker2.Location = new System.Drawing.Point(6, 302);
             this.dateTimePicker2.Name = "dateTimePicker2";
             this.dateTimePicker2.Size = new System.Drawing.Size(274, 22);
             this.dateTimePicker2.TabIndex = 12;
@@ -335,17 +371,6 @@ namespace DivaTableManager
             // 
             this.charaComboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.charaComboBox.FormattingEnabled = true;
-            this.charaComboBox.Items.AddRange(new object[] {
-            "MIKU",
-            "RIN",
-            "LEN",
-            "LUKA",
-            "KAITO",
-            "MEIKO",
-            "NERU",
-            "HAKU",
-            "SAKINE",
-            "TETO"});
             this.charaComboBox.Location = new System.Drawing.Point(6, 51);
             this.charaComboBox.Name = "charaComboBox";
             this.charaComboBox.Size = new System.Drawing.Size(274, 24);
@@ -354,7 +379,7 @@ namespace DivaTableManager
             // 
             // dateTimePicker1
             // 
-            this.dateTimePicker1.Location = new System.Drawing.Point(6, 221);
+            this.dateTimePicker1.Location = new System.Drawing.Point(6, 274);
             this.dateTimePicker1.Name = "dateTimePicker1";
             this.dateTimePicker1.Size = new System.Drawing.Size(274, 22);
             this.dateTimePicker1.TabIndex = 11;
@@ -370,7 +395,7 @@ namespace DivaTableManager
             // 
             // indexTextBox
             // 
-            this.indexTextBox.Location = new System.Drawing.Point(6, 193);
+            this.indexTextBox.Location = new System.Drawing.Point(6, 246);
             this.indexTextBox.Name = "indexTextBox";
             this.indexTextBox.Size = new System.Drawing.Size(274, 22);
             this.indexTextBox.TabIndex = 10;
@@ -378,7 +403,7 @@ namespace DivaTableManager
             // 
             // priceTextBox
             // 
-            this.priceTextBox.Location = new System.Drawing.Point(6, 165);
+            this.priceTextBox.Location = new System.Drawing.Point(6, 190);
             this.priceTextBox.Name = "priceTextBox";
             this.priceTextBox.Size = new System.Drawing.Size(274, 22);
             this.priceTextBox.TabIndex = 9;
@@ -386,7 +411,7 @@ namespace DivaTableManager
             // 
             // nameTextBox
             // 
-            this.nameTextBox.Location = new System.Drawing.Point(6, 137);
+            this.nameTextBox.Location = new System.Drawing.Point(6, 162);
             this.nameTextBox.Name = "nameTextBox";
             this.nameTextBox.Size = new System.Drawing.Size(274, 22);
             this.nameTextBox.TabIndex = 7;
@@ -395,7 +420,7 @@ namespace DivaTableManager
             // ngCheck
             // 
             this.ngCheck.AutoSize = true;
-            this.ngCheck.Location = new System.Drawing.Point(6, 277);
+            this.ngCheck.Location = new System.Drawing.Point(206, 357);
             this.ngCheck.Name = "ngCheck";
             this.ngCheck.Size = new System.Drawing.Size(107, 21);
             this.ngCheck.TabIndex = 8;
@@ -407,24 +432,14 @@ namespace DivaTableManager
             // 
             // tabPage2
             // 
-            this.tabPage2.Controls.Add(this.label11);
+            this.tabPage2.Controls.Add(this.tabControl2);
             this.tabPage2.Location = new System.Drawing.Point(4, 25);
             this.tabPage2.Name = "tabPage2";
-            this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPage2.Padding = new System.Windows.Forms.Padding(3, 3, 3, 3);
             this.tabPage2.Size = new System.Drawing.Size(971, 482);
             this.tabPage2.TabIndex = 1;
             this.tabPage2.Text = "Character Item Table";
             this.tabPage2.UseVisualStyleBackColor = true;
-            // 
-            // label11
-            // 
-            this.label11.AutoSize = true;
-            this.label11.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label11.Location = new System.Drawing.Point(3, 3);
-            this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(642, 29);
-            this.label11.TabIndex = 4;
-            this.label11.Text = "Please wait for this functionality to be added! - Jay39w";
             // 
             // menuStrip1
             // 
@@ -435,6 +450,7 @@ namespace DivaTableManager
             this.aboutToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
+            this.menuStrip1.Padding = new System.Windows.Forms.Padding(6, 2, 0, 2);
             this.menuStrip1.Size = new System.Drawing.Size(979, 28);
             this.menuStrip1.TabIndex = 3;
             this.menuStrip1.Text = "menuStrip1";
@@ -485,9 +501,16 @@ namespace DivaTableManager
             // dDirectoryToolStripMenuItem
             // 
             this.dDirectoryToolStripMenuItem.Name = "dDirectoryToolStripMenuItem";
-            this.dDirectoryToolStripMenuItem.Size = new System.Drawing.Size(176, 26);
+            this.dDirectoryToolStripMenuItem.Size = new System.Drawing.Size(230, 26);
             this.dDirectoryToolStripMenuItem.Text = "2D Directory";
             this.dDirectoryToolStripMenuItem.Click += new System.EventHandler(this.dDirectoryToolStripMenuItem_Click);
+            // 
+            // mDATA2DDirectoryToolStripMenuItem
+            // 
+            this.mDATA2DDirectoryToolStripMenuItem.Name = "mDATA2DDirectoryToolStripMenuItem";
+            this.mDATA2DDirectoryToolStripMenuItem.Size = new System.Drawing.Size(230, 26);
+            this.mDATA2DDirectoryToolStripMenuItem.Text = "MDATA 2D Directory";
+            this.mDATA2DDirectoryToolStripMenuItem.Click += new System.EventHandler(this.mDATA2DDirectoryToolStripMenuItem_Click);
             // 
             // aboutToolStripMenuItem
             // 
@@ -544,25 +567,174 @@ namespace DivaTableManager
             this.byJay39wToolStripMenuItem.Size = new System.Drawing.Size(170, 26);
             this.byJay39wToolStripMenuItem.Text = "by Jay39w";
             // 
-            // idUpDown
+            // tabControl2
             // 
-            this.idUpDown.Location = new System.Drawing.Point(6, 109);
-            this.idUpDown.Maximum = new decimal(new int[] {
-            999,
-            0,
-            0,
-            0});
-            this.idUpDown.Name = "idUpDown";
-            this.idUpDown.Size = new System.Drawing.Size(274, 22);
-            this.idUpDown.TabIndex = 24;
-            this.idUpDown.ValueChanged += new System.EventHandler(this.idUpDown_ValueChanged);
+            this.tabControl2.Controls.Add(this.tabPage3);
+            this.tabControl2.Controls.Add(this.tabPage4);
+            this.tabControl2.Controls.Add(this.tabPage5);
+            this.tabControl2.Controls.Add(this.tabPage6);
+            this.tabControl2.Controls.Add(this.tabPage7);
+            this.tabControl2.Controls.Add(this.tabPage8);
+            this.tabControl2.Controls.Add(this.tabPage9);
+            this.tabControl2.Controls.Add(this.tabPage10);
+            this.tabControl2.Controls.Add(this.tabPage11);
+            this.tabControl2.Controls.Add(this.tabPage12);
+            this.tabControl2.Location = new System.Drawing.Point(3, 3);
+            this.tabControl2.Name = "tabControl2";
+            this.tabControl2.SelectedIndex = 0;
+            this.tabControl2.Size = new System.Drawing.Size(968, 476);
+            this.tabControl2.TabIndex = 0;
             // 
-            // mDATA2DDirectoryToolStripMenuItem
+            // tabPage3
             // 
-            this.mDATA2DDirectoryToolStripMenuItem.Name = "mDATA2DDirectoryToolStripMenuItem";
-            this.mDATA2DDirectoryToolStripMenuItem.Size = new System.Drawing.Size(230, 26);
-            this.mDATA2DDirectoryToolStripMenuItem.Text = "MDATA 2D Directory";
-            this.mDATA2DDirectoryToolStripMenuItem.Click += new System.EventHandler(this.mDATA2DDirectoryToolStripMenuItem_Click);
+            this.tabPage3.BackColor = System.Drawing.Color.Transparent;
+            this.tabPage3.ForeColor = System.Drawing.Color.Aqua;
+            this.tabPage3.Location = new System.Drawing.Point(4, 25);
+            this.tabPage3.Name = "tabPage3";
+            this.tabPage3.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPage3.Size = new System.Drawing.Size(960, 447);
+            this.tabPage3.TabIndex = 0;
+            this.tabPage3.Text = "Miku";
+            this.tabPage3.UseVisualStyleBackColor = true;
+            // 
+            // tabPage4
+            // 
+            this.tabPage4.ForeColor = System.Drawing.Color.Yellow;
+            this.tabPage4.Location = new System.Drawing.Point(4, 25);
+            this.tabPage4.Name = "tabPage4";
+            this.tabPage4.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPage4.Size = new System.Drawing.Size(960, 447);
+            this.tabPage4.TabIndex = 1;
+            this.tabPage4.Text = "Rin";
+            this.tabPage4.UseVisualStyleBackColor = true;
+            // 
+            // tabPage5
+            // 
+            this.tabPage5.Location = new System.Drawing.Point(4, 25);
+            this.tabPage5.Name = "tabPage5";
+            this.tabPage5.Size = new System.Drawing.Size(960, 447);
+            this.tabPage5.TabIndex = 2;
+            this.tabPage5.Text = "Len";
+            this.tabPage5.UseVisualStyleBackColor = true;
+            // 
+            // tabPage6
+            // 
+            this.tabPage6.Location = new System.Drawing.Point(4, 25);
+            this.tabPage6.Name = "tabPage6";
+            this.tabPage6.Size = new System.Drawing.Size(960, 447);
+            this.tabPage6.TabIndex = 3;
+            this.tabPage6.Text = "Luka";
+            this.tabPage6.UseVisualStyleBackColor = true;
+            // 
+            // tabPage7
+            // 
+            this.tabPage7.Location = new System.Drawing.Point(4, 25);
+            this.tabPage7.Name = "tabPage7";
+            this.tabPage7.Size = new System.Drawing.Size(960, 447);
+            this.tabPage7.TabIndex = 4;
+            this.tabPage7.Text = "Kaito";
+            this.tabPage7.UseVisualStyleBackColor = true;
+            // 
+            // tabPage8
+            // 
+            this.tabPage8.Location = new System.Drawing.Point(4, 25);
+            this.tabPage8.Name = "tabPage8";
+            this.tabPage8.Size = new System.Drawing.Size(960, 447);
+            this.tabPage8.TabIndex = 5;
+            this.tabPage8.Text = "Meiko";
+            this.tabPage8.UseVisualStyleBackColor = true;
+            // 
+            // tabPage9
+            // 
+            this.tabPage9.Location = new System.Drawing.Point(4, 25);
+            this.tabPage9.Name = "tabPage9";
+            this.tabPage9.Size = new System.Drawing.Size(960, 447);
+            this.tabPage9.TabIndex = 6;
+            this.tabPage9.Text = "Neru";
+            this.tabPage9.UseVisualStyleBackColor = true;
+            // 
+            // tabPage10
+            // 
+            this.tabPage10.Location = new System.Drawing.Point(4, 25);
+            this.tabPage10.Name = "tabPage10";
+            this.tabPage10.Size = new System.Drawing.Size(960, 447);
+            this.tabPage10.TabIndex = 7;
+            this.tabPage10.Text = "Haku";
+            this.tabPage10.UseVisualStyleBackColor = true;
+            // 
+            // tabPage11
+            // 
+            this.tabPage11.Location = new System.Drawing.Point(4, 25);
+            this.tabPage11.Name = "tabPage11";
+            this.tabPage11.Size = new System.Drawing.Size(960, 447);
+            this.tabPage11.TabIndex = 8;
+            this.tabPage11.Text = "Sakine";
+            this.tabPage11.UseVisualStyleBackColor = true;
+            // 
+            // tabPage12
+            // 
+            this.tabPage12.Location = new System.Drawing.Point(4, 25);
+            this.tabPage12.Name = "tabPage12";
+            this.tabPage12.Size = new System.Drawing.Size(960, 447);
+            this.tabPage12.TabIndex = 9;
+            this.tabPage12.Text = "Teto";
+            this.tabPage12.UseVisualStyleBackColor = true;
+            // 
+            // EditTextBox
+            // 
+            this.EditTextBox.Location = new System.Drawing.Point(6, 107);
+            this.EditTextBox.Name = "EditTextBox";
+            this.EditTextBox.Size = new System.Drawing.Size(274, 22);
+            this.EditTextBox.TabIndex = 25;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(286, 110);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(63, 17);
+            this.label1.TabIndex = 26;
+            this.label1.Text = "Edit Size";
+            this.toolTip1.SetToolTip(this.label1, "The size of the module when using it in an edit.\r\nIf a certain value is exceeded " +
+        "when making an edit,\r\nit may not be possible to use the module in the edit.");
+            // 
+            // SleeveTextBox
+            // 
+            this.SleeveTextBox.Location = new System.Drawing.Point(6, 218);
+            this.SleeveTextBox.Name = "SleeveTextBox";
+            this.SleeveTextBox.Size = new System.Drawing.Size(274, 22);
+            this.SleeveTextBox.TabIndex = 27;
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(286, 221);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(51, 17);
+            this.label2.TabIndex = 28;
+            this.label2.Text = "Sleeve";
+            this.toolTip1.SetToolTip(this.label2, "I have absolutely no idea what this does.\r\nIt appears to only be used in 1.01 Arc" +
+        "ade versions\r\nand possibly the first release of Dreamy Theater.");
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.Location = new System.Drawing.Point(550, 16);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(151, 25);
+            this.label3.TabIndex = 15;
+            this.label3.Text = "Module Preview";
+            this.toolTip1.SetToolTip(this.label3, "Did you just feel like hovering over all the text?");
+            // 
+            // modCount
+            // 
+            this.modCount.AutoSize = true;
+            this.modCount.Location = new System.Drawing.Point(222, 415);
+            this.modCount.Name = "modCount";
+            this.modCount.Size = new System.Drawing.Size(65, 17);
+            this.modCount.TabIndex = 29;
+            this.modCount.Text = "Modules:";
             // 
             // Form1
             // 
@@ -581,12 +753,12 @@ namespace DivaTableManager
             this.tabPage1.PerformLayout();
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.idUpDown)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.tabPage2.ResumeLayout(false);
-            this.tabPage2.PerformLayout();
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.idUpDown)).EndInit();
+            this.tabControl2.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -629,7 +801,6 @@ namespace DivaTableManager
         private System.Windows.Forms.ToolStripMenuItem moduleTableHelpToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem characterItemTableHelpToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem mentalHelpToolStripMenuItem;
-        private System.Windows.Forms.Label label11;
         private System.Windows.Forms.Button delModuleEntry;
         private System.Windows.Forms.Button addModuleEntry;
         private System.Windows.Forms.ToolTip toolTip1;
@@ -639,6 +810,23 @@ namespace DivaTableManager
         private System.Windows.Forms.ToolStripMenuItem dDirectoryToolStripMenuItem;
         private System.Windows.Forms.NumericUpDown idUpDown;
         private System.Windows.Forms.ToolStripMenuItem mDATA2DDirectoryToolStripMenuItem;
+        private System.Windows.Forms.TabControl tabControl2;
+        private System.Windows.Forms.TabPage tabPage3;
+        private System.Windows.Forms.TabPage tabPage4;
+        private System.Windows.Forms.TabPage tabPage5;
+        private System.Windows.Forms.TabPage tabPage6;
+        private System.Windows.Forms.TabPage tabPage7;
+        private System.Windows.Forms.TabPage tabPage8;
+        private System.Windows.Forms.TabPage tabPage9;
+        private System.Windows.Forms.TabPage tabPage10;
+        private System.Windows.Forms.TabPage tabPage11;
+        private System.Windows.Forms.TabPage tabPage12;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.TextBox EditTextBox;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.TextBox SleeveTextBox;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Label modCount;
     }
 }
 

@@ -5,6 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Globalization;
 using System.Collections;
+using System.Drawing;
 using System.Windows.Forms;
 
 
@@ -20,10 +21,10 @@ namespace DivaTableManager
         public Form1()
         {
             InitializeComponent();
-            if (!DivaTableManager.Properties.Settings.Default.IsReset) 
+            if (!Properties.Settings.Default.IsReset) 
             {
-                DivaTableManager.Properties.Settings.Default.Upgrade();
-                DivaTableManager.Properties.Settings.Default.IsReset = true;
+                Properties.Settings.Default.Upgrade();
+                Properties.Settings.Default.IsReset = true;
             }
         }
 
@@ -59,13 +60,35 @@ namespace DivaTableManager
                     }
                     Code.modulePath = ofd.FileName; //set this on file opening to also allow for saving to use the path
                     Code.readModuleFile(Code.modulePath);
+                    populateCharaBox();
                     refreshModuleList();
+                    pictureBox1.SizeMode = PictureBoxSizeMode.StretchImage;
+                    pictureBox1.SendToBack();
                 }
                 else
                 {
                 }
             }
             catch (Exception) { }
+        }
+
+        private void populateCharaBox()
+        {
+            string[] baseChara = { "MIKU", "RIN", "LEN", "LUKA", "KAITO", "MEIKO" };
+            string[] noFChara = { "NERU", "HAKU", "SAKINE" };
+            charaComboBox.Items.AddRange(baseChara);
+            if (Code.moduleType == "F")
+            {
+                charaComboBox.Items.Add("EXTRA");
+            }
+            else
+            {
+                charaComboBox.Items.AddRange(noFChara);
+            }
+            if (Code.moduleType == "FT")
+            {
+                charaComboBox.Items.Add("TETO");
+            }
         }
 
         //END OF REGION: Stuff that needs to be here as it impacts form elements
@@ -173,8 +196,40 @@ namespace DivaTableManager
         private void listBox1_SelectedIndexChanged(object sender, EventArgs e)
         {
             curModule = Code.moduleEntries[listBox1.SelectedIndex];
-            if (curModule != null)
+            if (curModule != null && (Code.moduleType == "AC1" || Code.moduleType == "DT" || Code.moduleType == "DT1" || Code.moduleType == "AC" ))
             {
+                EditTextBox.Enabled = false;
+                attrComboBox.Enabled = false;
+                if(Code.moduleType == "AC1" || Code.moduleType == "DT1")
+                {
+                    indexTextBox.Enabled = false;
+                    SleeveTextBox.Enabled = true;
+                    SleeveTextBox.Text = curModule.sleeve;
+                }
+                if (Code.moduleType == "AC" || Code.moduleType == "DT")
+                {
+                    SleeveTextBox.Enabled = false;
+                    indexTextBox.Enabled = true;
+                    indexTextBox.Text = curModule.sort_index;
+                }
+                charaComboBox.Text = curModule.chara;
+                cosTextBox.Text = curModule.cos;
+                idUpDown.Value = curModule.id;
+                nameTextBox.Text = curModule.name;
+                ngCheck.Enabled = true;
+                priceTextBox.Text = curModule.shop_price;
+                ngCheck.Checked = Code.checkNG(curModule.ng);
+                var startDate = new DateTime(Int32.Parse(curModule.shop_st_year), Int32.Parse(curModule.shop_st_month), Int32.Parse(curModule.shop_st_day));
+                var endDate = new DateTime(Int32.Parse(curModule.shop_ed_year), Int32.Parse(curModule.shop_ed_month), Int32.Parse(curModule.shop_ed_day));
+                dateTimePicker1.Value = startDate;
+                dateTimePicker2.Value = endDate;
+            }
+            if (curModule != null && Code.moduleType == "FT")
+            {
+                EditTextBox.Enabled = false;
+                SleeveTextBox.Enabled = false;
+                attrComboBox.Enabled = true;
+                ngCheck.Enabled = true;
                 attrComboBox.Text = Code.attrCalcText(curModule.attr);
                 charaComboBox.Text = curModule.chara;
                 cosTextBox.Text = curModule.cos;
@@ -187,13 +242,30 @@ namespace DivaTableManager
                 var endDate = new DateTime(Int32.Parse(curModule.shop_ed_year), Int32.Parse(curModule.shop_ed_month), Int32.Parse(curModule.shop_ed_day));
                 dateTimePicker1.Value = startDate;
                 dateTimePicker2.Value = endDate;
+            }
+            if (curModule != null && Code.moduleType == "F")
+            {
+                attrComboBox.Enabled = false;
+                dateTimePicker1.Enabled = false;
+                ngCheck.Enabled = false;
+                dateTimePicker2.Enabled = false;
+                EditTextBox.Enabled = true;
+                SleeveTextBox.Enabled = false;
+                indexTextBox.Enabled = true;
+                EditTextBox.Text = curModule.edit_size;
+                charaComboBox.Text = curModule.chara;
+                cosTextBox.Text = curModule.cos;
+                idUpDown.Value = curModule.id;
+                nameTextBox.Text = curModule.name;
+                priceTextBox.Text = curModule.shop_price;
+                indexTextBox.Text = curModule.sort_index;
+            }
+            if (curModule != null)
+            {
                 Code.setPictureBox(curModule.id);
                 pictureBox1.Image = Code.moduleImageBitmap;
-                if (pictureBox1.Image != null)
-                {
-                    pictureBox1.Size = Code.moduleImageBitmap.Size;
-                }
             }
+            modCount.Text = "Modules: " + Code.moduleEntries.Count;
         }
 
         private void addModuleEntry_Click(object sender, EventArgs e)
@@ -222,7 +294,7 @@ namespace DivaTableManager
         //WinForms is a bitch sometimes so I need to have these here...
         private void saveToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            Code.SaveButton_Click();
+            Code.SaveButton_ClickModule();
         }
 
         private void exitToolStripMenuItem_Click(object sender, EventArgs e)

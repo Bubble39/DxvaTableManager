@@ -6,9 +6,11 @@ public class moduleEntry
     public int attr;
     public string chara;
     public string cos;
+    public string edit_size;
     public int id;
     public string name;
     public int ng;
+    public string sleeve;
     public string shop_ed_day;
     public string shop_ed_month;
     public string shop_ed_year;
