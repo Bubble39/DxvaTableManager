@@ -1,10 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.IO;
-using System.Linq;
-using System.Text;
-using System.Globalization;
-using System.Collections;
 using System.Windows.Forms;
 
 public class FormExtras
@@ -17,7 +11,7 @@ public class FormExtras
 
     public static void informationToolStripMenuItem_Click()
     {
-        MessageBox.Show("DivaTableManager by Jay39w" + Environment.NewLine + "Thanks to all who helped me with learning C#!" + Environment.NewLine + "Current Version: v1.4 (08/04/2021)", "About DTM");
+        MessageBox.Show("DivaTableManager by Jay39w" + Environment.NewLine + "Thanks to all who helped me with learning C#!" + Environment.NewLine + "Current Version: v1.5 (10/04/2021)", "About DTM");
     }
 
     public static void moduleTableHelpToolStripMenuItem_Click()

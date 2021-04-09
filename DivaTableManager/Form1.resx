@@ -120,6 +120,9 @@
   <metadata name="toolTip1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>152, 17</value>
   </metadata>
+  <metadata name="toolTip1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>152, 17</value>
+  </metadata>
   <data name="IndexLabel.ToolTip" xml:space="preserve">
     <value>The placement of the module in the shop list.
 The list is in ascending order. (0 --&gt; 100, etc.)
@@ -127,6 +130,12 @@ You may use clashing numbers although it may cause
 unwanted sorting results.
 Sort Index numbers vary by 'Character' setting so 0 for MIKU
 will not impact 0 for SAKINE, for example.</value>
+  </data>
+  <data name="NameLabel.ToolTip" xml:space="preserve">
+    <value>The name of the module.
+This is the name that will appear in module select.
+Bare in mind unsupported character sets will not display correctly in-game.
+Please note that you must press the ENTER key to save the name.</value>
   </data>
   <data name="ModIDLabel.ToolTip" xml:space="preserve">
     <value>The ID used for this module.

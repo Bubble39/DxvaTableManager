@@ -34,10 +34,15 @@ namespace DivaTableManager
             this.listBox1 = new System.Windows.Forms.ListBox();
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
+            this.modCount = new System.Windows.Forms.Label();
             this.ModuleListLabel = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.label2 = new System.Windows.Forms.Label();
+            this.SleeveTextBox = new System.Windows.Forms.TextBox();
+            this.label1 = new System.Windows.Forms.Label();
+            this.EditTextBox = new System.Windows.Forms.TextBox();
             this.idUpDown = new System.Windows.Forms.NumericUpDown();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.delModuleEntry = new System.Windows.Forms.Button();
             this.addModuleEntry = new System.Windows.Forms.Button();
             this.EndLabel = new System.Windows.Forms.Label();
@@ -59,7 +64,28 @@ namespace DivaTableManager
             this.priceTextBox = new System.Windows.Forms.TextBox();
             this.nameTextBox = new System.Windows.Forms.TextBox();
             this.ngCheck = new System.Windows.Forms.CheckBox();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.tabPage2 = new System.Windows.Forms.TabPage();
+            this.tabControl2 = new System.Windows.Forms.TabControl();
+            this.tabPage3 = new System.Windows.Forms.TabPage();
+            this.groupBox3 = new System.Windows.Forms.GroupBox();
+            this.MikuItemBox = new System.Windows.Forms.ListBox();
+            this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.MikuAdd = new System.Windows.Forms.Button();
+            this.MikuDel = new System.Windows.Forms.Button();
+            this.label4 = new System.Windows.Forms.Label();
+            this.MikuCosList = new System.Windows.Forms.CheckedListBox();
+            this.MikuCosBox = new System.Windows.Forms.ListBox();
+            this.tabPage4 = new System.Windows.Forms.TabPage();
+            this.tabPage5 = new System.Windows.Forms.TabPage();
+            this.tabPage6 = new System.Windows.Forms.TabPage();
+            this.tabPage7 = new System.Windows.Forms.TabPage();
+            this.tabPage8 = new System.Windows.Forms.TabPage();
+            this.tabPage9 = new System.Windows.Forms.TabPage();
+            this.tabPage10 = new System.Windows.Forms.TabPage();
+            this.tabPage11 = new System.Windows.Forms.TabPage();
+            this.tabPage12 = new System.Windows.Forms.TabPage();
+            this.tabPage13 = new System.Windows.Forms.TabPage();
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.fileToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.openToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -76,40 +102,29 @@ namespace DivaTableManager
             this.informationToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.byJay39wToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
-            this.tabControl2 = new System.Windows.Forms.TabControl();
-            this.tabPage3 = new System.Windows.Forms.TabPage();
-            this.tabPage4 = new System.Windows.Forms.TabPage();
-            this.tabPage5 = new System.Windows.Forms.TabPage();
-            this.tabPage6 = new System.Windows.Forms.TabPage();
-            this.tabPage7 = new System.Windows.Forms.TabPage();
-            this.tabPage8 = new System.Windows.Forms.TabPage();
-            this.tabPage9 = new System.Windows.Forms.TabPage();
-            this.tabPage10 = new System.Windows.Forms.TabPage();
-            this.tabPage11 = new System.Windows.Forms.TabPage();
-            this.tabPage12 = new System.Windows.Forms.TabPage();
-            this.EditTextBox = new System.Windows.Forms.TextBox();
-            this.label1 = new System.Windows.Forms.Label();
-            this.SleeveTextBox = new System.Windows.Forms.TextBox();
-            this.label2 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
-            this.modCount = new System.Windows.Forms.Label();
+            this.MikuIDBox = new System.Windows.Forms.ComboBox();
+            this.groupBox4 = new System.Windows.Forms.GroupBox();
+            this.groupBox5 = new System.Windows.Forms.GroupBox();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.idUpDown)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.tabPage2.SuspendLayout();
-            this.menuStrip1.SuspendLayout();
             this.tabControl2.SuspendLayout();
+            this.tabPage3.SuspendLayout();
+            this.groupBox3.SuspendLayout();
+            this.groupBox2.SuspendLayout();
+            this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
             // listBox1
             // 
             this.listBox1.FormattingEnabled = true;
             this.listBox1.ItemHeight = 16;
-            this.listBox1.Location = new System.Drawing.Point(719, 50);
+            this.listBox1.Location = new System.Drawing.Point(830, 39);
             this.listBox1.Name = "listBox1";
-            this.listBox1.Size = new System.Drawing.Size(244, 420);
+            this.listBox1.Size = new System.Drawing.Size(244, 484);
             this.listBox1.TabIndex = 1;
             this.listBox1.SelectedIndexChanged += new System.EventHandler(this.listBox1_SelectedIndexChanged);
             // 
@@ -120,43 +135,63 @@ namespace DivaTableManager
             this.tabControl1.Location = new System.Drawing.Point(0, 31);
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.SelectedIndex = 0;
-            this.tabControl1.Size = new System.Drawing.Size(979, 511);
+            this.tabControl1.Size = new System.Drawing.Size(1082, 552);
             this.tabControl1.TabIndex = 2;
             // 
             // tabPage1
             // 
+            this.tabPage1.Controls.Add(this.modCount);
             this.tabPage1.Controls.Add(this.ModuleListLabel);
+            this.tabPage1.Controls.Add(this.label3);
             this.tabPage1.Controls.Add(this.groupBox1);
             this.tabPage1.Controls.Add(this.listBox1);
+            this.tabPage1.Controls.Add(this.pictureBox1);
             this.tabPage1.Location = new System.Drawing.Point(4, 25);
             this.tabPage1.Name = "tabPage1";
-            this.tabPage1.Padding = new System.Windows.Forms.Padding(3, 3, 3, 3);
-            this.tabPage1.Size = new System.Drawing.Size(971, 482);
+            this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPage1.Size = new System.Drawing.Size(1074, 523);
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "Module Table";
             this.tabPage1.UseVisualStyleBackColor = true;
+            // 
+            // modCount
+            // 
+            this.modCount.AutoSize = true;
+            this.modCount.Location = new System.Drawing.Point(8, 493);
+            this.modCount.Name = "modCount";
+            this.modCount.Size = new System.Drawing.Size(65, 17);
+            this.modCount.TabIndex = 29;
+            this.modCount.Text = "Modules:";
             // 
             // ModuleListLabel
             // 
             this.ModuleListLabel.AutoSize = true;
             this.ModuleListLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.ModuleListLabel.Location = new System.Drawing.Point(719, 22);
+            this.ModuleListLabel.Location = new System.Drawing.Point(825, 6);
             this.ModuleListLabel.Name = "ModuleListLabel";
             this.ModuleListLabel.Size = new System.Drawing.Size(162, 25);
             this.ModuleListLabel.TabIndex = 14;
             this.ModuleListLabel.Text = "Module Entry List";
             this.toolTip1.SetToolTip(this.ModuleListLabel, "Did you just feel like hovering over all the text?");
             // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.Location = new System.Drawing.Point(370, 6);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(151, 25);
+            this.label3.TabIndex = 15;
+            this.label3.Text = "Module Preview";
+            this.toolTip1.SetToolTip(this.label3, "Did you just feel like hovering over all the text?");
+            // 
             // groupBox1
             // 
-            this.groupBox1.Controls.Add(this.modCount);
-            this.groupBox1.Controls.Add(this.label3);
             this.groupBox1.Controls.Add(this.label2);
             this.groupBox1.Controls.Add(this.SleeveTextBox);
             this.groupBox1.Controls.Add(this.label1);
             this.groupBox1.Controls.Add(this.EditTextBox);
             this.groupBox1.Controls.Add(this.idUpDown);
-            this.groupBox1.Controls.Add(this.pictureBox1);
             this.groupBox1.Controls.Add(this.delModuleEntry);
             this.groupBox1.Controls.Add(this.addModuleEntry);
             this.groupBox1.Controls.Add(this.EndLabel);
@@ -180,10 +215,46 @@ namespace DivaTableManager
             this.groupBox1.Controls.Add(this.ngCheck);
             this.groupBox1.Location = new System.Drawing.Point(6, 6);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(707, 465);
+            this.groupBox1.Size = new System.Drawing.Size(358, 478);
             this.groupBox1.TabIndex = 13;
             this.groupBox1.TabStop = false;
-            this.groupBox1.Text = "Module Information";
+            this.groupBox1.Text = "Module Properties";
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(286, 221);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(51, 17);
+            this.label2.TabIndex = 28;
+            this.label2.Text = "Sleeve";
+            this.toolTip1.SetToolTip(this.label2, "I have absolutely no idea what this does.\r\nIt appears to only be used in 1.01 Arc" +
+        "ade versions\r\nand possibly the first release of Dreamy Theater.");
+            // 
+            // SleeveTextBox
+            // 
+            this.SleeveTextBox.Location = new System.Drawing.Point(6, 218);
+            this.SleeveTextBox.Name = "SleeveTextBox";
+            this.SleeveTextBox.Size = new System.Drawing.Size(274, 22);
+            this.SleeveTextBox.TabIndex = 27;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(286, 110);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(63, 17);
+            this.label1.TabIndex = 26;
+            this.label1.Text = "Edit Size";
+            this.toolTip1.SetToolTip(this.label1, "The size of the module when using it in an edit.\r\nIf a certain value is exceeded " +
+        "when making an edit,\r\nit may not be possible to use the module in the edit.");
+            // 
+            // EditTextBox
+            // 
+            this.EditTextBox.Location = new System.Drawing.Point(6, 107);
+            this.EditTextBox.Name = "EditTextBox";
+            this.EditTextBox.Size = new System.Drawing.Size(274, 22);
+            this.EditTextBox.TabIndex = 25;
             // 
             // idUpDown
             // 
@@ -197,14 +268,6 @@ namespace DivaTableManager
             this.idUpDown.Size = new System.Drawing.Size(274, 22);
             this.idUpDown.TabIndex = 24;
             this.idUpDown.ValueChanged += new System.EventHandler(this.idUpDown_ValueChanged);
-            // 
-            // pictureBox1
-            // 
-            this.pictureBox1.Location = new System.Drawing.Point(359, 64);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(352, 400);
-            this.pictureBox1.TabIndex = 4;
-            this.pictureBox1.TabStop = false;
             // 
             // delModuleEntry
             // 
@@ -255,7 +318,7 @@ namespace DivaTableManager
             // 
             this.idCheckLabel.AutoSize = true;
             this.idCheckLabel.ForeColor = System.Drawing.Color.Black;
-            this.idCheckLabel.Location = new System.Drawing.Point(328, 112);
+            this.idCheckLabel.Location = new System.Drawing.Point(313, 136);
             this.idCheckLabel.Name = "idCheckLabel";
             this.idCheckLabel.Size = new System.Drawing.Size(0, 17);
             this.idCheckLabel.TabIndex = 20;
@@ -290,8 +353,7 @@ namespace DivaTableManager
             this.NameLabel.Size = new System.Drawing.Size(45, 17);
             this.NameLabel.TabIndex = 17;
             this.NameLabel.Text = "Name";
-            this.toolTip1.SetToolTip(this.NameLabel, "The name of the module.\r\nThis is the name that will appear in module select.\r\nBar" +
-        "e in mind unsupported character sets will not display correctly in-game.");
+            this.toolTip1.SetToolTip(this.NameLabel, resources.GetString("NameLabel.ToolTip"));
             // 
             // ModIDLabel
             // 
@@ -420,7 +482,7 @@ namespace DivaTableManager
             // ngCheck
             // 
             this.ngCheck.AutoSize = true;
-            this.ngCheck.Location = new System.Drawing.Point(206, 357);
+            this.ngCheck.Location = new System.Drawing.Point(6, 450);
             this.ngCheck.Name = "ngCheck";
             this.ngCheck.Size = new System.Drawing.Size(107, 21);
             this.ngCheck.TabIndex = 8;
@@ -430,16 +492,240 @@ namespace DivaTableManager
             this.ngCheck.UseVisualStyleBackColor = true;
             this.ngCheck.CheckedChanged += new System.EventHandler(this.ngCheck_CheckedChanged);
             // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Location = new System.Drawing.Point(370, 39);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(435, 484);
+            this.pictureBox1.TabIndex = 4;
+            this.pictureBox1.TabStop = false;
+            // 
             // tabPage2
             // 
             this.tabPage2.Controls.Add(this.tabControl2);
             this.tabPage2.Location = new System.Drawing.Point(4, 25);
             this.tabPage2.Name = "tabPage2";
-            this.tabPage2.Padding = new System.Windows.Forms.Padding(3, 3, 3, 3);
-            this.tabPage2.Size = new System.Drawing.Size(971, 482);
+            this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPage2.Size = new System.Drawing.Size(1074, 523);
             this.tabPage2.TabIndex = 1;
             this.tabPage2.Text = "Character Item Table";
             this.tabPage2.UseVisualStyleBackColor = true;
+            // 
+            // tabControl2
+            // 
+            this.tabControl2.Controls.Add(this.tabPage3);
+            this.tabControl2.Controls.Add(this.tabPage4);
+            this.tabControl2.Controls.Add(this.tabPage5);
+            this.tabControl2.Controls.Add(this.tabPage6);
+            this.tabControl2.Controls.Add(this.tabPage7);
+            this.tabControl2.Controls.Add(this.tabPage8);
+            this.tabControl2.Controls.Add(this.tabPage9);
+            this.tabControl2.Controls.Add(this.tabPage10);
+            this.tabControl2.Controls.Add(this.tabPage11);
+            this.tabControl2.Controls.Add(this.tabPage12);
+            this.tabControl2.Controls.Add(this.tabPage13);
+            this.tabControl2.Location = new System.Drawing.Point(3, 3);
+            this.tabControl2.Name = "tabControl2";
+            this.tabControl2.SelectedIndex = 0;
+            this.tabControl2.Size = new System.Drawing.Size(1075, 524);
+            this.tabControl2.TabIndex = 0;
+            // 
+            // tabPage3
+            // 
+            this.tabPage3.BackColor = System.Drawing.Color.Transparent;
+            this.tabPage3.Controls.Add(this.groupBox3);
+            this.tabPage3.Controls.Add(this.groupBox2);
+            this.tabPage3.ForeColor = System.Drawing.Color.Black;
+            this.tabPage3.Location = new System.Drawing.Point(4, 25);
+            this.tabPage3.Name = "tabPage3";
+            this.tabPage3.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPage3.Size = new System.Drawing.Size(1067, 495);
+            this.tabPage3.TabIndex = 0;
+            this.tabPage3.Text = "Miku";
+            this.tabPage3.UseVisualStyleBackColor = true;
+            // 
+            // groupBox3
+            // 
+            this.groupBox3.Controls.Add(this.groupBox5);
+            this.groupBox3.Controls.Add(this.groupBox4);
+            this.groupBox3.Controls.Add(this.MikuItemBox);
+            this.groupBox3.Location = new System.Drawing.Point(387, 3);
+            this.groupBox3.Name = "groupBox3";
+            this.groupBox3.Size = new System.Drawing.Size(672, 481);
+            this.groupBox3.TabIndex = 1;
+            this.groupBox3.TabStop = false;
+            this.groupBox3.Text = "Items";
+            // 
+            // MikuItemBox
+            // 
+            this.MikuItemBox.FormattingEnabled = true;
+            this.MikuItemBox.ItemHeight = 16;
+            this.MikuItemBox.Location = new System.Drawing.Point(494, 18);
+            this.MikuItemBox.Name = "MikuItemBox";
+            this.MikuItemBox.Size = new System.Drawing.Size(172, 452);
+            this.MikuItemBox.TabIndex = 0;
+            // 
+            // groupBox2
+            // 
+            this.groupBox2.Controls.Add(this.MikuIDBox);
+            this.groupBox2.Controls.Add(this.MikuAdd);
+            this.groupBox2.Controls.Add(this.MikuDel);
+            this.groupBox2.Controls.Add(this.label4);
+            this.groupBox2.Controls.Add(this.MikuCosList);
+            this.groupBox2.Controls.Add(this.MikuCosBox);
+            this.groupBox2.Location = new System.Drawing.Point(6, 3);
+            this.groupBox2.Name = "groupBox2";
+            this.groupBox2.Size = new System.Drawing.Size(375, 481);
+            this.groupBox2.TabIndex = 0;
+            this.groupBox2.TabStop = false;
+            this.groupBox2.Text = "Costumes";
+            // 
+            // MikuAdd
+            // 
+            this.MikuAdd.Location = new System.Drawing.Point(6, 424);
+            this.MikuAdd.Name = "MikuAdd";
+            this.MikuAdd.Size = new System.Drawing.Size(179, 23);
+            this.MikuAdd.TabIndex = 5;
+            this.MikuAdd.Text = "Add";
+            this.MikuAdd.UseVisualStyleBackColor = true;
+            // 
+            // MikuDel
+            // 
+            this.MikuDel.Location = new System.Drawing.Point(6, 453);
+            this.MikuDel.Name = "MikuDel";
+            this.MikuDel.Size = new System.Drawing.Size(179, 23);
+            this.MikuDel.TabIndex = 2;
+            this.MikuDel.Text = "Remove";
+            this.MikuDel.UseVisualStyleBackColor = true;
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.ForeColor = System.Drawing.Color.Black;
+            this.label4.Location = new System.Drawing.Point(3, 339);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(25, 17);
+            this.label4.TabIndex = 4;
+            this.label4.Text = "ID:";
+            this.toolTip1.SetToolTip(this.label4, "The ID of the item you wish to\r\nuse in this costume.\r\n(It corresponds to the item" +
+        " list to the right)");
+            // 
+            // MikuCosList
+            // 
+            this.MikuCosList.FormattingEnabled = true;
+            this.MikuCosList.Items.AddRange(new object[] {
+            "This",
+            "Does",
+            "Nothing",
+            "Yet",
+            "But",
+            "Hi",
+            "There"});
+            this.MikuCosList.Location = new System.Drawing.Point(191, 336);
+            this.MikuCosList.Name = "MikuCosList";
+            this.MikuCosList.Size = new System.Drawing.Size(172, 140);
+            this.MikuCosList.TabIndex = 2;
+            // 
+            // MikuCosBox
+            // 
+            this.MikuCosBox.FormattingEnabled = true;
+            this.MikuCosBox.ItemHeight = 16;
+            this.MikuCosBox.Location = new System.Drawing.Point(6, 18);
+            this.MikuCosBox.Name = "MikuCosBox";
+            this.MikuCosBox.Size = new System.Drawing.Size(357, 308);
+            this.MikuCosBox.TabIndex = 1;
+            // 
+            // tabPage4
+            // 
+            this.tabPage4.ForeColor = System.Drawing.Color.Black;
+            this.tabPage4.Location = new System.Drawing.Point(4, 25);
+            this.tabPage4.Name = "tabPage4";
+            this.tabPage4.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPage4.Size = new System.Drawing.Size(1067, 495);
+            this.tabPage4.TabIndex = 1;
+            this.tabPage4.Text = "Rin";
+            this.tabPage4.UseVisualStyleBackColor = true;
+            // 
+            // tabPage5
+            // 
+            this.tabPage5.Location = new System.Drawing.Point(4, 25);
+            this.tabPage5.Name = "tabPage5";
+            this.tabPage5.Size = new System.Drawing.Size(1067, 495);
+            this.tabPage5.TabIndex = 2;
+            this.tabPage5.Text = "Len";
+            this.tabPage5.UseVisualStyleBackColor = true;
+            // 
+            // tabPage6
+            // 
+            this.tabPage6.Location = new System.Drawing.Point(4, 25);
+            this.tabPage6.Name = "tabPage6";
+            this.tabPage6.Size = new System.Drawing.Size(1067, 495);
+            this.tabPage6.TabIndex = 3;
+            this.tabPage6.Text = "Luka";
+            this.tabPage6.UseVisualStyleBackColor = true;
+            // 
+            // tabPage7
+            // 
+            this.tabPage7.Location = new System.Drawing.Point(4, 25);
+            this.tabPage7.Name = "tabPage7";
+            this.tabPage7.Size = new System.Drawing.Size(1067, 495);
+            this.tabPage7.TabIndex = 4;
+            this.tabPage7.Text = "Kaito";
+            this.tabPage7.UseVisualStyleBackColor = true;
+            // 
+            // tabPage8
+            // 
+            this.tabPage8.Location = new System.Drawing.Point(4, 25);
+            this.tabPage8.Name = "tabPage8";
+            this.tabPage8.Size = new System.Drawing.Size(1067, 495);
+            this.tabPage8.TabIndex = 5;
+            this.tabPage8.Text = "Meiko";
+            this.tabPage8.UseVisualStyleBackColor = true;
+            // 
+            // tabPage9
+            // 
+            this.tabPage9.Location = new System.Drawing.Point(4, 25);
+            this.tabPage9.Name = "tabPage9";
+            this.tabPage9.Size = new System.Drawing.Size(1067, 495);
+            this.tabPage9.TabIndex = 6;
+            this.tabPage9.Text = "Neru";
+            this.tabPage9.UseVisualStyleBackColor = true;
+            // 
+            // tabPage10
+            // 
+            this.tabPage10.Location = new System.Drawing.Point(4, 25);
+            this.tabPage10.Name = "tabPage10";
+            this.tabPage10.Size = new System.Drawing.Size(1067, 495);
+            this.tabPage10.TabIndex = 7;
+            this.tabPage10.Text = "Haku";
+            this.tabPage10.UseVisualStyleBackColor = true;
+            // 
+            // tabPage11
+            // 
+            this.tabPage11.Location = new System.Drawing.Point(4, 25);
+            this.tabPage11.Name = "tabPage11";
+            this.tabPage11.Size = new System.Drawing.Size(1067, 495);
+            this.tabPage11.TabIndex = 8;
+            this.tabPage11.Text = "Sakine";
+            this.tabPage11.UseVisualStyleBackColor = true;
+            // 
+            // tabPage12
+            // 
+            this.tabPage12.Location = new System.Drawing.Point(4, 25);
+            this.tabPage12.Name = "tabPage12";
+            this.tabPage12.Size = new System.Drawing.Size(1067, 495);
+            this.tabPage12.TabIndex = 9;
+            this.tabPage12.Text = "Teto";
+            this.tabPage12.UseVisualStyleBackColor = true;
+            // 
+            // tabPage13
+            // 
+            this.tabPage13.Location = new System.Drawing.Point(4, 25);
+            this.tabPage13.Name = "tabPage13";
+            this.tabPage13.Size = new System.Drawing.Size(1067, 495);
+            this.tabPage13.TabIndex = 10;
+            this.tabPage13.Text = "Extra (F)";
+            this.tabPage13.UseVisualStyleBackColor = true;
             // 
             // menuStrip1
             // 
@@ -450,8 +736,7 @@ namespace DivaTableManager
             this.aboutToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Padding = new System.Windows.Forms.Padding(6, 2, 0, 2);
-            this.menuStrip1.Size = new System.Drawing.Size(979, 28);
+            this.menuStrip1.Size = new System.Drawing.Size(1082, 28);
             this.menuStrip1.TabIndex = 3;
             this.menuStrip1.Text = "menuStrip1";
             // 
@@ -567,180 +852,37 @@ namespace DivaTableManager
             this.byJay39wToolStripMenuItem.Size = new System.Drawing.Size(170, 26);
             this.byJay39wToolStripMenuItem.Text = "by Jay39w";
             // 
-            // tabControl2
+            // MikuIDBox
             // 
-            this.tabControl2.Controls.Add(this.tabPage3);
-            this.tabControl2.Controls.Add(this.tabPage4);
-            this.tabControl2.Controls.Add(this.tabPage5);
-            this.tabControl2.Controls.Add(this.tabPage6);
-            this.tabControl2.Controls.Add(this.tabPage7);
-            this.tabControl2.Controls.Add(this.tabPage8);
-            this.tabControl2.Controls.Add(this.tabPage9);
-            this.tabControl2.Controls.Add(this.tabPage10);
-            this.tabControl2.Controls.Add(this.tabPage11);
-            this.tabControl2.Controls.Add(this.tabPage12);
-            this.tabControl2.Location = new System.Drawing.Point(3, 3);
-            this.tabControl2.Name = "tabControl2";
-            this.tabControl2.SelectedIndex = 0;
-            this.tabControl2.Size = new System.Drawing.Size(968, 476);
-            this.tabControl2.TabIndex = 0;
+            this.MikuIDBox.FormattingEnabled = true;
+            this.MikuIDBox.Location = new System.Drawing.Point(27, 336);
+            this.MikuIDBox.Name = "MikuIDBox";
+            this.MikuIDBox.Size = new System.Drawing.Size(158, 24);
+            this.MikuIDBox.TabIndex = 6;
             // 
-            // tabPage3
+            // groupBox4
             // 
-            this.tabPage3.BackColor = System.Drawing.Color.Transparent;
-            this.tabPage3.ForeColor = System.Drawing.Color.Aqua;
-            this.tabPage3.Location = new System.Drawing.Point(4, 25);
-            this.tabPage3.Name = "tabPage3";
-            this.tabPage3.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage3.Size = new System.Drawing.Size(960, 447);
-            this.tabPage3.TabIndex = 0;
-            this.tabPage3.Text = "Miku";
-            this.tabPage3.UseVisualStyleBackColor = true;
+            this.groupBox4.Location = new System.Drawing.Point(288, 332);
+            this.groupBox4.Name = "groupBox4";
+            this.groupBox4.Size = new System.Drawing.Size(200, 138);
+            this.groupBox4.TabIndex = 1;
+            this.groupBox4.TabStop = false;
+            this.groupBox4.Text = "Objects";
             // 
-            // tabPage4
+            // groupBox5
             // 
-            this.tabPage4.ForeColor = System.Drawing.Color.Yellow;
-            this.tabPage4.Location = new System.Drawing.Point(4, 25);
-            this.tabPage4.Name = "tabPage4";
-            this.tabPage4.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage4.Size = new System.Drawing.Size(960, 447);
-            this.tabPage4.TabIndex = 1;
-            this.tabPage4.Text = "Rin";
-            this.tabPage4.UseVisualStyleBackColor = true;
-            // 
-            // tabPage5
-            // 
-            this.tabPage5.Location = new System.Drawing.Point(4, 25);
-            this.tabPage5.Name = "tabPage5";
-            this.tabPage5.Size = new System.Drawing.Size(960, 447);
-            this.tabPage5.TabIndex = 2;
-            this.tabPage5.Text = "Len";
-            this.tabPage5.UseVisualStyleBackColor = true;
-            // 
-            // tabPage6
-            // 
-            this.tabPage6.Location = new System.Drawing.Point(4, 25);
-            this.tabPage6.Name = "tabPage6";
-            this.tabPage6.Size = new System.Drawing.Size(960, 447);
-            this.tabPage6.TabIndex = 3;
-            this.tabPage6.Text = "Luka";
-            this.tabPage6.UseVisualStyleBackColor = true;
-            // 
-            // tabPage7
-            // 
-            this.tabPage7.Location = new System.Drawing.Point(4, 25);
-            this.tabPage7.Name = "tabPage7";
-            this.tabPage7.Size = new System.Drawing.Size(960, 447);
-            this.tabPage7.TabIndex = 4;
-            this.tabPage7.Text = "Kaito";
-            this.tabPage7.UseVisualStyleBackColor = true;
-            // 
-            // tabPage8
-            // 
-            this.tabPage8.Location = new System.Drawing.Point(4, 25);
-            this.tabPage8.Name = "tabPage8";
-            this.tabPage8.Size = new System.Drawing.Size(960, 447);
-            this.tabPage8.TabIndex = 5;
-            this.tabPage8.Text = "Meiko";
-            this.tabPage8.UseVisualStyleBackColor = true;
-            // 
-            // tabPage9
-            // 
-            this.tabPage9.Location = new System.Drawing.Point(4, 25);
-            this.tabPage9.Name = "tabPage9";
-            this.tabPage9.Size = new System.Drawing.Size(960, 447);
-            this.tabPage9.TabIndex = 6;
-            this.tabPage9.Text = "Neru";
-            this.tabPage9.UseVisualStyleBackColor = true;
-            // 
-            // tabPage10
-            // 
-            this.tabPage10.Location = new System.Drawing.Point(4, 25);
-            this.tabPage10.Name = "tabPage10";
-            this.tabPage10.Size = new System.Drawing.Size(960, 447);
-            this.tabPage10.TabIndex = 7;
-            this.tabPage10.Text = "Haku";
-            this.tabPage10.UseVisualStyleBackColor = true;
-            // 
-            // tabPage11
-            // 
-            this.tabPage11.Location = new System.Drawing.Point(4, 25);
-            this.tabPage11.Name = "tabPage11";
-            this.tabPage11.Size = new System.Drawing.Size(960, 447);
-            this.tabPage11.TabIndex = 8;
-            this.tabPage11.Text = "Sakine";
-            this.tabPage11.UseVisualStyleBackColor = true;
-            // 
-            // tabPage12
-            // 
-            this.tabPage12.Location = new System.Drawing.Point(4, 25);
-            this.tabPage12.Name = "tabPage12";
-            this.tabPage12.Size = new System.Drawing.Size(960, 447);
-            this.tabPage12.TabIndex = 9;
-            this.tabPage12.Text = "Teto";
-            this.tabPage12.UseVisualStyleBackColor = true;
-            // 
-            // EditTextBox
-            // 
-            this.EditTextBox.Location = new System.Drawing.Point(6, 107);
-            this.EditTextBox.Name = "EditTextBox";
-            this.EditTextBox.Size = new System.Drawing.Size(274, 22);
-            this.EditTextBox.TabIndex = 25;
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(286, 110);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(63, 17);
-            this.label1.TabIndex = 26;
-            this.label1.Text = "Edit Size";
-            this.toolTip1.SetToolTip(this.label1, "The size of the module when using it in an edit.\r\nIf a certain value is exceeded " +
-        "when making an edit,\r\nit may not be possible to use the module in the edit.");
-            // 
-            // SleeveTextBox
-            // 
-            this.SleeveTextBox.Location = new System.Drawing.Point(6, 218);
-            this.SleeveTextBox.Name = "SleeveTextBox";
-            this.SleeveTextBox.Size = new System.Drawing.Size(274, 22);
-            this.SleeveTextBox.TabIndex = 27;
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(286, 221);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(51, 17);
-            this.label2.TabIndex = 28;
-            this.label2.Text = "Sleeve";
-            this.toolTip1.SetToolTip(this.label2, "I have absolutely no idea what this does.\r\nIt appears to only be used in 1.01 Arc" +
-        "ade versions\r\nand possibly the first release of Dreamy Theater.");
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(550, 16);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(151, 25);
-            this.label3.TabIndex = 15;
-            this.label3.Text = "Module Preview";
-            this.toolTip1.SetToolTip(this.label3, "Did you just feel like hovering over all the text?");
-            // 
-            // modCount
-            // 
-            this.modCount.AutoSize = true;
-            this.modCount.Location = new System.Drawing.Point(222, 415);
-            this.modCount.Name = "modCount";
-            this.modCount.Size = new System.Drawing.Size(65, 17);
-            this.modCount.TabIndex = 29;
-            this.modCount.Text = "Modules:";
+            this.groupBox5.Location = new System.Drawing.Point(288, 18);
+            this.groupBox5.Name = "groupBox5";
+            this.groupBox5.Size = new System.Drawing.Size(200, 308);
+            this.groupBox5.TabIndex = 2;
+            this.groupBox5.TabStop = false;
+            this.groupBox5.Text = "Textures";
             // 
             // Form1
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(979, 539);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(120F, 120F);
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi;
+            this.ClientSize = new System.Drawing.Size(1082, 586);
             this.Controls.Add(this.tabControl1);
             this.Controls.Add(this.menuStrip1);
             this.ForeColor = System.Drawing.SystemColors.ControlText;
@@ -756,9 +898,13 @@ namespace DivaTableManager
             ((System.ComponentModel.ISupportInitialize)(this.idUpDown)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.tabPage2.ResumeLayout(false);
+            this.tabControl2.ResumeLayout(false);
+            this.tabPage3.ResumeLayout(false);
+            this.groupBox3.ResumeLayout(false);
+            this.groupBox2.ResumeLayout(false);
+            this.groupBox2.PerformLayout();
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
-            this.tabControl2.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -827,6 +973,18 @@ namespace DivaTableManager
         private System.Windows.Forms.TextBox SleeveTextBox;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label modCount;
+        private System.Windows.Forms.TabPage tabPage13;
+        private System.Windows.Forms.GroupBox groupBox3;
+        private System.Windows.Forms.ListBox MikuItemBox;
+        private System.Windows.Forms.GroupBox groupBox2;
+        private System.Windows.Forms.CheckedListBox MikuCosList;
+        private System.Windows.Forms.ListBox MikuCosBox;
+        private System.Windows.Forms.Button MikuAdd;
+        private System.Windows.Forms.Button MikuDel;
+        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.ComboBox MikuIDBox;
+        private System.Windows.Forms.GroupBox groupBox5;
+        private System.Windows.Forms.GroupBox groupBox4;
     }
 }
 

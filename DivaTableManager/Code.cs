@@ -3,23 +3,26 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Text;
-using System.Globalization;
-using System.Collections;
 using System.Windows.Forms;
 using MikuMikuLibrary.IO;
 using MikuMikuLibrary.Sprites;
 using MikuMikuLibrary.Archives;
-using MikuMikuLibrary.Textures.Processing;
 using System.Drawing;
 
 public class Code
 {
     public static List<moduleEntry> moduleEntries = new List<moduleEntry>();
     public static List<int> usedID = new List<int>();
+    public static List<cosEntry> costumesList = new List<cosEntry>();
     public static string modulePath;
     public static string outputPath;
+    public static string charaPath;
     public static Bitmap moduleImageBitmap;
     public static string moduleType;
+    public static List<string> intakeTables = new List<string>();
+    public static int typeSwitch;
+    public static int cosCount;
+
 
 
     // If the module tbl path has been set, run the writing code upon clicking the save button
@@ -35,72 +38,48 @@ public class Code
             using (StreamWriter tw = new StreamWriter(outputSource))
             {
                 tw.AutoFlush = true;
-                if (moduleType == "AC1" || moduleType == "DT" || moduleType == "DT1" || moduleType == "AC")
+                foreach (moduleEntry entry in moduleEntries.OrderBy(x => x.entry))
                 {
-                    foreach (moduleEntry entry in moduleEntries.OrderBy(x => x.entry))
-                    {
-                        tw.WriteLine("module." + entry.entry + ".chara=" + entry.chara);
-                        tw.WriteLine("module." + entry.entry + ".cos=" + entry.cos);
-                        tw.WriteLine("module." + entry.entry + ".id=" + entry.id);
-                        tw.WriteLine("module." + entry.entry + ".name=" + entry.name);
-                        tw.WriteLine("module." + entry.entry + ".ng=" + entry.ng);
-                        tw.WriteLine("module." + entry.entry + ".shop_ed_day=" + entry.shop_ed_day);
-                        tw.WriteLine("module." + entry.entry + ".shop_ed_month=" + entry.shop_ed_month);
-                        tw.WriteLine("module." + entry.entry + ".shop_ed_year=" + entry.shop_ed_year);
-                        tw.WriteLine("module." + entry.entry + ".shop_price=" + entry.shop_price);
-                        tw.WriteLine("module." + entry.entry + ".shop_st_day=" + entry.shop_st_day);
-                        tw.WriteLine("module." + entry.entry + ".shop_st_month=" + entry.shop_st_month);
-                        tw.WriteLine("module." + entry.entry + ".shop_st_year=" + entry.shop_st_year);
-                        if(moduleType == "AC1" || moduleType == "DT1")
-                        {
-                            tw.WriteLine("module." + entry.entry + ".sleeve=" + entry.sleeve);
-                        }
-                        if(moduleType == "DT" || moduleType == "AC")
-                        {
-                            tw.WriteLine("module." + entry.entry + ".sort_index=" + entry.sort_index);
-                        }
-                    }
-                }
-                if (moduleType == "FT")
-                {
-                    foreach (moduleEntry entry in moduleEntries.OrderBy(x => x.entry))
+                    if(moduleType == "FT")
                     {
                         tw.WriteLine("module." + entry.entry + ".attr=" + entry.attr);
-                        tw.WriteLine("module." + entry.entry + ".chara=" + entry.chara);
-                        tw.WriteLine("module." + entry.entry + ".cos=" + entry.cos);
-                        tw.WriteLine("module." + entry.entry + ".id=" + entry.id);
-                        tw.WriteLine("module." + entry.entry + ".name=" + entry.name);
+                    }
+                    tw.WriteLine("module." + entry.entry + ".chara=" + entry.chara);
+                    tw.WriteLine("module." + entry.entry + ".cos=" + entry.cos);
+                    if(moduleType == "F")
+                    {
+                        tw.WriteLine("module." + entry.entry + ".edit_size=" + entry.edit_size);
+                    }
+                    tw.WriteLine("module." + entry.entry + ".id=" + entry.id);
+                    tw.WriteLine("module." + entry.entry + ".name=" + entry.name);
+                    if(moduleType != "F")
+                    {
                         tw.WriteLine("module." + entry.entry + ".ng=" + entry.ng);
                         tw.WriteLine("module." + entry.entry + ".shop_ed_day=" + entry.shop_ed_day);
                         tw.WriteLine("module." + entry.entry + ".shop_ed_month=" + entry.shop_ed_month);
                         tw.WriteLine("module." + entry.entry + ".shop_ed_year=" + entry.shop_ed_year);
-                        tw.WriteLine("module." + entry.entry + ".shop_price=" + entry.shop_price);
+                    }
+                    tw.WriteLine("module." + entry.entry + ".shop_price=" + entry.shop_price);
+                    if (moduleType != "F")
+                    {
                         tw.WriteLine("module." + entry.entry + ".shop_st_day=" + entry.shop_st_day);
                         tw.WriteLine("module." + entry.entry + ".shop_st_month=" + entry.shop_st_month);
                         tw.WriteLine("module." + entry.entry + ".shop_st_year=" + entry.shop_st_year);
-                        tw.WriteLine("module." + entry.entry + ".sort_index=" + entry.sort_index);
                     }
-                }
-                if (moduleType == "F")
-                {
-                    foreach (moduleEntry entry in moduleEntries.OrderBy(x => x.entry))
+                    if (moduleType == "AC1" || moduleType == "DT1")
                     {
-                        tw.WriteLine("module." + entry.entry + ".chara=" + entry.chara);
-                        tw.WriteLine("module." + entry.entry + ".cos=" + entry.cos);
-                        tw.WriteLine("module." + entry.entry + ".edit_size=" + entry.edit_size);
-                        tw.WriteLine("module." + entry.entry + ".id=" + entry.id);
-                        tw.WriteLine("module." + entry.entry + ".name=" + entry.name);
-                        tw.WriteLine("module." + entry.entry + ".shop_price=" + entry.shop_price);
+                        tw.WriteLine("module." + entry.entry + ".sleeve=" + entry.sleeve);
+                    }
+                    else if (moduleType != "AC1" || moduleType != "DT1")
+                    {
                         tw.WriteLine("module." + entry.entry + ".sort_index=" + entry.sort_index);
                     }
                 }
                 tw.WriteLine("module.data_list.length=" + moduleEntries.Count.ToString());
-                Console.WriteLine("Wrote " + moduleEntries.Count + " entries and closed the stream.");
                 if (moduleType == "AC1" || moduleType == "DT" || moduleType == "DT1")
                 {
                     tw.WriteLine("patch=0");
                     tw.WriteLine("version=0");
-                    Console.WriteLine("Wrote " + moduleEntries.Count + " entries and added patch and version, then closed the stream.");
                 }
                 farc.Add("gm_module_id.bin", outputSource, true, ConflictPolicy.Replace);
                 farc.Save(outputPath);
@@ -108,6 +87,101 @@ public class Code
             }
         }
         else { MessageBox.Show("Please open a table first.", "Error"); }
+    }
+
+    public static void readCharaFile(string charaPath)
+    {
+        MessageBox.Show("This will not do anything but will stall the program due to testing." +
+            "Feel free to exit the application if you don't want to wait.", "girl... i said it doesnt work yet");
+        var farc = BinaryFile.Load<FarcArchive>(charaPath);
+        foreach (var fileName in farc)
+        {
+            var source = farc.Open(fileName, EntryStreamMode.MemoryStream);
+            using (var sr = new StreamReader(source, Encoding.UTF8))
+            {
+                string content = sr.ReadToEnd();
+                intakeTables.Add(content);
+            }
+        }
+        // 0 = HAK 9 = TET
+        foreach (var content in intakeTables)
+        {
+            readList(content);
+            Console.WriteLine("");
+            Console.WriteLine("Reading Next Table...");
+            Console.WriteLine("");
+        }
+    }
+
+    public static void readList(string content)
+    {
+        for (int i = 0; i < 999; i++)
+        {
+            string searchCos = "cos." + i.ToString() + ".";
+            foreach (string fileLine in content.Split(new[] { '\n', '\r' }))
+            {
+                if (fileLine.Contains(searchCos))
+                {
+                    var readEntry = new cosEntry();
+                    if (fileLine.Contains(".id="))
+                    {
+                        string[] splitString = fileLine.Split('=');
+                        readEntry.id = Int32.Parse(splitString[1]);
+                        Console.WriteLine("Detected COS id: " + readEntry.id);
+                    }
+                    else if(fileLine.Contains("item.0"))
+                    {
+                        string[] splitString = fileLine.Split('=');
+                        readEntry.item0 = Int32.Parse(splitString[1]);
+                        Console.WriteLine(readEntry.item0);
+                    }
+                    else if (fileLine.Contains("item.1"))
+                    {
+                        string[] splitString = fileLine.Split('=');
+                        readEntry.item1 = Int32.Parse(splitString[1]);
+                        Console.WriteLine(readEntry.item1);
+                    }
+                    else if (fileLine.Contains("item.2"))
+                    {
+                        string[] splitString = fileLine.Split('=');
+                        readEntry.item2 = Int32.Parse(splitString[1]);
+                        Console.WriteLine(readEntry.item2);
+                    }
+                    else if (fileLine.Contains("item.3"))
+                    {
+                        string[] splitString = fileLine.Split('=');
+                        readEntry.item3 = Int32.Parse(splitString[1]);
+                        Console.WriteLine(readEntry.item3);
+                    }
+                    else if (fileLine.Contains("item.4"))
+                    {
+                        string[] splitString = fileLine.Split('=');
+                        readEntry.item4 = Int32.Parse(splitString[1]);
+                        Console.WriteLine(readEntry.item4);
+                    }
+                    else if (fileLine.Contains("item.5"))
+                    {
+                        string[] splitString = fileLine.Split('=');
+                        readEntry.item5 = Int32.Parse(splitString[1]);
+                        Console.WriteLine(readEntry.item5);
+                    }
+                    else if (fileLine.Contains("item.6"))
+                    {
+                        string[] splitString = fileLine.Split('=');
+                        readEntry.item6 = Int32.Parse(splitString[1]);
+                        Console.WriteLine(readEntry.item6);
+                    }
+                    else if(fileLine.Contains(".item.length="))
+                    {
+                        string[] splitString = fileLine.Split('=');
+                        readEntry.itemLength = Int32.Parse(splitString[1]);
+                        Console.WriteLine("COS id " + readEntry.id + " contains this many items: " + readEntry.itemLength);
+                        costumesList.Add(readEntry);
+                    }
+                }
+            }
+        }
+        Console.WriteLine("The Costume List contains: " + costumesList.Count + " entries.");
     }
 
     // Search for module. 0 - 999 to try and cover all bases then read them
@@ -127,22 +201,22 @@ public class Code
                     Console.WriteLine("F file detected.");
                     moduleType = "F";
                 }
-                if (content.Contains("attr"))
+                else if (content.Contains("attr"))
                 {
                     Console.WriteLine("FT file detected.");
                     moduleType = "FT";
                 }
-                if(content.Contains("patch=") & content.Contains("sleeve=") == false)
+                else if (content.Contains("patch=") & content.Contains("sleeve=") == false)
                 {
                     Console.WriteLine("DT file detected.");
                     moduleType = "DT";
                 }
-                if(content.Contains("sleeve="))
+                else if (content.Contains("sleeve="))
                 {
                     Console.WriteLine("AC1 file detected.");
                     moduleType = "AC1";
                 }
-                if(content.Contains("patch=") == false & content.Contains("attr=") == false & content.Contains("sleeve=") == false & content.Contains("edit_size") == false)
+                else if (content.Contains("patch=") == false & content.Contains("attr=") == false & content.Contains("sleeve=") == false & content.Contains("edit_size") == false)
                 {
                     Console.WriteLine("AC file detected.");
                     moduleType = "AC";
@@ -342,65 +416,40 @@ public class Code
 
     public static void addDummyEntry()
     {
-        if (moduleType == "AC" || moduleType == "DT" || moduleType == "DT1" || moduleType == "AC1")
-        {
-            var dummyEntry = new moduleEntry();
-            dummyEntry.entry = moduleEntries.Count.ToString();
-            dummyEntry.chara = "MIKU";
-            dummyEntry.cos = "COS_001";
-            dummyEntry.id = 999;
-            dummyEntry.name = "ダミー";
-            dummyEntry.ng = 0;
-            dummyEntry.shop_ed_day = "3";
-            dummyEntry.shop_ed_month = "9";
-            dummyEntry.shop_ed_year = "2029";
-            dummyEntry.shop_price = "0";
-            dummyEntry.shop_st_day = "3";
-            dummyEntry.shop_st_month = "9";
-            dummyEntry.shop_st_year = "2009";
-            if(moduleType == "AC1" || moduleType == "DT1")
-            {
-                dummyEntry.sleeve = "0.07";
-            }
-            if (moduleType == "AC" || moduleType == "DT")
-            {
-                dummyEntry.sort_index = "999";
-            }
-            moduleEntries.Add(dummyEntry);
-        }
+        var dummyEntry = new moduleEntry();
+        dummyEntry.entry = moduleEntries.Count.ToString();
+        dummyEntry.chara = "MIKU";
+        dummyEntry.cos = "COS_001";
+        dummyEntry.id = 999;
+        dummyEntry.name = "DUMMY";
+        dummyEntry.shop_price = "0";
         if (moduleType == "FT")
         {
-            var dummyEntry = new moduleEntry();
-            dummyEntry.entry = moduleEntries.Count.ToString();
             dummyEntry.attr = 0;
-            dummyEntry.chara = "MIKU";
-            dummyEntry.cos = "COS_001";
-            dummyEntry.id = 999;
-            dummyEntry.name = "ダミー";
-            dummyEntry.ng = 0;
-            dummyEntry.shop_ed_day = "3";
-            dummyEntry.shop_ed_month = "9";
-            dummyEntry.shop_ed_year = "2029";
-            dummyEntry.shop_price = "0";
-            dummyEntry.shop_st_day = "3";
-            dummyEntry.shop_st_month = "9";
-            dummyEntry.shop_st_year = "2009";
-            dummyEntry.sort_index = "999";
-            moduleEntries.Add(dummyEntry);
         }
         if (moduleType == "F")
         {
-            var dummyEntry = new moduleEntry();
-            dummyEntry.entry = moduleEntries.Count.ToString();
-            dummyEntry.chara = "MIKU";
-            dummyEntry.cos = "COS_001";
             dummyEntry.edit_size = "0";
-            dummyEntry.id = 999;
-            dummyEntry.name = "ダミー";
-            dummyEntry.shop_price = "0";
-            dummyEntry.sort_index = "999";
-            moduleEntries.Add(dummyEntry);
         }
+        if (moduleType != "F")
+        {
+            dummyEntry.ng = 0;
+            dummyEntry.shop_ed_day = "3";
+            dummyEntry.shop_ed_month = "9";
+            dummyEntry.shop_ed_year = "2029";
+            dummyEntry.shop_st_day = "3";
+            dummyEntry.shop_st_month = "9";
+            dummyEntry.shop_st_year = "2009";
+        }
+        if (moduleType == "AC1" || moduleType == "DT1")
+        {
+            dummyEntry.sleeve = "0.07";
+        }
+        else if (moduleType != "AC1" || moduleType != "DT1")
+        {
+            dummyEntry.sort_index = "999";
+        }
+        moduleEntries.Add(dummyEntry);
     }
 
     public static void setPictureBox(int id)
@@ -411,11 +460,11 @@ public class Code
         {
             idString = "00" + id.ToString();
         }
-        if (id >= 10 && id <= 99)
+        else if (id >= 10 && id <= 99)
         {
             idString = "0" + id;
         }
-        if (id > 99)
+        else if (id > 99)
         {
             idString = id.ToString();
         }
@@ -423,43 +472,42 @@ public class Code
         {
             searchModule = "spr_mdl_thmb" + idString + ".farc";
         }
+        else if (moduleType == "DT" || moduleType == "DT1")
+        {
+            searchModule = "spr_ps3_mdl" + idString + ".farc";
+        }
         else
         {
             searchModule = "spr_sel_md" + idString + "cmn.farc";
-        }
-        if (moduleType == "DT" || moduleType == "DT1")
-        {
-            searchModule = "spr_ps3_mdl" + idString + ".farc";
         }
         string mdataFoldersPath = DivaTableManager.Properties.Settings.Default.userDirectoryModulePreviewMDATA + "/";
         string[] dirs = Directory.GetDirectories(mdataFoldersPath);
         string pathName = (DivaTableManager.Properties.Settings.Default.userDirectoryModulePreview + "/" + searchModule);
         try
         {
-            if (pathName != null & moduleType != "AC1")
+            if (pathName != null)
             {
-                var farc = BinaryFile.Load<FarcArchive>(pathName);
-                if (farc != null)
+                if (moduleType != "AC1")
                 {
-                    foreach (var fileName in farc)
+                    var farc = BinaryFile.Load<FarcArchive>(pathName);
+                    if (farc != null)
                     {
-                        var source = farc.Open(fileName, EntryStreamMode.MemoryStream);
-                        var sprite = BinaryFile.Load<SpriteSet>(source);
-                        var cropSprite = SpriteCropper.Crop(sprite.Sprites[0], sprite);
-                        moduleImageBitmap = cropSprite;
+                        foreach (var fileName in farc)
+                        {
+                            var source = farc.Open(fileName, EntryStreamMode.MemoryStream);
+                            var sprite = BinaryFile.Load<SpriteSet>(source);
+                            var cropSprite = SpriteCropper.Crop(sprite.Sprites[0], sprite);
+                            moduleImageBitmap = cropSprite;
+                        }
                     }
                 }
-            }
-            if (pathName != null & moduleType == "AC1")
-            {
-                pathName = DivaTableManager.Properties.Settings.Default.userDirectoryModulePreview + "/spr_sel_mdall.farc";
-                var farc = BinaryFile.Load<FarcArchive>(pathName);
-                Console.WriteLine(pathName);
-                if (farc != null)
+                else
                 {
-                    foreach (var fileName in farc)
+                    pathName = DivaTableManager.Properties.Settings.Default.userDirectoryModulePreview + "/spr_sel_mdall.farc";
+                    var farc = BinaryFile.Load<FarcArchive>(pathName);
+                    if (farc != null)
                     {
-                        var source = farc.Open(fileName, EntryStreamMode.MemoryStream);
+                        var source = farc.Open("spr_sel_mdall.bin", EntryStreamMode.MemoryStream);
                         var sprite = BinaryFile.Load<SpriteSet>(source);
                         var cropSprite = SpriteCropper.Crop(sprite.Sprites[id], sprite);
                         moduleImageBitmap = cropSprite;
@@ -469,7 +517,6 @@ public class Code
         }
         catch (FileNotFoundException)
         {
-            moduleImageBitmap = null;
             if (mdataFoldersPath != null && moduleType == "FT")
             {
                 foreach (string dir in dirs)
@@ -498,6 +545,8 @@ public class Code
                     }
                 }
             }
+            moduleImageBitmap = null;
         }
+        catch (ArgumentOutOfRangeException) { }
     }
 }

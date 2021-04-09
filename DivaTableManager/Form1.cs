@@ -1,11 +1,5 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.IO;
-using System.Linq;
-using System.Text;
-using System.Globalization;
-using System.Collections;
-using System.Drawing;
 using System.Windows.Forms;
 
 
@@ -13,11 +7,11 @@ namespace DivaTableManager
 {
     public partial class Form1 : Form
     {
-        //REGION: Declare some stuff for later use
+        // Declarations
         OpenFileDialog ofd = new OpenFileDialog();
         public static moduleEntry curModule;
 
-        //END OF REGION: Declare some stuff for later use
+        // Open the form and allow for program properties to be set
         public Form1()
         {
             InitializeComponent();
@@ -28,79 +22,77 @@ namespace DivaTableManager
             }
         }
 
-        //REGION: Stuff that needs to be here as it impacts form elements
-        //Reused code from ADPEdit, hi bestie
+        //================================================================================================
 
-        public void refreshModuleList()
-        {
-            if (Code.moduleEntries != null) //check if list is null/empty
+        public void refreshModuleList() // Check for null list, if not make a new list with all the entries and push the
+        {                               // name and character to a string which becomes the listbox data
+            if (Code.moduleEntries != null)
             {
-                var dummy = new List<string>(); // make a new string list
-                for (int i = 0; i < Code.moduleEntries.Count; i++) // count all the module entries
+                var dummy = new List<string>();
+                for (int i = 0; i < Code.moduleEntries.Count; i++)
                 {
                     var x = Code.moduleEntries[i];
                     string finalModuleName = x.name + " " + "(" + x.chara + ")";
-                    dummy.Add(finalModuleName);  // list all modules
+                    dummy.Add(finalModuleName);
                 }
-                listBox1.DataSource = dummy; // listbox data source is now all modules
+                listBox1.DataSource = dummy;
             }
-            else { }
+            else { MessageBox.Show("this isnt supposed to happen", "what?"); }
         }
 
         private void OpenButton_Click(object sender, EventArgs e)
         {
             try
             {
-                ofd.Filter = "Module Table files|*_module_tbl.farc|All files (*.*)|*.*";
+                ofd.Filter = "Supported Files|*_module_tbl.farc; *chritm_prop.farc|Module Table files|*_module_tbl.farc|Character Item Table files| *chritm_prop.farc|All files (*.*)|*.*";
                 if (ofd.ShowDialog() == DialogResult.OK)
                 {
-                    if (Code.moduleEntries != null)
+                    if (ofd.FileName.Contains("module_tbl.farc"))
                     {
-                        Code.moduleEntries.Clear(); //clear list of module entries when opening a new file
+                        if (Code.moduleEntries != null)
+                        {
+                            Code.moduleEntries.Clear(); //clear list of module entries when opening a new file
+                        }
+                        Code.modulePath = ofd.FileName; //set this on file opening to also allow for saving to use the path
+                        Code.readModuleFile(Code.modulePath);
+                        Code.typeSwitch = 0;
+                        populateCharaBox();
+                        refreshModuleList();
+                        pictureBox1.SendToBack();
                     }
-                    Code.modulePath = ofd.FileName; //set this on file opening to also allow for saving to use the path
-                    Code.readModuleFile(Code.modulePath);
-                    populateCharaBox();
-                    refreshModuleList();
-                    pictureBox1.SizeMode = PictureBoxSizeMode.StretchImage;
-                    pictureBox1.SendToBack();
+                    else if (ofd.FileName.Contains("chritm_prop.farc"))
+                    {
+                        Code.typeSwitch = 1;
+                        Code.charaPath = ofd.FileName;
+                        Code.readCharaFile(Code.charaPath);
+                    }
                 }
-                else
-                {
-                }
+                else  { }
             }
             catch (Exception) { }
         }
 
-        private void populateCharaBox()
+        private void populateCharaBox() // Adds items to the comboBox depending on what game the file is from
         {
             string[] baseChara = { "MIKU", "RIN", "LEN", "LUKA", "KAITO", "MEIKO" };
             string[] noFChara = { "NERU", "HAKU", "SAKINE" };
             charaComboBox.Items.AddRange(baseChara);
+
             if (Code.moduleType == "F")
-            {
-                charaComboBox.Items.Add("EXTRA");
-            }
+            { charaComboBox.Items.Add("EXTRA"); }
+
             else
-            {
-                charaComboBox.Items.AddRange(noFChara);
-            }
+            { charaComboBox.Items.AddRange(noFChara); }
+
             if (Code.moduleType == "FT")
-            {
-                charaComboBox.Items.Add("TETO");
-            }
+            { charaComboBox.Items.Add("TETO"); }
         }
 
-        //END OF REGION: Stuff that needs to be here as it impacts form elements
-        //REGION: Detect changes to form information by user and apply to entry in moduleEntries list
-        //(Mostly one line voids, unless it impacts the listBox)
+    //================================================================================================
 
         private void attrComboBox_SelectedIndexChanged(object sender, EventArgs e)
         {
-            if(curModule != null)
-            {
-                curModule.attr = Code.calcAttr(attrComboBox.Text);
-            }
+            if(curModule != null) { curModule.attr = Code.calcAttr(attrComboBox.Text); }
         }
 
         private void charaComboBox_SelectedIndexChanged(object sender, EventArgs e)
@@ -119,17 +111,14 @@ namespace DivaTableManager
 
         private void cosTextBox_TextChanged(object sender, EventArgs e)
         {
-            if (curModule != null && cosTextBox.Text.Contains("COS_"))
-            {
-                curModule.cos = cosTextBox.Text;
-            }
+            if (curModule != null && cosTextBox.Text.Contains("COS_")) { curModule.cos = cosTextBox.Text; }
         }
 
         private void nameTextBox_KeyDown(object sender, KeyEventArgs e)
         {
             if (Code.moduleEntries != null && e.KeyCode == Keys.Enter)
             {
-                if (nameTextBox.Text != null && listBox1.SelectedItem.ToString() != (nameTextBox.Text + " " + "(" + curModule.chara + ")"))
+                if (nameTextBox.Text != null && listBox1.SelectedItem.ToString() != (nameTextBox.Text + " (" + curModule.chara + ")"))
                 {
                     int indexStore = listBox1.SelectedIndex;
                     curModule.name = nameTextBox.Text;
@@ -143,31 +132,21 @@ namespace DivaTableManager
         {
             if (curModule != null)
             {
-                if (ngCheck.Checked)
-                {
-                    curModule.ng = 1;
-                }
-                else
-                {
-                    curModule.ng = 0;
-                }
+                if (ngCheck.Checked) { curModule.ng = 1; }
+                else { curModule.ng = 0; }
             }
         }
 
         private void priceTextBox_TextChanged(object sender, EventArgs e)
         {
-            if (curModule != null && curModule.shop_price != priceTextBox.Text)
-            {
+            if (curModule != null && curModule.shop_price != priceTextBox.Text) {
                 curModule.shop_price = priceTextBox.Text;
             }
         }
 
         private void indexTextBox_TextChanged(object sender, EventArgs e)
         {
-            if (curModule != null)
-            {
-                curModule.sort_index = indexTextBox.Text;
-            }
+            if (curModule != null) { curModule.sort_index = indexTextBox.Text; }
         }
 
         private void dateTimePicker1_ValueChanged(object sender, EventArgs e)
@@ -206,7 +185,7 @@ namespace DivaTableManager
                     SleeveTextBox.Enabled = true;
                     SleeveTextBox.Text = curModule.sleeve;
                 }
-                if (Code.moduleType == "AC" || Code.moduleType == "DT")
+                else if (Code.moduleType == "AC" || Code.moduleType == "DT")
                 {
                     SleeveTextBox.Enabled = false;
                     indexTextBox.Enabled = true;
@@ -224,7 +203,7 @@ namespace DivaTableManager
                 dateTimePicker1.Value = startDate;
                 dateTimePicker2.Value = endDate;
             }
-            if (curModule != null && Code.moduleType == "FT")
+            else if (curModule != null && Code.moduleType == "FT")
             {
                 EditTextBox.Enabled = false;
                 SleeveTextBox.Enabled = false;
@@ -243,7 +222,7 @@ namespace DivaTableManager
                 dateTimePicker1.Value = startDate;
                 dateTimePicker2.Value = endDate;
             }
-            if (curModule != null && Code.moduleType == "F")
+            else if (curModule != null && Code.moduleType == "F")
             {
                 attrComboBox.Enabled = false;
                 dateTimePicker1.Enabled = false;
@@ -262,6 +241,11 @@ namespace DivaTableManager
             }
             if (curModule != null)
             {
+                if(Code.moduleType == "AC1")
+                {
+
+                }
+                else { pictureBox1.SizeMode = PictureBoxSizeMode.StretchImage; }
                 Code.setPictureBox(curModule.id);
                 pictureBox1.Image = Code.moduleImageBitmap;
             }
@@ -294,43 +278,30 @@ namespace DivaTableManager
         //WinForms is a bitch sometimes so I need to have these here...
         private void saveToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            Code.SaveButton_ClickModule();
+            if(Code.typeSwitch == 0)
+            {
+                Code.SaveButton_ClickModule();
+            }
+            else if(Code.typeSwitch == 1)
+            {
+              
+            }
+            else { }
         }
 
-        private void exitToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            FormExtras.exitToolStripMenuItem_Click();
-        }
+        private void exitToolStripMenuItem_Click(object sender, EventArgs e) { FormExtras.exitToolStripMenuItem_Click(); }
 
-        private void moduleTableHelpToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            FormExtras.moduleTableHelpToolStripMenuItem_Click();
-        }
+        private void moduleTableHelpToolStripMenuItem_Click(object sender, EventArgs e) { FormExtras.moduleTableHelpToolStripMenuItem_Click(); }
 
-        private void characterItemTableHelpToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            FormExtras.characterItemTableHelpToolStripMenuItem_Click();
-        }
+        private void characterItemTableHelpToolStripMenuItem_Click(object sender, EventArgs e) { FormExtras.characterItemTableHelpToolStripMenuItem_Click(); }
 
-        private void mentalHelpToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            FormExtras.mentalHelpToolStripMenuItem_Click();
-        }
+        private void mentalHelpToolStripMenuItem_Click(object sender, EventArgs e) { FormExtras.mentalHelpToolStripMenuItem_Click(); }
 
-        private void informationToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            FormExtras.informationToolStripMenuItem_Click();
-        }
+        private void informationToolStripMenuItem_Click(object sender, EventArgs e) { FormExtras.informationToolStripMenuItem_Click(); }
 
-        private void dDirectoryToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            FormExtras.setDirectory2d();
-        }
+        private void dDirectoryToolStripMenuItem_Click(object sender, EventArgs e) { FormExtras.setDirectory2d(); }
 
-        private void mDATA2DDirectoryToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            FormExtras.setDirectory2dMDATA();
-        }
+        private void mDATA2DDirectoryToolStripMenuItem_Click(object sender, EventArgs e) { FormExtras.setDirectory2dMDATA(); }
 
         private void idUpDown_ValueChanged(object sender, EventArgs e)
         {
@@ -352,6 +323,5 @@ namespace DivaTableManager
                 }
             }
         }
-        //STOP
     }
 }

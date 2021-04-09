@@ -1,6 +1,4 @@
-﻿using System;
-
-public class moduleEntry
+﻿public class moduleEntry
 {
     public string entry;
     public int attr;
@@ -19,4 +17,48 @@ public class moduleEntry
     public string shop_st_month;
     public string shop_st_year;
     public string sort_index;
+}
+
+public class cosEntry
+{
+    public int entry;
+    public int id;
+    public int item0;
+    public int item1;
+    public int item2;
+    public int item3;
+    public int item4;
+    public int item5;
+    public int item6;
+    public int itemLength;
+}
+
+public class itemEntry
+{
+    public int entry;
+    public int attr;
+    class dataSetObj
+    {
+        int rpk;
+        string uid;
+    }
+    int dataSetObjLength;
+    class dataSetTex
+    {
+        string chg;
+        string org;
+    }
+    int dataSetTexLength;
+    int desID;
+    int exclusion;
+    int faceDepth;
+    int flag;
+    string name;
+    int no;
+    string[] objSet;
+    int objSetLength;
+    int orgItm;
+    int point;
+    int subID;
+    int type;
 }
