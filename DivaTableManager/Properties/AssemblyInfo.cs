@@ -10,7 +10,7 @@ using System.Runtime.InteropServices;
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("")]
 [assembly: AssemblyProduct("DivaTableManager")]
-[assembly: AssemblyCopyright("Copyright © Jay39w  2021")]
+[assembly: AssemblyCopyright("Copyright © Bubble39 2022")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
 

@@ -34,18 +34,12 @@ namespace DivaTableManager
             this.listBox1 = new System.Windows.Forms.ListBox();
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
-            this.modCount = new System.Windows.Forms.Label();
-            this.ModuleListLabel = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.label2 = new System.Windows.Forms.Label();
-            this.SleeveTextBox = new System.Windows.Forms.TextBox();
-            this.label1 = new System.Windows.Forms.Label();
-            this.EditTextBox = new System.Windows.Forms.TextBox();
+            this.indexTextBox = new System.Windows.Forms.NumericUpDown();
+            this.modCount = new System.Windows.Forms.Label();
             this.idUpDown = new System.Windows.Forms.NumericUpDown();
             this.delModuleEntry = new System.Windows.Forms.Button();
             this.addModuleEntry = new System.Windows.Forms.Button();
-            this.EndLabel = new System.Windows.Forms.Label();
             this.StartLabel = new System.Windows.Forms.Label();
             this.idCheckLabel = new System.Windows.Forms.Label();
             this.IndexLabel = new System.Windows.Forms.Label();
@@ -56,65 +50,66 @@ namespace DivaTableManager
             this.CharaLabel = new System.Windows.Forms.Label();
             this.AttrLabel = new System.Windows.Forms.Label();
             this.attrComboBox = new System.Windows.Forms.ComboBox();
-            this.dateTimePicker2 = new System.Windows.Forms.DateTimePicker();
             this.charaComboBox = new System.Windows.Forms.ComboBox();
             this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
             this.cosTextBox = new System.Windows.Forms.TextBox();
-            this.indexTextBox = new System.Windows.Forms.TextBox();
             this.priceTextBox = new System.Windows.Forms.TextBox();
             this.nameTextBox = new System.Windows.Forms.TextBox();
             this.ngCheck = new System.Windows.Forms.CheckBox();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.tabPage2 = new System.Windows.Forms.TabPage();
-            this.tabControl2 = new System.Windows.Forms.TabControl();
-            this.tabPage3 = new System.Windows.Forms.TabPage();
-            this.groupBox3 = new System.Windows.Forms.GroupBox();
-            this.MikuItemBox = new System.Windows.Forms.ListBox();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.MikuAdd = new System.Windows.Forms.Button();
-            this.MikuDel = new System.Windows.Forms.Button();
+            this.numericUpDown4 = new System.Windows.Forms.NumericUpDown();
+            this.label11 = new System.Windows.Forms.Label();
+            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.button3 = new System.Windows.Forms.Button();
+            this.numericUpDown3 = new System.Windows.Forms.NumericUpDown();
+            this.checkBox2 = new System.Windows.Forms.CheckBox();
+            this.numericUpDown1 = new System.Windows.Forms.NumericUpDown();
+            this.label1 = new System.Windows.Forms.Label();
+            this.numericUpDown2 = new System.Windows.Forms.NumericUpDown();
+            this.button1 = new System.Windows.Forms.Button();
+            this.button2 = new System.Windows.Forms.Button();
+            this.label2 = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
-            this.MikuCosList = new System.Windows.Forms.CheckedListBox();
-            this.MikuCosBox = new System.Windows.Forms.ListBox();
-            this.tabPage4 = new System.Windows.Forms.TabPage();
-            this.tabPage5 = new System.Windows.Forms.TabPage();
-            this.tabPage6 = new System.Windows.Forms.TabPage();
-            this.tabPage7 = new System.Windows.Forms.TabPage();
-            this.tabPage8 = new System.Windows.Forms.TabPage();
-            this.tabPage9 = new System.Windows.Forms.TabPage();
-            this.tabPage10 = new System.Windows.Forms.TabPage();
-            this.tabPage11 = new System.Windows.Forms.TabPage();
-            this.tabPage12 = new System.Windows.Forms.TabPage();
-            this.tabPage13 = new System.Windows.Forms.TabPage();
+            this.label5 = new System.Windows.Forms.Label();
+            this.label6 = new System.Windows.Forms.Label();
+            this.label7 = new System.Windows.Forms.Label();
+            this.label8 = new System.Windows.Forms.Label();
+            this.label9 = new System.Windows.Forms.Label();
+            this.label10 = new System.Windows.Forms.Label();
+            this.comboBox2 = new System.Windows.Forms.ComboBox();
+            this.dateTimePicker2 = new System.Windows.Forms.DateTimePicker();
+            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.textBox3 = new System.Windows.Forms.TextBox();
+            this.checkBox1 = new System.Windows.Forms.CheckBox();
+            this.listBox2 = new System.Windows.Forms.ListBox();
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.fileToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.newToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.openToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.saveToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.exitToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.settingsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.dDirectoryToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.mDATA2DDirectoryToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.saveAsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.macroToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.ignoreShortcutToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.checkIDToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.deleteToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.batchToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.moduleBatchIndexToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.characterItemchritmToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.aboutToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.helpToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.moduleTableHelpToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.characterItemTableHelpToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.mentalHelpToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.informationToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.byJay39wToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
-            this.MikuIDBox = new System.Windows.Forms.ComboBox();
-            this.groupBox4 = new System.Windows.Forms.GroupBox();
-            this.groupBox5 = new System.Windows.Forms.GroupBox();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.groupBox1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.indexTextBox)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.idUpDown)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.tabPage2.SuspendLayout();
-            this.tabControl2.SuspendLayout();
-            this.tabPage3.SuspendLayout();
-            this.groupBox3.SuspendLayout();
             this.groupBox2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown4)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown3)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown2)).BeginInit();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -122,9 +117,11 @@ namespace DivaTableManager
             // 
             this.listBox1.FormattingEnabled = true;
             this.listBox1.ItemHeight = 16;
-            this.listBox1.Location = new System.Drawing.Point(830, 39);
+            this.listBox1.Location = new System.Drawing.Point(370, 10);
+            this.listBox1.MaximumSize = new System.Drawing.Size(256, 292);
+            this.listBox1.MinimumSize = new System.Drawing.Size(256, 292);
             this.listBox1.Name = "listBox1";
-            this.listBox1.Size = new System.Drawing.Size(244, 484);
+            this.listBox1.Size = new System.Drawing.Size(256, 292);
             this.listBox1.TabIndex = 1;
             this.listBox1.SelectedIndexChanged += new System.EventHandler(this.listBox1_SelectedIndexChanged);
             // 
@@ -136,65 +133,27 @@ namespace DivaTableManager
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.SelectedIndex = 0;
             this.tabControl1.Size = new System.Drawing.Size(1082, 552);
-            this.tabControl1.TabIndex = 2;
+            this.tabControl1.TabIndex = 1;
             // 
             // tabPage1
             // 
-            this.tabPage1.Controls.Add(this.modCount);
-            this.tabPage1.Controls.Add(this.ModuleListLabel);
-            this.tabPage1.Controls.Add(this.label3);
             this.tabPage1.Controls.Add(this.groupBox1);
             this.tabPage1.Controls.Add(this.listBox1);
-            this.tabPage1.Controls.Add(this.pictureBox1);
             this.tabPage1.Location = new System.Drawing.Point(4, 25);
             this.tabPage1.Name = "tabPage1";
             this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
             this.tabPage1.Size = new System.Drawing.Size(1074, 523);
             this.tabPage1.TabIndex = 0;
-            this.tabPage1.Text = "Module Table";
+            this.tabPage1.Text = "Modules";
             this.tabPage1.UseVisualStyleBackColor = true;
-            // 
-            // modCount
-            // 
-            this.modCount.AutoSize = true;
-            this.modCount.Location = new System.Drawing.Point(8, 493);
-            this.modCount.Name = "modCount";
-            this.modCount.Size = new System.Drawing.Size(65, 17);
-            this.modCount.TabIndex = 29;
-            this.modCount.Text = "Modules:";
-            // 
-            // ModuleListLabel
-            // 
-            this.ModuleListLabel.AutoSize = true;
-            this.ModuleListLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.ModuleListLabel.Location = new System.Drawing.Point(825, 6);
-            this.ModuleListLabel.Name = "ModuleListLabel";
-            this.ModuleListLabel.Size = new System.Drawing.Size(162, 25);
-            this.ModuleListLabel.TabIndex = 14;
-            this.ModuleListLabel.Text = "Module Entry List";
-            this.toolTip1.SetToolTip(this.ModuleListLabel, "Did you just feel like hovering over all the text?");
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(370, 6);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(151, 25);
-            this.label3.TabIndex = 15;
-            this.label3.Text = "Module Preview";
-            this.toolTip1.SetToolTip(this.label3, "Did you just feel like hovering over all the text?");
             // 
             // groupBox1
             // 
-            this.groupBox1.Controls.Add(this.label2);
-            this.groupBox1.Controls.Add(this.SleeveTextBox);
-            this.groupBox1.Controls.Add(this.label1);
-            this.groupBox1.Controls.Add(this.EditTextBox);
+            this.groupBox1.Controls.Add(this.indexTextBox);
+            this.groupBox1.Controls.Add(this.modCount);
             this.groupBox1.Controls.Add(this.idUpDown);
             this.groupBox1.Controls.Add(this.delModuleEntry);
             this.groupBox1.Controls.Add(this.addModuleEntry);
-            this.groupBox1.Controls.Add(this.EndLabel);
             this.groupBox1.Controls.Add(this.StartLabel);
             this.groupBox1.Controls.Add(this.idCheckLabel);
             this.groupBox1.Controls.Add(this.IndexLabel);
@@ -205,60 +164,54 @@ namespace DivaTableManager
             this.groupBox1.Controls.Add(this.CharaLabel);
             this.groupBox1.Controls.Add(this.AttrLabel);
             this.groupBox1.Controls.Add(this.attrComboBox);
-            this.groupBox1.Controls.Add(this.dateTimePicker2);
             this.groupBox1.Controls.Add(this.charaComboBox);
             this.groupBox1.Controls.Add(this.dateTimePicker1);
             this.groupBox1.Controls.Add(this.cosTextBox);
-            this.groupBox1.Controls.Add(this.indexTextBox);
             this.groupBox1.Controls.Add(this.priceTextBox);
             this.groupBox1.Controls.Add(this.nameTextBox);
             this.groupBox1.Controls.Add(this.ngCheck);
-            this.groupBox1.Location = new System.Drawing.Point(6, 6);
+            this.groupBox1.Location = new System.Drawing.Point(8, 3);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(358, 478);
+            this.groupBox1.Size = new System.Drawing.Size(358, 299);
             this.groupBox1.TabIndex = 13;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Module Properties";
             // 
-            // label2
+            // indexTextBox
             // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(286, 221);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(51, 17);
-            this.label2.TabIndex = 28;
-            this.label2.Text = "Sleeve";
-            this.toolTip1.SetToolTip(this.label2, "I have absolutely no idea what this does.\r\nIt appears to only be used in 1.01 Arc" +
-        "ade versions\r\nand possibly the first release of Dreamy Theater.");
+            this.indexTextBox.Location = new System.Drawing.Point(6, 192);
+            this.indexTextBox.Maximum = new decimal(new int[] {
+            5000,
+            0,
+            0,
+            0});
+            this.indexTextBox.Minimum = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
+            this.indexTextBox.Name = "indexTextBox";
+            this.indexTextBox.Size = new System.Drawing.Size(273, 22);
+            this.indexTextBox.TabIndex = 30;
+            this.indexTextBox.Value = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
+            this.indexTextBox.ValueChanged += new System.EventHandler(this.indexTextBox_ValueChanged);
             // 
-            // SleeveTextBox
+            // modCount
             // 
-            this.SleeveTextBox.Location = new System.Drawing.Point(6, 218);
-            this.SleeveTextBox.Name = "SleeveTextBox";
-            this.SleeveTextBox.Size = new System.Drawing.Size(274, 22);
-            this.SleeveTextBox.TabIndex = 27;
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(286, 110);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(63, 17);
-            this.label1.TabIndex = 26;
-            this.label1.Text = "Edit Size";
-            this.toolTip1.SetToolTip(this.label1, "The size of the module when using it in an edit.\r\nIf a certain value is exceeded " +
-        "when making an edit,\r\nit may not be possible to use the module in the edit.");
-            // 
-            // EditTextBox
-            // 
-            this.EditTextBox.Location = new System.Drawing.Point(6, 107);
-            this.EditTextBox.Name = "EditTextBox";
-            this.EditTextBox.Size = new System.Drawing.Size(274, 22);
-            this.EditTextBox.TabIndex = 25;
+            this.modCount.AutoSize = true;
+            this.modCount.Location = new System.Drawing.Point(132, 264);
+            this.modCount.Name = "modCount";
+            this.modCount.Size = new System.Drawing.Size(65, 17);
+            this.modCount.TabIndex = 29;
+            this.modCount.Text = "Modules:";
             // 
             // idUpDown
             // 
-            this.idUpDown.Location = new System.Drawing.Point(6, 134);
+            this.idUpDown.Location = new System.Drawing.Point(6, 109);
             this.idUpDown.Maximum = new decimal(new int[] {
             999,
             0,
@@ -271,54 +224,44 @@ namespace DivaTableManager
             // 
             // delModuleEntry
             // 
-            this.delModuleEntry.Location = new System.Drawing.Point(2, 396);
+            this.delModuleEntry.Location = new System.Drawing.Point(69, 260);
             this.delModuleEntry.Name = "delModuleEntry";
-            this.delModuleEntry.Size = new System.Drawing.Size(198, 48);
+            this.delModuleEntry.Size = new System.Drawing.Size(57, 25);
             this.delModuleEntry.TabIndex = 23;
-            this.delModuleEntry.Text = "Delete Selected Entry";
+            this.delModuleEntry.Text = "Delete";
             this.toolTip1.SetToolTip(this.delModuleEntry, "Removes the selected entry from the list.");
             this.delModuleEntry.UseVisualStyleBackColor = true;
             this.delModuleEntry.Click += new System.EventHandler(this.delModuleEntry_Click);
             // 
             // addModuleEntry
             // 
-            this.addModuleEntry.Location = new System.Drawing.Point(2, 342);
+            this.addModuleEntry.Location = new System.Drawing.Point(5, 260);
             this.addModuleEntry.Name = "addModuleEntry";
-            this.addModuleEntry.Size = new System.Drawing.Size(198, 48);
+            this.addModuleEntry.Size = new System.Drawing.Size(57, 25);
             this.addModuleEntry.TabIndex = 15;
-            this.addModuleEntry.Text = "Add Dummy Entry \r\n(At End of List)";
+            this.addModuleEntry.Text = "Add";
             this.toolTip1.SetToolTip(this.addModuleEntry, "Adds a dummy entry with default values to the end of the list.\r\nOnce the entry is" +
         " added the user can edit it to their liking.");
             this.addModuleEntry.UseVisualStyleBackColor = true;
             this.addModuleEntry.Click += new System.EventHandler(this.addModuleEntry_Click);
             // 
-            // EndLabel
-            // 
-            this.EndLabel.AutoSize = true;
-            this.EndLabel.Location = new System.Drawing.Point(286, 304);
-            this.EndLabel.Name = "EndLabel";
-            this.EndLabel.Size = new System.Drawing.Size(67, 17);
-            this.EndLabel.TabIndex = 22;
-            this.EndLabel.Text = "End Date";
-            this.toolTip1.SetToolTip(this.EndLabel, "The date on which this module will disappear from the shop.\r\nWhen the date is rea" +
-        "ched, the module will no longer be\r\navailable in the shop.\r\n");
-            // 
             // StartLabel
             // 
             this.StartLabel.AutoSize = true;
-            this.StartLabel.Location = new System.Drawing.Point(286, 276);
+            this.StartLabel.Location = new System.Drawing.Point(285, 223);
             this.StartLabel.Name = "StartLabel";
             this.StartLabel.Size = new System.Drawing.Size(72, 17);
             this.StartLabel.TabIndex = 21;
             this.StartLabel.Text = "Start Date";
             this.toolTip1.SetToolTip(this.StartLabel, "The date on which this module will appear in the shop.\r\nIf the date is not yet re" +
-        "ached, the module will not be\r\navailable in the shop.");
+        "ached, the module will not be\r\navailable in the shop. May not be used in some ga" +
+        "mes.");
             // 
             // idCheckLabel
             // 
             this.idCheckLabel.AutoSize = true;
             this.idCheckLabel.ForeColor = System.Drawing.Color.Black;
-            this.idCheckLabel.Location = new System.Drawing.Point(313, 136);
+            this.idCheckLabel.Location = new System.Drawing.Point(313, 111);
             this.idCheckLabel.Name = "idCheckLabel";
             this.idCheckLabel.Size = new System.Drawing.Size(0, 17);
             this.idCheckLabel.TabIndex = 20;
@@ -326,7 +269,7 @@ namespace DivaTableManager
             // IndexLabel
             // 
             this.IndexLabel.AutoSize = true;
-            this.IndexLabel.Location = new System.Drawing.Point(286, 248);
+            this.IndexLabel.Location = new System.Drawing.Point(285, 195);
             this.IndexLabel.Name = "IndexLabel";
             this.IndexLabel.Size = new System.Drawing.Size(71, 17);
             this.IndexLabel.TabIndex = 19;
@@ -336,7 +279,7 @@ namespace DivaTableManager
             // PriceLabel
             // 
             this.PriceLabel.AutoSize = true;
-            this.PriceLabel.Location = new System.Drawing.Point(286, 192);
+            this.PriceLabel.Location = new System.Drawing.Point(286, 167);
             this.PriceLabel.Name = "PriceLabel";
             this.PriceLabel.Size = new System.Drawing.Size(72, 17);
             this.PriceLabel.TabIndex = 18;
@@ -348,7 +291,7 @@ namespace DivaTableManager
             // NameLabel
             // 
             this.NameLabel.AutoSize = true;
-            this.NameLabel.Location = new System.Drawing.Point(286, 164);
+            this.NameLabel.Location = new System.Drawing.Point(286, 139);
             this.NameLabel.Name = "NameLabel";
             this.NameLabel.Size = new System.Drawing.Size(45, 17);
             this.NameLabel.TabIndex = 17;
@@ -358,7 +301,7 @@ namespace DivaTableManager
             // ModIDLabel
             // 
             this.ModIDLabel.AutoSize = true;
-            this.ModIDLabel.Location = new System.Drawing.Point(286, 136);
+            this.ModIDLabel.Location = new System.Drawing.Point(286, 111);
             this.ModIDLabel.Name = "ModIDLabel";
             this.ModIDLabel.Size = new System.Drawing.Size(21, 17);
             this.ModIDLabel.TabIndex = 16;
@@ -394,40 +337,21 @@ namespace DivaTableManager
             this.AttrLabel.Size = new System.Drawing.Size(61, 17);
             this.AttrLabel.TabIndex = 13;
             this.AttrLabel.Text = "Attribute";
-            this.toolTip1.SetToolTip(this.AttrLabel, "The attributes set to the module entry.\r\nYou can fully ignore the Future Sound, C" +
-        "olorful Tone and Prelude tags if you are\r\nworking with Mega39\'s/MegaMix or Arcad" +
-        "e Future Tone.");
+            this.toolTip1.SetToolTip(this.AttrLabel, "The attributes set to the module entry.\r\nYou can ignore the Future Sound, Colorfu" +
+        "l Tone and Prelude tags if you are\r\nworking with NSW Mega39\'s or PC MegaMix+ as " +
+        "they will not impact anything.");
             // 
             // attrComboBox
             // 
             this.attrComboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.attrComboBox.FormattingEnabled = true;
-            this.attrComboBox.Items.AddRange(new object[] {
-            "Default (No Pack)",
-            "Default (Future Sound)",
-            "Default (Colorful Tone)",
-            "Default (Prelude/Etc)",
-            "Swimsuit (No Pack)",
-            "Swimsuit (Future Sound)",
-            "Swimsuit (Colorful Tone)",
-            "Swimsuit (Prelude/Etc)",
-            "Hair Unswappable (No Pack)",
-            "Hair Unswappable (Future Sound)",
-            "Hair Unswappable (Colorful Tone)",
-            "Hair Unswappable (Prelude/Etc)"});
             this.attrComboBox.Location = new System.Drawing.Point(6, 21);
             this.attrComboBox.Name = "attrComboBox";
             this.attrComboBox.Size = new System.Drawing.Size(274, 24);
             this.attrComboBox.TabIndex = 3;
+            this.toolTip1.SetToolTip(this.attrComboBox, "xxx_N - No Pack\r\nxxx_FS - Future Sound\r\nxxx_CT - Colourful Tone\r\nxxx_PL -  Prelud" +
+        "e\r\nNoSwap - Cannot swap hairstyles");
             this.attrComboBox.SelectedIndexChanged += new System.EventHandler(this.attrComboBox_SelectedIndexChanged);
-            // 
-            // dateTimePicker2
-            // 
-            this.dateTimePicker2.Location = new System.Drawing.Point(6, 302);
-            this.dateTimePicker2.Name = "dateTimePicker2";
-            this.dateTimePicker2.Size = new System.Drawing.Size(274, 22);
-            this.dateTimePicker2.TabIndex = 12;
-            this.dateTimePicker2.ValueChanged += new System.EventHandler(this.dateTimePicker2_ValueChanged);
             // 
             // charaComboBox
             // 
@@ -441,7 +365,7 @@ namespace DivaTableManager
             // 
             // dateTimePicker1
             // 
-            this.dateTimePicker1.Location = new System.Drawing.Point(6, 274);
+            this.dateTimePicker1.Location = new System.Drawing.Point(5, 221);
             this.dateTimePicker1.Name = "dateTimePicker1";
             this.dateTimePicker1.Size = new System.Drawing.Size(274, 22);
             this.dateTimePicker1.TabIndex = 11;
@@ -455,17 +379,9 @@ namespace DivaTableManager
             this.cosTextBox.TabIndex = 5;
             this.cosTextBox.TextChanged += new System.EventHandler(this.cosTextBox_TextChanged);
             // 
-            // indexTextBox
-            // 
-            this.indexTextBox.Location = new System.Drawing.Point(6, 246);
-            this.indexTextBox.Name = "indexTextBox";
-            this.indexTextBox.Size = new System.Drawing.Size(274, 22);
-            this.indexTextBox.TabIndex = 10;
-            this.indexTextBox.TextChanged += new System.EventHandler(this.indexTextBox_TextChanged);
-            // 
             // priceTextBox
             // 
-            this.priceTextBox.Location = new System.Drawing.Point(6, 190);
+            this.priceTextBox.Location = new System.Drawing.Point(6, 165);
             this.priceTextBox.Name = "priceTextBox";
             this.priceTextBox.Size = new System.Drawing.Size(274, 22);
             this.priceTextBox.TabIndex = 9;
@@ -473,7 +389,7 @@ namespace DivaTableManager
             // 
             // nameTextBox
             // 
-            this.nameTextBox.Location = new System.Drawing.Point(6, 162);
+            this.nameTextBox.Location = new System.Drawing.Point(6, 137);
             this.nameTextBox.Name = "nameTextBox";
             this.nameTextBox.Size = new System.Drawing.Size(274, 22);
             this.nameTextBox.TabIndex = 7;
@@ -482,7 +398,7 @@ namespace DivaTableManager
             // ngCheck
             // 
             this.ngCheck.AutoSize = true;
-            this.ngCheck.Location = new System.Drawing.Point(6, 450);
+            this.ngCheck.Location = new System.Drawing.Point(251, 264);
             this.ngCheck.Name = "ngCheck";
             this.ngCheck.Size = new System.Drawing.Size(107, 21);
             this.ngCheck.TabIndex = 8;
@@ -492,269 +408,385 @@ namespace DivaTableManager
             this.ngCheck.UseVisualStyleBackColor = true;
             this.ngCheck.CheckedChanged += new System.EventHandler(this.ngCheck_CheckedChanged);
             // 
-            // pictureBox1
-            // 
-            this.pictureBox1.Location = new System.Drawing.Point(370, 39);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(435, 484);
-            this.pictureBox1.TabIndex = 4;
-            this.pictureBox1.TabStop = false;
-            // 
             // tabPage2
             // 
-            this.tabPage2.Controls.Add(this.tabControl2);
+            this.tabPage2.Controls.Add(this.groupBox2);
+            this.tabPage2.Controls.Add(this.listBox2);
             this.tabPage2.Location = new System.Drawing.Point(4, 25);
             this.tabPage2.Name = "tabPage2";
-            this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
             this.tabPage2.Size = new System.Drawing.Size(1074, 523);
             this.tabPage2.TabIndex = 1;
-            this.tabPage2.Text = "Character Item Table";
+            this.tabPage2.Text = "Customise Items";
             this.tabPage2.UseVisualStyleBackColor = true;
-            // 
-            // tabControl2
-            // 
-            this.tabControl2.Controls.Add(this.tabPage3);
-            this.tabControl2.Controls.Add(this.tabPage4);
-            this.tabControl2.Controls.Add(this.tabPage5);
-            this.tabControl2.Controls.Add(this.tabPage6);
-            this.tabControl2.Controls.Add(this.tabPage7);
-            this.tabControl2.Controls.Add(this.tabPage8);
-            this.tabControl2.Controls.Add(this.tabPage9);
-            this.tabControl2.Controls.Add(this.tabPage10);
-            this.tabControl2.Controls.Add(this.tabPage11);
-            this.tabControl2.Controls.Add(this.tabPage12);
-            this.tabControl2.Controls.Add(this.tabPage13);
-            this.tabControl2.Location = new System.Drawing.Point(3, 3);
-            this.tabControl2.Name = "tabControl2";
-            this.tabControl2.SelectedIndex = 0;
-            this.tabControl2.Size = new System.Drawing.Size(1075, 524);
-            this.tabControl2.TabIndex = 0;
-            // 
-            // tabPage3
-            // 
-            this.tabPage3.BackColor = System.Drawing.Color.Transparent;
-            this.tabPage3.Controls.Add(this.groupBox3);
-            this.tabPage3.Controls.Add(this.groupBox2);
-            this.tabPage3.ForeColor = System.Drawing.Color.Black;
-            this.tabPage3.Location = new System.Drawing.Point(4, 25);
-            this.tabPage3.Name = "tabPage3";
-            this.tabPage3.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage3.Size = new System.Drawing.Size(1067, 495);
-            this.tabPage3.TabIndex = 0;
-            this.tabPage3.Text = "Miku";
-            this.tabPage3.UseVisualStyleBackColor = true;
-            // 
-            // groupBox3
-            // 
-            this.groupBox3.Controls.Add(this.groupBox5);
-            this.groupBox3.Controls.Add(this.groupBox4);
-            this.groupBox3.Controls.Add(this.MikuItemBox);
-            this.groupBox3.Location = new System.Drawing.Point(387, 3);
-            this.groupBox3.Name = "groupBox3";
-            this.groupBox3.Size = new System.Drawing.Size(672, 481);
-            this.groupBox3.TabIndex = 1;
-            this.groupBox3.TabStop = false;
-            this.groupBox3.Text = "Items";
-            // 
-            // MikuItemBox
-            // 
-            this.MikuItemBox.FormattingEnabled = true;
-            this.MikuItemBox.ItemHeight = 16;
-            this.MikuItemBox.Location = new System.Drawing.Point(494, 18);
-            this.MikuItemBox.Name = "MikuItemBox";
-            this.MikuItemBox.Size = new System.Drawing.Size(172, 452);
-            this.MikuItemBox.TabIndex = 0;
             // 
             // groupBox2
             // 
-            this.groupBox2.Controls.Add(this.MikuIDBox);
-            this.groupBox2.Controls.Add(this.MikuAdd);
-            this.groupBox2.Controls.Add(this.MikuDel);
+            this.groupBox2.Controls.Add(this.numericUpDown4);
+            this.groupBox2.Controls.Add(this.label11);
+            this.groupBox2.Controls.Add(this.comboBox1);
+            this.groupBox2.Controls.Add(this.button3);
+            this.groupBox2.Controls.Add(this.numericUpDown3);
+            this.groupBox2.Controls.Add(this.checkBox2);
+            this.groupBox2.Controls.Add(this.numericUpDown1);
+            this.groupBox2.Controls.Add(this.label1);
+            this.groupBox2.Controls.Add(this.numericUpDown2);
+            this.groupBox2.Controls.Add(this.button1);
+            this.groupBox2.Controls.Add(this.button2);
+            this.groupBox2.Controls.Add(this.label2);
+            this.groupBox2.Controls.Add(this.label3);
             this.groupBox2.Controls.Add(this.label4);
-            this.groupBox2.Controls.Add(this.MikuCosList);
-            this.groupBox2.Controls.Add(this.MikuCosBox);
-            this.groupBox2.Location = new System.Drawing.Point(6, 3);
+            this.groupBox2.Controls.Add(this.label5);
+            this.groupBox2.Controls.Add(this.label6);
+            this.groupBox2.Controls.Add(this.label7);
+            this.groupBox2.Controls.Add(this.label8);
+            this.groupBox2.Controls.Add(this.label9);
+            this.groupBox2.Controls.Add(this.label10);
+            this.groupBox2.Controls.Add(this.comboBox2);
+            this.groupBox2.Controls.Add(this.dateTimePicker2);
+            this.groupBox2.Controls.Add(this.textBox2);
+            this.groupBox2.Controls.Add(this.textBox3);
+            this.groupBox2.Controls.Add(this.checkBox1);
+            this.groupBox2.Location = new System.Drawing.Point(8, 3);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(375, 481);
-            this.groupBox2.TabIndex = 0;
+            this.groupBox2.Size = new System.Drawing.Size(358, 299);
+            this.groupBox2.TabIndex = 15;
             this.groupBox2.TabStop = false;
-            this.groupBox2.Text = "Costumes";
+            this.groupBox2.Text = "Customise Item Properties";
             // 
-            // MikuAdd
+            // numericUpDown4
             // 
-            this.MikuAdd.Location = new System.Drawing.Point(6, 424);
-            this.MikuAdd.Name = "MikuAdd";
-            this.MikuAdd.Size = new System.Drawing.Size(179, 23);
-            this.MikuAdd.TabIndex = 5;
-            this.MikuAdd.Text = "Add";
-            this.MikuAdd.UseVisualStyleBackColor = true;
+            this.numericUpDown4.Location = new System.Drawing.Point(6, 133);
+            this.numericUpDown4.Maximum = new decimal(new int[] {
+            5000,
+            0,
+            0,
+            0});
+            this.numericUpDown4.Name = "numericUpDown4";
+            this.numericUpDown4.Size = new System.Drawing.Size(258, 22);
+            this.numericUpDown4.TabIndex = 36;
+            this.numericUpDown4.ValueChanged += new System.EventHandler(this.numericUpDown4_ValueChanged);
             // 
-            // MikuDel
+            // label11
             // 
-            this.MikuDel.Location = new System.Drawing.Point(6, 453);
-            this.MikuDel.Name = "MikuDel";
-            this.MikuDel.Size = new System.Drawing.Size(179, 23);
-            this.MikuDel.TabIndex = 2;
-            this.MikuDel.Text = "Remove";
-            this.MikuDel.UseVisualStyleBackColor = true;
+            this.label11.AutoSize = true;
+            this.label11.Location = new System.Drawing.Point(269, 135);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(66, 17);
+            this.label11.TabIndex = 35;
+            this.label11.Text = "Object ID";
+            this.toolTip1.SetToolTip(this.label11, resources.GetString("label11.ToolTip"));
+            // 
+            // comboBox1
+            // 
+            this.comboBox1.FormattingEnabled = true;
+            this.comboBox1.Items.AddRange(new object[] {
+            "ZUJO",
+            "FACE",
+            "NECK",
+            "BACK",
+            "KAMI"});
+            this.comboBox1.Location = new System.Drawing.Point(6, 158);
+            this.comboBox1.Name = "comboBox1";
+            this.comboBox1.Size = new System.Drawing.Size(257, 24);
+            this.comboBox1.TabIndex = 34;
+            this.comboBox1.SelectedIndexChanged += new System.EventHandler(this.comboBox1_SelectedIndexChanged);
+            // 
+            // button3
+            // 
+            this.button3.Location = new System.Drawing.Point(145, 22);
+            this.button3.Name = "button3";
+            this.button3.Size = new System.Drawing.Size(119, 23);
+            this.button3.TabIndex = 33;
+            this.button3.Text = "Select...";
+            this.button3.UseVisualStyleBackColor = true;
+            this.button3.Click += new System.EventHandler(this.button3_Click);
+            // 
+            // numericUpDown3
+            // 
+            this.numericUpDown3.Location = new System.Drawing.Point(6, 22);
+            this.numericUpDown3.Maximum = new decimal(new int[] {
+            5000,
+            0,
+            0,
+            0});
+            this.numericUpDown3.Minimum = new decimal(new int[] {
+            1,
+            0,
+            0,
+            -2147483648});
+            this.numericUpDown3.Name = "numericUpDown3";
+            this.numericUpDown3.Size = new System.Drawing.Size(133, 22);
+            this.numericUpDown3.TabIndex = 32;
+            this.numericUpDown3.ValueChanged += new System.EventHandler(this.numericUpDown3_ValueChanged);
+            // 
+            // checkBox2
+            // 
+            this.checkBox2.AutoSize = true;
+            this.checkBox2.Location = new System.Drawing.Point(200, 271);
+            this.checkBox2.Name = "checkBox2";
+            this.checkBox2.Size = new System.Drawing.Size(89, 21);
+            this.checkBox2.TabIndex = 31;
+            this.checkBox2.Text = "Sell Type";
+            this.toolTip1.SetToolTip(this.checkBox2, "No idea what this does, please let me know if you do.");
+            this.checkBox2.UseVisualStyleBackColor = true;
+            this.checkBox2.CheckedChanged += new System.EventHandler(this.checkBox2_CheckedChanged);
+            // 
+            // numericUpDown1
+            // 
+            this.numericUpDown1.Location = new System.Drawing.Point(6, 214);
+            this.numericUpDown1.Maximum = new decimal(new int[] {
+            5000,
+            0,
+            0,
+            0});
+            this.numericUpDown1.Name = "numericUpDown1";
+            this.numericUpDown1.Size = new System.Drawing.Size(257, 22);
+            this.numericUpDown1.TabIndex = 30;
+            this.numericUpDown1.Value = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
+            this.numericUpDown1.ValueChanged += new System.EventHandler(this.numericUpDown1_ValueChanged);
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(124, 272);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(45, 17);
+            this.label1.TabIndex = 29;
+            this.label1.Text = "Items:";
+            // 
+            // numericUpDown2
+            // 
+            this.numericUpDown2.Location = new System.Drawing.Point(6, 81);
+            this.numericUpDown2.Maximum = new decimal(new int[] {
+            5000,
+            0,
+            0,
+            0});
+            this.numericUpDown2.Name = "numericUpDown2";
+            this.numericUpDown2.Size = new System.Drawing.Size(258, 22);
+            this.numericUpDown2.TabIndex = 24;
+            this.numericUpDown2.ValueChanged += new System.EventHandler(this.numericUpDown2_ValueChanged);
+            // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(67, 268);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(57, 25);
+            this.button1.TabIndex = 23;
+            this.button1.Text = "Delete";
+            this.toolTip1.SetToolTip(this.button1, "Removes the selected entry from the list.");
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
+            // button2
+            // 
+            this.button2.Location = new System.Drawing.Point(4, 268);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(57, 25);
+            this.button2.TabIndex = 15;
+            this.button2.Text = "Add";
+            this.toolTip1.SetToolTip(this.button2, "Adds a dummy entry with default values to the end of the list.\r\nOnce the entry is" +
+        " added the user can edit it to their liking.");
+            this.button2.UseVisualStyleBackColor = true;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(269, 245);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(72, 17);
+            this.label2.TabIndex = 21;
+            this.label2.Text = "Start Date";
+            this.toolTip1.SetToolTip(this.label2, "The date on which this module will appear in the shop.\r\nIf the date is not yet re" +
+        "ached, the module will not be\r\navailable in the shop. May not be used in some ga" +
+        "mes.");
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.ForeColor = System.Drawing.Color.Black;
+            this.label3.Location = new System.Drawing.Point(297, 111);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(0, 17);
+            this.label3.TabIndex = 20;
             // 
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.ForeColor = System.Drawing.Color.Black;
-            this.label4.Location = new System.Drawing.Point(3, 339);
+            this.label4.Location = new System.Drawing.Point(269, 217);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(25, 17);
-            this.label4.TabIndex = 4;
-            this.label4.Text = "ID:";
-            this.toolTip1.SetToolTip(this.label4, "The ID of the item you wish to\r\nuse in this costume.\r\n(It corresponds to the item" +
-        " list to the right)");
+            this.label4.Size = new System.Drawing.Size(71, 17);
+            this.label4.TabIndex = 19;
+            this.label4.Text = "Sort Index";
+            this.toolTip1.SetToolTip(this.label4, resources.GetString("label4.ToolTip"));
             // 
-            // MikuCosList
+            // label5
             // 
-            this.MikuCosList.FormattingEnabled = true;
-            this.MikuCosList.Items.AddRange(new object[] {
-            "This",
-            "Does",
-            "Nothing",
-            "Yet",
-            "But",
-            "Hi",
-            "There"});
-            this.MikuCosList.Location = new System.Drawing.Point(191, 336);
-            this.MikuCosList.Name = "MikuCosList";
-            this.MikuCosList.Size = new System.Drawing.Size(172, 140);
-            this.MikuCosList.TabIndex = 2;
+            this.label5.AutoSize = true;
+            this.label5.Location = new System.Drawing.Point(270, 189);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(72, 17);
+            this.label5.TabIndex = 18;
+            this.label5.Text = "Price (VP)";
+            this.toolTip1.SetToolTip(this.label5, "The price of the module, in Vocaloid Points, in the module shop.\r\nFor consistency" +
+        ", it is advised to use different values when working \r\nwith FT/M39 and when work" +
+        "ing with AFT.");
             // 
-            // MikuCosBox
+            // label6
             // 
-            this.MikuCosBox.FormattingEnabled = true;
-            this.MikuCosBox.ItemHeight = 16;
-            this.MikuCosBox.Location = new System.Drawing.Point(6, 18);
-            this.MikuCosBox.Name = "MikuCosBox";
-            this.MikuCosBox.Size = new System.Drawing.Size(357, 308);
-            this.MikuCosBox.TabIndex = 1;
+            this.label6.AutoSize = true;
+            this.label6.Location = new System.Drawing.Point(269, 109);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(45, 17);
+            this.label6.TabIndex = 17;
+            this.label6.Text = "Name";
+            this.toolTip1.SetToolTip(this.label6, resources.GetString("label6.ToolTip"));
             // 
-            // tabPage4
+            // label7
             // 
-            this.tabPage4.ForeColor = System.Drawing.Color.Black;
-            this.tabPage4.Location = new System.Drawing.Point(4, 25);
-            this.tabPage4.Name = "tabPage4";
-            this.tabPage4.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage4.Size = new System.Drawing.Size(1067, 495);
-            this.tabPage4.TabIndex = 1;
-            this.tabPage4.Text = "Rin";
-            this.tabPage4.UseVisualStyleBackColor = true;
+            this.label7.AutoSize = true;
+            this.label7.Location = new System.Drawing.Point(270, 83);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(21, 17);
+            this.label7.TabIndex = 16;
+            this.label7.Text = "ID";
+            this.toolTip1.SetToolTip(this.label7, resources.GetString("label7.ToolTip"));
             // 
-            // tabPage5
+            // label8
             // 
-            this.tabPage5.Location = new System.Drawing.Point(4, 25);
-            this.tabPage5.Name = "tabPage5";
-            this.tabPage5.Size = new System.Drawing.Size(1067, 495);
-            this.tabPage5.TabIndex = 2;
-            this.tabPage5.Text = "Len";
-            this.tabPage5.UseVisualStyleBackColor = true;
+            this.label8.AutoSize = true;
+            this.label8.Location = new System.Drawing.Point(269, 161);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(41, 17);
+            this.label8.TabIndex = 15;
+            this.label8.Text = "Parts";
+            this.toolTip1.SetToolTip(this.label8, resources.GetString("label8.ToolTip"));
             // 
-            // tabPage6
+            // label9
             // 
-            this.tabPage6.Location = new System.Drawing.Point(4, 25);
-            this.tabPage6.Name = "tabPage6";
-            this.tabPage6.Size = new System.Drawing.Size(1067, 495);
-            this.tabPage6.TabIndex = 3;
-            this.tabPage6.Text = "Luka";
-            this.tabPage6.UseVisualStyleBackColor = true;
+            this.label9.AutoSize = true;
+            this.label9.Location = new System.Drawing.Point(270, 54);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(70, 17);
+            this.label9.TabIndex = 14;
+            this.label9.Text = "Character";
+            this.toolTip1.SetToolTip(this.label9, "The character you would like this module to be used on.\r\nThis will control in whi" +
+        "ch module select section the module appears and more.");
             // 
-            // tabPage7
+            // label10
             // 
-            this.tabPage7.Location = new System.Drawing.Point(4, 25);
-            this.tabPage7.Name = "tabPage7";
-            this.tabPage7.Size = new System.Drawing.Size(1067, 495);
-            this.tabPage7.TabIndex = 4;
-            this.tabPage7.Text = "Kaito";
-            this.tabPage7.UseVisualStyleBackColor = true;
+            this.label10.AutoSize = true;
+            this.label10.Location = new System.Drawing.Point(269, 24);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(86, 17);
+            this.label10.TabIndex = 13;
+            this.label10.Text = "Bind Module";
+            this.toolTip1.SetToolTip(this.label10, "The attributes set to the module entry.\r\nYou can ignore the Future Sound, Colorfu" +
+        "l Tone and Prelude tags if you are\r\nworking with NSW Mega39\'s or PC MegaMix+ as " +
+        "they will not impact anything.");
             // 
-            // tabPage8
+            // comboBox2
             // 
-            this.tabPage8.Location = new System.Drawing.Point(4, 25);
-            this.tabPage8.Name = "tabPage8";
-            this.tabPage8.Size = new System.Drawing.Size(1067, 495);
-            this.tabPage8.TabIndex = 5;
-            this.tabPage8.Text = "Meiko";
-            this.tabPage8.UseVisualStyleBackColor = true;
+            this.comboBox2.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.comboBox2.FormattingEnabled = true;
+            this.comboBox2.Location = new System.Drawing.Point(6, 51);
+            this.comboBox2.Name = "comboBox2";
+            this.comboBox2.Size = new System.Drawing.Size(258, 24);
+            this.comboBox2.TabIndex = 4;
+            this.comboBox2.SelectedIndexChanged += new System.EventHandler(this.comboBox2_SelectedIndexChanged);
             // 
-            // tabPage9
+            // dateTimePicker2
             // 
-            this.tabPage9.Location = new System.Drawing.Point(4, 25);
-            this.tabPage9.Name = "tabPage9";
-            this.tabPage9.Size = new System.Drawing.Size(1067, 495);
-            this.tabPage9.TabIndex = 6;
-            this.tabPage9.Text = "Neru";
-            this.tabPage9.UseVisualStyleBackColor = true;
+            this.dateTimePicker2.Location = new System.Drawing.Point(5, 243);
+            this.dateTimePicker2.Name = "dateTimePicker2";
+            this.dateTimePicker2.Size = new System.Drawing.Size(258, 22);
+            this.dateTimePicker2.TabIndex = 11;
+            this.dateTimePicker2.ValueChanged += new System.EventHandler(this.dateTimePicker2_ValueChanged);
             // 
-            // tabPage10
+            // textBox2
             // 
-            this.tabPage10.Location = new System.Drawing.Point(4, 25);
-            this.tabPage10.Name = "tabPage10";
-            this.tabPage10.Size = new System.Drawing.Size(1067, 495);
-            this.tabPage10.TabIndex = 7;
-            this.tabPage10.Text = "Haku";
-            this.tabPage10.UseVisualStyleBackColor = true;
+            this.textBox2.Location = new System.Drawing.Point(6, 187);
+            this.textBox2.Name = "textBox2";
+            this.textBox2.Size = new System.Drawing.Size(258, 22);
+            this.textBox2.TabIndex = 9;
+            this.textBox2.TextChanged += new System.EventHandler(this.textBox2_TextChanged);
             // 
-            // tabPage11
+            // textBox3
             // 
-            this.tabPage11.Location = new System.Drawing.Point(4, 25);
-            this.tabPage11.Name = "tabPage11";
-            this.tabPage11.Size = new System.Drawing.Size(1067, 495);
-            this.tabPage11.TabIndex = 8;
-            this.tabPage11.Text = "Sakine";
-            this.tabPage11.UseVisualStyleBackColor = true;
+            this.textBox3.Location = new System.Drawing.Point(5, 107);
+            this.textBox3.Name = "textBox3";
+            this.textBox3.Size = new System.Drawing.Size(258, 22);
+            this.textBox3.TabIndex = 7;
+            this.textBox3.KeyDown += new System.Windows.Forms.KeyEventHandler(this.textBox3_TextChanged);
             // 
-            // tabPage12
+            // checkBox1
             // 
-            this.tabPage12.Location = new System.Drawing.Point(4, 25);
-            this.tabPage12.Name = "tabPage12";
-            this.tabPage12.Size = new System.Drawing.Size(1067, 495);
-            this.tabPage12.TabIndex = 9;
-            this.tabPage12.Text = "Teto";
-            this.tabPage12.UseVisualStyleBackColor = true;
+            this.checkBox1.AutoSize = true;
+            this.checkBox1.Location = new System.Drawing.Point(290, 271);
+            this.checkBox1.Name = "checkBox1";
+            this.checkBox1.Size = new System.Drawing.Size(70, 21);
+            this.checkBox1.TabIndex = 8;
+            this.checkBox1.Text = "Ignore";
+            this.toolTip1.SetToolTip(this.checkBox1, "Ignores the current entry.\r\nIf this box is checked, the item will not show in\r\nth" +
+        "e game unless overridden by \'mdata\' or\r\n\'databank\' customise lists.");
+            this.checkBox1.UseVisualStyleBackColor = true;
+            this.checkBox1.CheckedChanged += new System.EventHandler(this.checkBox1_CheckedChanged);
             // 
-            // tabPage13
+            // listBox2
             // 
-            this.tabPage13.Location = new System.Drawing.Point(4, 25);
-            this.tabPage13.Name = "tabPage13";
-            this.tabPage13.Size = new System.Drawing.Size(1067, 495);
-            this.tabPage13.TabIndex = 10;
-            this.tabPage13.Text = "Extra (F)";
-            this.tabPage13.UseVisualStyleBackColor = true;
+            this.listBox2.FormattingEnabled = true;
+            this.listBox2.ItemHeight = 16;
+            this.listBox2.Location = new System.Drawing.Point(370, 10);
+            this.listBox2.MaximumSize = new System.Drawing.Size(256, 292);
+            this.listBox2.MinimumSize = new System.Drawing.Size(256, 292);
+            this.listBox2.Name = "listBox2";
+            this.listBox2.Size = new System.Drawing.Size(256, 292);
+            this.listBox2.TabIndex = 14;
+            this.listBox2.SelectedIndexChanged += new System.EventHandler(this.listBox2_SelectedIndexChanged);
             // 
             // menuStrip1
             // 
             this.menuStrip1.ImageScalingSize = new System.Drawing.Size(20, 20);
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.fileToolStripMenuItem,
-            this.settingsToolStripMenuItem,
+            this.macroToolStripMenuItem,
+            this.batchToolStripMenuItem,
+            this.characterItemchritmToolStripMenuItem,
             this.aboutToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(1082, 28);
+            this.menuStrip1.Size = new System.Drawing.Size(642, 28);
             this.menuStrip1.TabIndex = 3;
             this.menuStrip1.Text = "menuStrip1";
             // 
             // fileToolStripMenuItem
             // 
             this.fileToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.newToolStripMenuItem,
             this.openToolStripMenuItem,
             this.saveToolStripMenuItem,
-            this.exitToolStripMenuItem});
+            this.saveAsToolStripMenuItem});
             this.fileToolStripMenuItem.Name = "fileToolStripMenuItem";
             this.fileToolStripMenuItem.Size = new System.Drawing.Size(46, 24);
             this.fileToolStripMenuItem.Text = "File";
+            // 
+            // newToolStripMenuItem
+            // 
+            this.newToolStripMenuItem.Name = "newToolStripMenuItem";
+            this.newToolStripMenuItem.Size = new System.Drawing.Size(242, 26);
+            this.newToolStripMenuItem.Text = "New";
+            this.newToolStripMenuItem.Click += new System.EventHandler(this.newToolStripMenuItem_Click);
             // 
             // openToolStripMenuItem
             // 
             this.openToolStripMenuItem.Name = "openToolStripMenuItem";
             this.openToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.O)));
-            this.openToolStripMenuItem.Size = new System.Drawing.Size(181, 26);
+            this.openToolStripMenuItem.Size = new System.Drawing.Size(242, 26);
             this.openToolStripMenuItem.Text = "Open";
             this.openToolStripMenuItem.Click += new System.EventHandler(this.OpenButton_Click);
             // 
@@ -762,147 +794,112 @@ namespace DivaTableManager
             // 
             this.saveToolStripMenuItem.Name = "saveToolStripMenuItem";
             this.saveToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.S)));
-            this.saveToolStripMenuItem.Size = new System.Drawing.Size(181, 26);
+            this.saveToolStripMenuItem.Size = new System.Drawing.Size(242, 26);
             this.saveToolStripMenuItem.Text = "Save";
             this.saveToolStripMenuItem.Click += new System.EventHandler(this.saveToolStripMenuItem_Click);
             // 
-            // exitToolStripMenuItem
+            // saveAsToolStripMenuItem
             // 
-            this.exitToolStripMenuItem.Name = "exitToolStripMenuItem";
-            this.exitToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.E)));
-            this.exitToolStripMenuItem.Size = new System.Drawing.Size(181, 26);
-            this.exitToolStripMenuItem.Text = "Exit";
-            this.exitToolStripMenuItem.Click += new System.EventHandler(this.exitToolStripMenuItem_Click);
+            this.saveAsToolStripMenuItem.Name = "saveAsToolStripMenuItem";
+            this.saveAsToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)(((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.Shift) 
+            | System.Windows.Forms.Keys.S)));
+            this.saveAsToolStripMenuItem.Size = new System.Drawing.Size(242, 26);
+            this.saveAsToolStripMenuItem.Text = "Save As...";
+            this.saveAsToolStripMenuItem.Click += new System.EventHandler(this.saveAsToolStripMenuItem_Click);
             // 
-            // settingsToolStripMenuItem
+            // macroToolStripMenuItem
             // 
-            this.settingsToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.dDirectoryToolStripMenuItem,
-            this.mDATA2DDirectoryToolStripMenuItem});
-            this.settingsToolStripMenuItem.Name = "settingsToolStripMenuItem";
-            this.settingsToolStripMenuItem.Size = new System.Drawing.Size(76, 24);
-            this.settingsToolStripMenuItem.Text = "Settings";
+            this.macroToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.ignoreShortcutToolStripMenuItem,
+            this.checkIDToolStripMenuItem,
+            this.deleteToolStripMenuItem});
+            this.macroToolStripMenuItem.Enabled = false;
+            this.macroToolStripMenuItem.Name = "macroToolStripMenuItem";
+            this.macroToolStripMenuItem.Size = new System.Drawing.Size(84, 24);
+            this.macroToolStripMenuItem.Text = "Shortcuts";
             // 
-            // dDirectoryToolStripMenuItem
+            // ignoreShortcutToolStripMenuItem
             // 
-            this.dDirectoryToolStripMenuItem.Name = "dDirectoryToolStripMenuItem";
-            this.dDirectoryToolStripMenuItem.Size = new System.Drawing.Size(230, 26);
-            this.dDirectoryToolStripMenuItem.Text = "2D Directory";
-            this.dDirectoryToolStripMenuItem.Click += new System.EventHandler(this.dDirectoryToolStripMenuItem_Click);
+            this.ignoreShortcutToolStripMenuItem.Name = "ignoreShortcutToolStripMenuItem";
+            this.ignoreShortcutToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.I)));
+            this.ignoreShortcutToolStripMenuItem.Size = new System.Drawing.Size(240, 26);
+            this.ignoreShortcutToolStripMenuItem.Text = "Ignore Shortcut";
+            this.ignoreShortcutToolStripMenuItem.Click += new System.EventHandler(this.ignoreShortcutToolStripMenuItem_Click);
             // 
-            // mDATA2DDirectoryToolStripMenuItem
+            // checkIDToolStripMenuItem
             // 
-            this.mDATA2DDirectoryToolStripMenuItem.Name = "mDATA2DDirectoryToolStripMenuItem";
-            this.mDATA2DDirectoryToolStripMenuItem.Size = new System.Drawing.Size(230, 26);
-            this.mDATA2DDirectoryToolStripMenuItem.Text = "MDATA 2D Directory";
-            this.mDATA2DDirectoryToolStripMenuItem.Click += new System.EventHandler(this.mDATA2DDirectoryToolStripMenuItem_Click);
+            this.checkIDToolStripMenuItem.Name = "checkIDToolStripMenuItem";
+            this.checkIDToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.Oem1)));
+            this.checkIDToolStripMenuItem.Size = new System.Drawing.Size(240, 26);
+            this.checkIDToolStripMenuItem.Text = "Check ID";
+            this.checkIDToolStripMenuItem.Click += new System.EventHandler(this.checkIDToolStripMenuItem_Click);
+            // 
+            // deleteToolStripMenuItem
+            // 
+            this.deleteToolStripMenuItem.Name = "deleteToolStripMenuItem";
+            this.deleteToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.Delete)));
+            this.deleteToolStripMenuItem.Size = new System.Drawing.Size(240, 26);
+            this.deleteToolStripMenuItem.Text = "Delete";
+            this.deleteToolStripMenuItem.Click += new System.EventHandler(this.deleteToolStripMenuItem_Click);
+            // 
+            // batchToolStripMenuItem
+            // 
+            this.batchToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.moduleBatchIndexToolStripMenuItem});
+            this.batchToolStripMenuItem.Name = "batchToolStripMenuItem";
+            this.batchToolStripMenuItem.Size = new System.Drawing.Size(119, 24);
+            this.batchToolStripMenuItem.Text = "Multi-Function";
+            // 
+            // moduleBatchIndexToolStripMenuItem
+            // 
+            this.moduleBatchIndexToolStripMenuItem.Name = "moduleBatchIndexToolStripMenuItem";
+            this.moduleBatchIndexToolStripMenuItem.Size = new System.Drawing.Size(235, 26);
+            this.moduleBatchIndexToolStripMenuItem.Text = "Module Management";
+            this.moduleBatchIndexToolStripMenuItem.Click += new System.EventHandler(this.moduleBatchIndexToolStripMenuItem_Click);
+            // 
+            // characterItemchritmToolStripMenuItem
+            // 
+            this.characterItemchritmToolStripMenuItem.Name = "characterItemchritmToolStripMenuItem";
+            this.characterItemchritmToolStripMenuItem.Size = new System.Drawing.Size(111, 24);
+            this.characterItemchritmToolStripMenuItem.Text = "Chritm Editor";
+            this.characterItemchritmToolStripMenuItem.Click += new System.EventHandler(this.characterItemchritmToolStripMenuItem_Click);
             // 
             // aboutToolStripMenuItem
             // 
-            this.aboutToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.helpToolStripMenuItem,
-            this.informationToolStripMenuItem,
-            this.byJay39wToolStripMenuItem});
             this.aboutToolStripMenuItem.Name = "aboutToolStripMenuItem";
             this.aboutToolStripMenuItem.Size = new System.Drawing.Size(64, 24);
             this.aboutToolStripMenuItem.Text = "About";
-            // 
-            // helpToolStripMenuItem
-            // 
-            this.helpToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.moduleTableHelpToolStripMenuItem,
-            this.characterItemTableHelpToolStripMenuItem,
-            this.mentalHelpToolStripMenuItem});
-            this.helpToolStripMenuItem.Name = "helpToolStripMenuItem";
-            this.helpToolStripMenuItem.Size = new System.Drawing.Size(170, 26);
-            this.helpToolStripMenuItem.Text = "Help";
-            // 
-            // moduleTableHelpToolStripMenuItem
-            // 
-            this.moduleTableHelpToolStripMenuItem.Name = "moduleTableHelpToolStripMenuItem";
-            this.moduleTableHelpToolStripMenuItem.Size = new System.Drawing.Size(264, 26);
-            this.moduleTableHelpToolStripMenuItem.Text = "Module Table Help";
-            this.moduleTableHelpToolStripMenuItem.Click += new System.EventHandler(this.moduleTableHelpToolStripMenuItem_Click);
-            // 
-            // characterItemTableHelpToolStripMenuItem
-            // 
-            this.characterItemTableHelpToolStripMenuItem.Name = "characterItemTableHelpToolStripMenuItem";
-            this.characterItemTableHelpToolStripMenuItem.Size = new System.Drawing.Size(264, 26);
-            this.characterItemTableHelpToolStripMenuItem.Text = "Character Item Table Help";
-            this.characterItemTableHelpToolStripMenuItem.Click += new System.EventHandler(this.characterItemTableHelpToolStripMenuItem_Click);
-            // 
-            // mentalHelpToolStripMenuItem
-            // 
-            this.mentalHelpToolStripMenuItem.Name = "mentalHelpToolStripMenuItem";
-            this.mentalHelpToolStripMenuItem.Size = new System.Drawing.Size(264, 26);
-            this.mentalHelpToolStripMenuItem.Text = "Mental Help";
-            this.mentalHelpToolStripMenuItem.Click += new System.EventHandler(this.mentalHelpToolStripMenuItem_Click);
-            // 
-            // informationToolStripMenuItem
-            // 
-            this.informationToolStripMenuItem.Name = "informationToolStripMenuItem";
-            this.informationToolStripMenuItem.Size = new System.Drawing.Size(170, 26);
-            this.informationToolStripMenuItem.Text = "Information";
-            this.informationToolStripMenuItem.Click += new System.EventHandler(this.informationToolStripMenuItem_Click);
-            // 
-            // byJay39wToolStripMenuItem
-            // 
-            this.byJay39wToolStripMenuItem.Enabled = false;
-            this.byJay39wToolStripMenuItem.Name = "byJay39wToolStripMenuItem";
-            this.byJay39wToolStripMenuItem.Size = new System.Drawing.Size(170, 26);
-            this.byJay39wToolStripMenuItem.Text = "by Jay39w";
-            // 
-            // MikuIDBox
-            // 
-            this.MikuIDBox.FormattingEnabled = true;
-            this.MikuIDBox.Location = new System.Drawing.Point(27, 336);
-            this.MikuIDBox.Name = "MikuIDBox";
-            this.MikuIDBox.Size = new System.Drawing.Size(158, 24);
-            this.MikuIDBox.TabIndex = 6;
-            // 
-            // groupBox4
-            // 
-            this.groupBox4.Location = new System.Drawing.Point(288, 332);
-            this.groupBox4.Name = "groupBox4";
-            this.groupBox4.Size = new System.Drawing.Size(200, 138);
-            this.groupBox4.TabIndex = 1;
-            this.groupBox4.TabStop = false;
-            this.groupBox4.Text = "Objects";
-            // 
-            // groupBox5
-            // 
-            this.groupBox5.Location = new System.Drawing.Point(288, 18);
-            this.groupBox5.Name = "groupBox5";
-            this.groupBox5.Size = new System.Drawing.Size(200, 308);
-            this.groupBox5.TabIndex = 2;
-            this.groupBox5.TabStop = false;
-            this.groupBox5.Text = "Textures";
+            this.aboutToolStripMenuItem.Click += new System.EventHandler(this.aboutToolStripMenuItem_Click);
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(120F, 120F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi;
-            this.ClientSize = new System.Drawing.Size(1082, 586);
+            this.ClientSize = new System.Drawing.Size(642, 368);
             this.Controls.Add(this.tabControl1);
             this.Controls.Add(this.menuStrip1);
             this.ForeColor = System.Drawing.SystemColors.ControlText;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MainMenuStrip = this.menuStrip1;
+            this.MaximizeBox = false;
+            this.MaximumSize = new System.Drawing.Size(660, 415);
+            this.MinimumSize = new System.Drawing.Size(660, 415);
             this.Name = "Form1";
             this.Text = "DivaTableManager";
+            this.Load += new System.EventHandler(this.Form1_Load);
             this.tabControl1.ResumeLayout(false);
             this.tabPage1.ResumeLayout(false);
-            this.tabPage1.PerformLayout();
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.indexTextBox)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.idUpDown)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.tabPage2.ResumeLayout(false);
-            this.tabControl2.ResumeLayout(false);
-            this.tabPage3.ResumeLayout(false);
-            this.groupBox3.ResumeLayout(false);
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown4)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown3)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown2)).EndInit();
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
             this.ResumeLayout(false);
@@ -914,15 +911,12 @@ namespace DivaTableManager
         private System.Windows.Forms.ListBox listBox1;
         private System.Windows.Forms.TabControl tabControl1;
         private System.Windows.Forms.TabPage tabPage1;
-        private System.Windows.Forms.TabPage tabPage2;
         private System.Windows.Forms.ComboBox charaComboBox;
         private System.Windows.Forms.ComboBox attrComboBox;
         private System.Windows.Forms.TextBox cosTextBox;
         private System.Windows.Forms.TextBox nameTextBox;
         private System.Windows.Forms.CheckBox ngCheck;
         private System.Windows.Forms.TextBox priceTextBox;
-        private System.Windows.Forms.TextBox indexTextBox;
-        private System.Windows.Forms.DateTimePicker dateTimePicker2;
         private System.Windows.Forms.DateTimePicker dateTimePicker1;
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.Label CharaLabel;
@@ -930,61 +924,58 @@ namespace DivaTableManager
         private System.Windows.Forms.Label ModIDLabel;
         private System.Windows.Forms.Label CosLabel;
         private System.Windows.Forms.Label NameLabel;
-        private System.Windows.Forms.Label ModuleListLabel;
         private System.Windows.Forms.Label IndexLabel;
         private System.Windows.Forms.Label PriceLabel;
         private System.Windows.Forms.Label idCheckLabel;
         private System.Windows.Forms.MenuStrip menuStrip1;
         private System.Windows.Forms.ToolStripMenuItem fileToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem openToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem exitToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem aboutToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem helpToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem informationToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem byJay39wToolStripMenuItem;
-        private System.Windows.Forms.Label EndLabel;
         private System.Windows.Forms.Label StartLabel;
-        private System.Windows.Forms.ToolStripMenuItem moduleTableHelpToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem characterItemTableHelpToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem mentalHelpToolStripMenuItem;
         private System.Windows.Forms.Button delModuleEntry;
         private System.Windows.Forms.Button addModuleEntry;
         private System.Windows.Forms.ToolTip toolTip1;
         public System.Windows.Forms.ToolStripMenuItem saveToolStripMenuItem;
-        private System.Windows.Forms.PictureBox pictureBox1;
-        private System.Windows.Forms.ToolStripMenuItem settingsToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem dDirectoryToolStripMenuItem;
         private System.Windows.Forms.NumericUpDown idUpDown;
-        private System.Windows.Forms.ToolStripMenuItem mDATA2DDirectoryToolStripMenuItem;
-        private System.Windows.Forms.TabControl tabControl2;
-        private System.Windows.Forms.TabPage tabPage3;
-        private System.Windows.Forms.TabPage tabPage4;
-        private System.Windows.Forms.TabPage tabPage5;
-        private System.Windows.Forms.TabPage tabPage6;
-        private System.Windows.Forms.TabPage tabPage7;
-        private System.Windows.Forms.TabPage tabPage8;
-        private System.Windows.Forms.TabPage tabPage9;
-        private System.Windows.Forms.TabPage tabPage10;
-        private System.Windows.Forms.TabPage tabPage11;
-        private System.Windows.Forms.TabPage tabPage12;
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.TextBox EditTextBox;
-        private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.TextBox SleeveTextBox;
-        private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label modCount;
-        private System.Windows.Forms.TabPage tabPage13;
-        private System.Windows.Forms.GroupBox groupBox3;
-        private System.Windows.Forms.ListBox MikuItemBox;
+        private System.Windows.Forms.ToolStripMenuItem macroToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem ignoreShortcutToolStripMenuItem;
+        private System.Windows.Forms.NumericUpDown indexTextBox;
+        private System.Windows.Forms.ToolStripMenuItem batchToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem moduleBatchIndexToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem characterItemchritmToolStripMenuItem;
+        private System.Windows.Forms.TabPage tabPage2;
         private System.Windows.Forms.GroupBox groupBox2;
-        private System.Windows.Forms.CheckedListBox MikuCosList;
-        private System.Windows.Forms.ListBox MikuCosBox;
-        private System.Windows.Forms.Button MikuAdd;
-        private System.Windows.Forms.Button MikuDel;
+        private System.Windows.Forms.CheckBox checkBox2;
+        private System.Windows.Forms.NumericUpDown numericUpDown1;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.NumericUpDown numericUpDown2;
+        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.ComboBox MikuIDBox;
-        private System.Windows.Forms.GroupBox groupBox5;
-        private System.Windows.Forms.GroupBox groupBox4;
+        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.Label label8;
+        private System.Windows.Forms.Label label9;
+        private System.Windows.Forms.Label label10;
+        private System.Windows.Forms.ComboBox comboBox2;
+        private System.Windows.Forms.DateTimePicker dateTimePicker2;
+        private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.TextBox textBox3;
+        private System.Windows.Forms.CheckBox checkBox1;
+        private System.Windows.Forms.ListBox listBox2;
+        private System.Windows.Forms.ToolStripMenuItem saveAsToolStripMenuItem;
+        private System.Windows.Forms.Button button3;
+        private System.Windows.Forms.NumericUpDown numericUpDown3;
+        private System.Windows.Forms.ComboBox comboBox1;
+        private System.Windows.Forms.NumericUpDown numericUpDown4;
+        private System.Windows.Forms.Label label11;
+        private System.Windows.Forms.ToolStripMenuItem checkIDToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem newToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem deleteToolStripMenuItem;
     }
 }
 
