@@ -32,6 +32,20 @@ namespace DivaTableManager
             this.components = new System.ComponentModel.Container();
             this.label1 = new System.Windows.Forms.Label();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
+            this.groupBox9 = new System.Windows.Forms.GroupBox();
+            this.flagBox = new System.Windows.Forms.ComboBox();
+            this.groupBox15 = new System.Windows.Forms.GroupBox();
+            this.orgItmBox = new System.Windows.Forms.ComboBox();
+            this.groupBox14 = new System.Windows.Forms.GroupBox();
+            this.typeNum = new System.Windows.Forms.NumericUpDown();
+            this.groupBox13 = new System.Windows.Forms.GroupBox();
+            this.attrBox = new System.Windows.Forms.ComboBox();
+            this.groupBox12 = new System.Windows.Forms.GroupBox();
+            this.desIdBox = new System.Windows.Forms.ComboBox();
+            this.groupBox11 = new System.Windows.Forms.GroupBox();
+            this.rpkBox = new System.Windows.Forms.ComboBox();
+            this.groupBox10 = new System.Windows.Forms.GroupBox();
+            this.subIdBox = new System.Windows.Forms.ComboBox();
             this.groupBox8 = new System.Windows.Forms.GroupBox();
             this.textBox4 = new System.Windows.Forms.TextBox();
             this.groupBox7 = new System.Windows.Forms.GroupBox();
@@ -72,22 +86,7 @@ namespace DivaTableManager
             this.openToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.saveToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.saveAsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
-            this.chrSel = new System.Windows.Forms.ComboBox();
-            this.groupBox10 = new System.Windows.Forms.GroupBox();
-            this.subIdBox = new System.Windows.Forms.ComboBox();
-            this.groupBox11 = new System.Windows.Forms.GroupBox();
-            this.orgItmBox = new System.Windows.Forms.ComboBox();
-            this.groupBox12 = new System.Windows.Forms.GroupBox();
-            this.desIdBox = new System.Windows.Forms.ComboBox();
-            this.groupBox13 = new System.Windows.Forms.GroupBox();
-            this.attrBox = new System.Windows.Forms.ComboBox();
-            this.groupBox14 = new System.Windows.Forms.GroupBox();
-            this.typeNum = new System.Windows.Forms.NumericUpDown();
-            this.groupBox15 = new System.Windows.Forms.GroupBox();
-            this.rpkBox = new System.Windows.Forms.ComboBox();
-            this.groupBox9 = new System.Windows.Forms.GroupBox();
-            this.flagBox = new System.Windows.Forms.ComboBox();
+            this.deleteShortcutToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.itemPresetsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.headAccessoryToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.faceAccessoryToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -98,9 +97,18 @@ namespace DivaTableManager
             this.handsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.contactLensesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.eyeTextureSwapToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.deleteShortcutToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.multiDeleteToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
+            this.chrSel = new System.Windows.Forms.ComboBox();
             this.groupBox3.SuspendLayout();
+            this.groupBox9.SuspendLayout();
+            this.groupBox15.SuspendLayout();
+            this.groupBox14.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.typeNum)).BeginInit();
+            this.groupBox13.SuspendLayout();
+            this.groupBox12.SuspendLayout();
+            this.groupBox11.SuspendLayout();
+            this.groupBox10.SuspendLayout();
             this.groupBox8.SuspendLayout();
             this.groupBox7.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown2)).BeginInit();
@@ -112,14 +120,6 @@ namespace DivaTableManager
             this.groupBox2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown3)).BeginInit();
             this.menuStrip1.SuspendLayout();
-            this.groupBox10.SuspendLayout();
-            this.groupBox11.SuspendLayout();
-            this.groupBox12.SuspendLayout();
-            this.groupBox13.SuspendLayout();
-            this.groupBox14.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.typeNum)).BeginInit();
-            this.groupBox15.SuspendLayout();
-            this.groupBox9.SuspendLayout();
             this.SuspendLayout();
             // 
             // label1
@@ -156,6 +156,177 @@ namespace DivaTableManager
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "Items";
             // 
+            // groupBox9
+            // 
+            this.groupBox9.Controls.Add(this.flagBox);
+            this.groupBox9.Location = new System.Drawing.Point(243, 322);
+            this.groupBox9.Name = "groupBox9";
+            this.groupBox9.Size = new System.Drawing.Size(209, 56);
+            this.groupBox9.TabIndex = 17;
+            this.groupBox9.TabStop = false;
+            this.groupBox9.Text = "Flag";
+            // 
+            // flagBox
+            // 
+            this.flagBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.flagBox.FormattingEnabled = true;
+            this.flagBox.Items.AddRange(new object[] {
+            "0",
+            "4"});
+            this.flagBox.Location = new System.Drawing.Point(6, 21);
+            this.flagBox.Name = "flagBox";
+            this.flagBox.Size = new System.Drawing.Size(197, 24);
+            this.flagBox.TabIndex = 13;
+            this.flagBox.SelectedIndexChanged += new System.EventHandler(this.flagBox_SelectedIndexChanged);
+            // 
+            // groupBox15
+            // 
+            this.groupBox15.Controls.Add(this.orgItmBox);
+            this.groupBox15.Location = new System.Drawing.Point(569, 322);
+            this.groupBox15.Name = "groupBox15";
+            this.groupBox15.Size = new System.Drawing.Size(105, 56);
+            this.groupBox15.TabIndex = 16;
+            this.groupBox15.TabStop = false;
+            this.groupBox15.Text = "Original Item";
+            // 
+            // orgItmBox
+            // 
+            this.orgItmBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.orgItmBox.FormattingEnabled = true;
+            this.orgItmBox.Location = new System.Drawing.Point(6, 21);
+            this.orgItmBox.Name = "orgItmBox";
+            this.orgItmBox.Size = new System.Drawing.Size(92, 24);
+            this.orgItmBox.TabIndex = 13;
+            this.orgItmBox.SelectedIndexChanged += new System.EventHandler(this.orgItmBox_SelectedIndexChanged);
+            // 
+            // groupBox14
+            // 
+            this.groupBox14.Controls.Add(this.typeNum);
+            this.groupBox14.Location = new System.Drawing.Point(569, 265);
+            this.groupBox14.Name = "groupBox14";
+            this.groupBox14.Size = new System.Drawing.Size(105, 56);
+            this.groupBox14.TabIndex = 15;
+            this.groupBox14.TabStop = false;
+            this.groupBox14.Text = "Type";
+            // 
+            // typeNum
+            // 
+            this.typeNum.Location = new System.Drawing.Point(6, 23);
+            this.typeNum.Maximum = new decimal(new int[] {
+            2,
+            0,
+            0,
+            0});
+            this.typeNum.Name = "typeNum";
+            this.typeNum.Size = new System.Drawing.Size(92, 22);
+            this.typeNum.TabIndex = 1;
+            this.toolTip1.SetToolTip(this.typeNum, "This seems to be used for face mask customise items / module accessories");
+            this.typeNum.ValueChanged += new System.EventHandler(this.typeNum_ValueChanged);
+            // 
+            // groupBox13
+            // 
+            this.groupBox13.Controls.Add(this.attrBox);
+            this.groupBox13.Location = new System.Drawing.Point(569, 17);
+            this.groupBox13.Name = "groupBox13";
+            this.groupBox13.Size = new System.Drawing.Size(105, 56);
+            this.groupBox13.TabIndex = 15;
+            this.groupBox13.TabStop = false;
+            this.groupBox13.Text = "Attr";
+            // 
+            // attrBox
+            // 
+            this.attrBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.attrBox.FormattingEnabled = true;
+            this.attrBox.Items.AddRange(new object[] {
+            "1",
+            "5",
+            "37",
+            "2085"});
+            this.attrBox.Location = new System.Drawing.Point(6, 21);
+            this.attrBox.Name = "attrBox";
+            this.attrBox.Size = new System.Drawing.Size(92, 24);
+            this.attrBox.TabIndex = 13;
+            this.toolTip1.SetToolTip(this.attrBox, "1 - No Texture Swaps\r\n5 - Has Texture Swaps\r\n37 - Eye/Face Texture Swaps\r\n2085 - " +
+        "Head Swaps");
+            this.attrBox.SelectedIndexChanged += new System.EventHandler(this.attrBox_SelectedIndexChanged);
+            // 
+            // groupBox12
+            // 
+            this.groupBox12.Controls.Add(this.desIdBox);
+            this.groupBox12.Location = new System.Drawing.Point(569, 141);
+            this.groupBox12.Name = "groupBox12";
+            this.groupBox12.Size = new System.Drawing.Size(105, 56);
+            this.groupBox12.TabIndex = 14;
+            this.groupBox12.TabStop = false;
+            this.groupBox12.Text = "Des ID";
+            // 
+            // desIdBox
+            // 
+            this.desIdBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.desIdBox.FormattingEnabled = true;
+            this.desIdBox.Items.AddRange(new object[] {
+            "0",
+            "1",
+            "2"});
+            this.desIdBox.Location = new System.Drawing.Point(6, 21);
+            this.desIdBox.Name = "desIdBox";
+            this.desIdBox.Size = new System.Drawing.Size(92, 24);
+            this.desIdBox.TabIndex = 13;
+            this.desIdBox.SelectedIndexChanged += new System.EventHandler(this.desIdBox_SelectedIndexChanged);
+            // 
+            // groupBox11
+            // 
+            this.groupBox11.Controls.Add(this.rpkBox);
+            this.groupBox11.Location = new System.Drawing.Point(569, 203);
+            this.groupBox11.Name = "groupBox11";
+            this.groupBox11.Size = new System.Drawing.Size(105, 56);
+            this.groupBox11.TabIndex = 14;
+            this.groupBox11.TabStop = false;
+            this.groupBox11.Text = "RPK";
+            // 
+            // rpkBox
+            // 
+            this.rpkBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.rpkBox.FormattingEnabled = true;
+            this.rpkBox.Items.AddRange(new object[] {
+            "-1",
+            "1"});
+            this.rpkBox.Location = new System.Drawing.Point(6, 16);
+            this.rpkBox.Name = "rpkBox";
+            this.rpkBox.Size = new System.Drawing.Size(92, 24);
+            this.rpkBox.TabIndex = 14;
+            this.rpkBox.SelectedIndexChanged += new System.EventHandler(this.rpkBox_SelectedIndexChanged);
+            // 
+            // groupBox10
+            // 
+            this.groupBox10.Controls.Add(this.subIdBox);
+            this.groupBox10.Location = new System.Drawing.Point(569, 79);
+            this.groupBox10.Name = "groupBox10";
+            this.groupBox10.Size = new System.Drawing.Size(105, 56);
+            this.groupBox10.TabIndex = 6;
+            this.groupBox10.TabStop = false;
+            this.groupBox10.Text = "Sub ID";
+            // 
+            // subIdBox
+            // 
+            this.subIdBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.subIdBox.FormattingEnabled = true;
+            this.subIdBox.Items.AddRange(new object[] {
+            "0",
+            "1",
+            "4",
+            "6",
+            "8",
+            "10",
+            "14",
+            "16",
+            "24"});
+            this.subIdBox.Location = new System.Drawing.Point(6, 21);
+            this.subIdBox.Name = "subIdBox";
+            this.subIdBox.Size = new System.Drawing.Size(92, 24);
+            this.subIdBox.TabIndex = 13;
+            this.subIdBox.SelectedIndexChanged += new System.EventHandler(this.subIdBox_SelectedIndexChanged);
+            // 
             // groupBox8
             // 
             this.groupBox8.Controls.Add(this.textBox4);
@@ -174,7 +345,8 @@ namespace DivaTableManager
             this.textBox4.Name = "textBox4";
             this.textBox4.Size = new System.Drawing.Size(203, 22);
             this.textBox4.TabIndex = 2;
-            this.textBox4.TextChanged += new System.EventHandler(this.textBox4_TextChanged);
+            this.toolTip1.SetToolTip(this.textBox4, "Press ENTER to save changes!");
+            this.textBox4.KeyDown += new System.Windows.Forms.KeyEventHandler(this.textBox4_KeyDown);
             // 
             // groupBox7
             // 
@@ -563,7 +735,7 @@ namespace DivaTableManager
             // 
             this.openToolStripMenuItem.Name = "openToolStripMenuItem";
             this.openToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.O)));
-            this.openToolStripMenuItem.Size = new System.Drawing.Size(242, 26);
+            this.openToolStripMenuItem.Size = new System.Drawing.Size(256, 26);
             this.openToolStripMenuItem.Text = "Open";
             this.openToolStripMenuItem.Click += new System.EventHandler(this.openToolStripMenuItem_Click);
             // 
@@ -571,7 +743,7 @@ namespace DivaTableManager
             // 
             this.saveToolStripMenuItem.Name = "saveToolStripMenuItem";
             this.saveToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.S)));
-            this.saveToolStripMenuItem.Size = new System.Drawing.Size(242, 26);
+            this.saveToolStripMenuItem.Size = new System.Drawing.Size(256, 26);
             this.saveToolStripMenuItem.Text = "Save";
             this.saveToolStripMenuItem.Click += new System.EventHandler(this.saveToolStripMenuItem_Click);
             // 
@@ -580,9 +752,105 @@ namespace DivaTableManager
             this.saveAsToolStripMenuItem.Name = "saveAsToolStripMenuItem";
             this.saveAsToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)(((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.Shift) 
             | System.Windows.Forms.Keys.S)));
-            this.saveAsToolStripMenuItem.Size = new System.Drawing.Size(242, 26);
+            this.saveAsToolStripMenuItem.Size = new System.Drawing.Size(256, 26);
             this.saveAsToolStripMenuItem.Text = "Save As...";
             this.saveAsToolStripMenuItem.Click += new System.EventHandler(this.saveAsToolStripMenuItem_Click);
+            // 
+            // deleteShortcutToolStripMenuItem
+            // 
+            this.deleteShortcutToolStripMenuItem.Enabled = false;
+            this.deleteShortcutToolStripMenuItem.Name = "deleteShortcutToolStripMenuItem";
+            this.deleteShortcutToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.Delete)));
+            this.deleteShortcutToolStripMenuItem.Size = new System.Drawing.Size(256, 26);
+            this.deleteShortcutToolStripMenuItem.Text = "DeleteShortcut";
+            this.deleteShortcutToolStripMenuItem.Visible = false;
+            this.deleteShortcutToolStripMenuItem.Click += new System.EventHandler(this.deleteShortcutToolStripMenuItem_Click);
+            // 
+            // itemPresetsToolStripMenuItem
+            // 
+            this.itemPresetsToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.headAccessoryToolStripMenuItem,
+            this.faceAccessoryToolStripMenuItem,
+            this.chestAccessoryToolStripMenuItem,
+            this.backAccessoryToolStripMenuItem,
+            this.hairToolStripMenuItem,
+            this.bodyToolStripMenuItem,
+            this.handsToolStripMenuItem,
+            this.contactLensesToolStripMenuItem,
+            this.eyeTextureSwapToolStripMenuItem});
+            this.itemPresetsToolStripMenuItem.Name = "itemPresetsToolStripMenuItem";
+            this.itemPresetsToolStripMenuItem.Size = new System.Drawing.Size(103, 24);
+            this.itemPresetsToolStripMenuItem.Text = "Item Presets";
+            // 
+            // headAccessoryToolStripMenuItem
+            // 
+            this.headAccessoryToolStripMenuItem.Name = "headAccessoryToolStripMenuItem";
+            this.headAccessoryToolStripMenuItem.Size = new System.Drawing.Size(207, 26);
+            this.headAccessoryToolStripMenuItem.Text = "Head Accessory";
+            this.headAccessoryToolStripMenuItem.Click += new System.EventHandler(this.headAccessoryToolStripMenuItem_Click);
+            // 
+            // faceAccessoryToolStripMenuItem
+            // 
+            this.faceAccessoryToolStripMenuItem.Name = "faceAccessoryToolStripMenuItem";
+            this.faceAccessoryToolStripMenuItem.Size = new System.Drawing.Size(207, 26);
+            this.faceAccessoryToolStripMenuItem.Text = "Face Accessory";
+            this.faceAccessoryToolStripMenuItem.Click += new System.EventHandler(this.faceAccessoryToolStripMenuItem_Click);
+            // 
+            // chestAccessoryToolStripMenuItem
+            // 
+            this.chestAccessoryToolStripMenuItem.Name = "chestAccessoryToolStripMenuItem";
+            this.chestAccessoryToolStripMenuItem.Size = new System.Drawing.Size(207, 26);
+            this.chestAccessoryToolStripMenuItem.Text = "Chest Accessory";
+            this.chestAccessoryToolStripMenuItem.Click += new System.EventHandler(this.chestAccessoryToolStripMenuItem_Click);
+            // 
+            // backAccessoryToolStripMenuItem
+            // 
+            this.backAccessoryToolStripMenuItem.Name = "backAccessoryToolStripMenuItem";
+            this.backAccessoryToolStripMenuItem.Size = new System.Drawing.Size(207, 26);
+            this.backAccessoryToolStripMenuItem.Text = "Back Accessory";
+            this.backAccessoryToolStripMenuItem.Click += new System.EventHandler(this.backAccessoryToolStripMenuItem_Click);
+            // 
+            // hairToolStripMenuItem
+            // 
+            this.hairToolStripMenuItem.Name = "hairToolStripMenuItem";
+            this.hairToolStripMenuItem.Size = new System.Drawing.Size(207, 26);
+            this.hairToolStripMenuItem.Text = "Hair";
+            this.hairToolStripMenuItem.Click += new System.EventHandler(this.hairToolStripMenuItem_Click);
+            // 
+            // bodyToolStripMenuItem
+            // 
+            this.bodyToolStripMenuItem.Name = "bodyToolStripMenuItem";
+            this.bodyToolStripMenuItem.Size = new System.Drawing.Size(207, 26);
+            this.bodyToolStripMenuItem.Text = "Body";
+            this.bodyToolStripMenuItem.Click += new System.EventHandler(this.bodyToolStripMenuItem_Click);
+            // 
+            // handsToolStripMenuItem
+            // 
+            this.handsToolStripMenuItem.Name = "handsToolStripMenuItem";
+            this.handsToolStripMenuItem.Size = new System.Drawing.Size(207, 26);
+            this.handsToolStripMenuItem.Text = "Hands";
+            this.handsToolStripMenuItem.Click += new System.EventHandler(this.handsToolStripMenuItem_Click);
+            // 
+            // contactLensesToolStripMenuItem
+            // 
+            this.contactLensesToolStripMenuItem.Name = "contactLensesToolStripMenuItem";
+            this.contactLensesToolStripMenuItem.Size = new System.Drawing.Size(207, 26);
+            this.contactLensesToolStripMenuItem.Text = "Contact Lenses";
+            this.contactLensesToolStripMenuItem.Click += new System.EventHandler(this.contactLensesToolStripMenuItem_Click);
+            // 
+            // eyeTextureSwapToolStripMenuItem
+            // 
+            this.eyeTextureSwapToolStripMenuItem.Name = "eyeTextureSwapToolStripMenuItem";
+            this.eyeTextureSwapToolStripMenuItem.Size = new System.Drawing.Size(207, 26);
+            this.eyeTextureSwapToolStripMenuItem.Text = "Eye Texture Swap";
+            this.eyeTextureSwapToolStripMenuItem.Click += new System.EventHandler(this.eyeTextureSwapToolStripMenuItem_Click);
+            // 
+            // multiDeleteToolStripMenuItem
+            // 
+            this.multiDeleteToolStripMenuItem.Name = "multiDeleteToolStripMenuItem";
+            this.multiDeleteToolStripMenuItem.Size = new System.Drawing.Size(145, 24);
+            this.multiDeleteToolStripMenuItem.Text = "Multi Delete Items";
+            this.multiDeleteToolStripMenuItem.Click += new System.EventHandler(this.multiDeleteToolStripMenuItem_Click);
             // 
             // chrSel
             // 
@@ -605,273 +873,6 @@ namespace DivaTableManager
             this.chrSel.TabIndex = 14;
             this.chrSel.SelectedIndexChanged += new System.EventHandler(this.chrSel_SelectedIndexChanged);
             // 
-            // groupBox10
-            // 
-            this.groupBox10.Controls.Add(this.subIdBox);
-            this.groupBox10.Location = new System.Drawing.Point(569, 79);
-            this.groupBox10.Name = "groupBox10";
-            this.groupBox10.Size = new System.Drawing.Size(105, 56);
-            this.groupBox10.TabIndex = 6;
-            this.groupBox10.TabStop = false;
-            this.groupBox10.Text = "Sub ID";
-            // 
-            // subIdBox
-            // 
-            this.subIdBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.subIdBox.FormattingEnabled = true;
-            this.subIdBox.Items.AddRange(new object[] {
-            "0",
-            "1",
-            "4",
-            "6",
-            "8",
-            "10",
-            "14",
-            "16",
-            "24"});
-            this.subIdBox.Location = new System.Drawing.Point(6, 21);
-            this.subIdBox.Name = "subIdBox";
-            this.subIdBox.Size = new System.Drawing.Size(92, 24);
-            this.subIdBox.TabIndex = 13;
-            this.subIdBox.SelectedIndexChanged += new System.EventHandler(this.subIdBox_SelectedIndexChanged);
-            // 
-            // groupBox11
-            // 
-            this.groupBox11.Controls.Add(this.rpkBox);
-            this.groupBox11.Location = new System.Drawing.Point(569, 203);
-            this.groupBox11.Name = "groupBox11";
-            this.groupBox11.Size = new System.Drawing.Size(105, 56);
-            this.groupBox11.TabIndex = 14;
-            this.groupBox11.TabStop = false;
-            this.groupBox11.Text = "RPK";
-            // 
-            // orgItmBox
-            // 
-            this.orgItmBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.orgItmBox.FormattingEnabled = true;
-            this.orgItmBox.Location = new System.Drawing.Point(6, 21);
-            this.orgItmBox.Name = "orgItmBox";
-            this.orgItmBox.Size = new System.Drawing.Size(92, 24);
-            this.orgItmBox.TabIndex = 13;
-            this.orgItmBox.SelectedIndexChanged += new System.EventHandler(this.orgItmBox_SelectedIndexChanged);
-            // 
-            // groupBox12
-            // 
-            this.groupBox12.Controls.Add(this.desIdBox);
-            this.groupBox12.Location = new System.Drawing.Point(569, 141);
-            this.groupBox12.Name = "groupBox12";
-            this.groupBox12.Size = new System.Drawing.Size(105, 56);
-            this.groupBox12.TabIndex = 14;
-            this.groupBox12.TabStop = false;
-            this.groupBox12.Text = "Des ID";
-            // 
-            // desIdBox
-            // 
-            this.desIdBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.desIdBox.FormattingEnabled = true;
-            this.desIdBox.Items.AddRange(new object[] {
-            "0",
-            "1",
-            "2"});
-            this.desIdBox.Location = new System.Drawing.Point(6, 21);
-            this.desIdBox.Name = "desIdBox";
-            this.desIdBox.Size = new System.Drawing.Size(92, 24);
-            this.desIdBox.TabIndex = 13;
-            this.desIdBox.SelectedIndexChanged += new System.EventHandler(this.desIdBox_SelectedIndexChanged);
-            // 
-            // groupBox13
-            // 
-            this.groupBox13.Controls.Add(this.attrBox);
-            this.groupBox13.Location = new System.Drawing.Point(569, 17);
-            this.groupBox13.Name = "groupBox13";
-            this.groupBox13.Size = new System.Drawing.Size(105, 56);
-            this.groupBox13.TabIndex = 15;
-            this.groupBox13.TabStop = false;
-            this.groupBox13.Text = "Attr";
-            // 
-            // attrBox
-            // 
-            this.attrBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.attrBox.FormattingEnabled = true;
-            this.attrBox.Items.AddRange(new object[] {
-            "1",
-            "5",
-            "37",
-            "2085"});
-            this.attrBox.Location = new System.Drawing.Point(6, 21);
-            this.attrBox.Name = "attrBox";
-            this.attrBox.Size = new System.Drawing.Size(92, 24);
-            this.attrBox.TabIndex = 13;
-            this.toolTip1.SetToolTip(this.attrBox, "1 - No Texture Swaps\r\n5 - Has Texture Swaps\r\n37 - Eye/Face Texture Swaps\r\n2085 - " +
-        "Head Swaps");
-            this.attrBox.SelectedIndexChanged += new System.EventHandler(this.attrBox_SelectedIndexChanged);
-            // 
-            // groupBox14
-            // 
-            this.groupBox14.Controls.Add(this.typeNum);
-            this.groupBox14.Location = new System.Drawing.Point(569, 265);
-            this.groupBox14.Name = "groupBox14";
-            this.groupBox14.Size = new System.Drawing.Size(105, 56);
-            this.groupBox14.TabIndex = 15;
-            this.groupBox14.TabStop = false;
-            this.groupBox14.Text = "Type";
-            // 
-            // typeNum
-            // 
-            this.typeNum.Location = new System.Drawing.Point(6, 23);
-            this.typeNum.Maximum = new decimal(new int[] {
-            2,
-            0,
-            0,
-            0});
-            this.typeNum.Name = "typeNum";
-            this.typeNum.Size = new System.Drawing.Size(92, 22);
-            this.typeNum.TabIndex = 1;
-            this.toolTip1.SetToolTip(this.typeNum, "This seems to be used for face mask customise items / module accessories");
-            this.typeNum.ValueChanged += new System.EventHandler(this.typeNum_ValueChanged);
-            // 
-            // groupBox15
-            // 
-            this.groupBox15.Controls.Add(this.orgItmBox);
-            this.groupBox15.Location = new System.Drawing.Point(569, 322);
-            this.groupBox15.Name = "groupBox15";
-            this.groupBox15.Size = new System.Drawing.Size(105, 56);
-            this.groupBox15.TabIndex = 16;
-            this.groupBox15.TabStop = false;
-            this.groupBox15.Text = "Original Item";
-            // 
-            // rpkBox
-            // 
-            this.rpkBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.rpkBox.FormattingEnabled = true;
-            this.rpkBox.Items.AddRange(new object[] {
-            "-1",
-            "1"});
-            this.rpkBox.Location = new System.Drawing.Point(6, 16);
-            this.rpkBox.Name = "rpkBox";
-            this.rpkBox.Size = new System.Drawing.Size(92, 24);
-            this.rpkBox.TabIndex = 14;
-            this.rpkBox.SelectedIndexChanged += new System.EventHandler(this.rpkBox_SelectedIndexChanged);
-            // 
-            // groupBox9
-            // 
-            this.groupBox9.Controls.Add(this.flagBox);
-            this.groupBox9.Location = new System.Drawing.Point(243, 322);
-            this.groupBox9.Name = "groupBox9";
-            this.groupBox9.Size = new System.Drawing.Size(209, 56);
-            this.groupBox9.TabIndex = 17;
-            this.groupBox9.TabStop = false;
-            this.groupBox9.Text = "Flag";
-            // 
-            // flagBox
-            // 
-            this.flagBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.flagBox.FormattingEnabled = true;
-            this.flagBox.Items.AddRange(new object[] {
-            "0",
-            "4"});
-            this.flagBox.Location = new System.Drawing.Point(6, 21);
-            this.flagBox.Name = "flagBox";
-            this.flagBox.Size = new System.Drawing.Size(197, 24);
-            this.flagBox.TabIndex = 13;
-            this.flagBox.SelectedIndexChanged += new System.EventHandler(this.flagBox_SelectedIndexChanged);
-            // 
-            // itemPresetsToolStripMenuItem
-            // 
-            this.itemPresetsToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.headAccessoryToolStripMenuItem,
-            this.faceAccessoryToolStripMenuItem,
-            this.chestAccessoryToolStripMenuItem,
-            this.backAccessoryToolStripMenuItem,
-            this.hairToolStripMenuItem,
-            this.bodyToolStripMenuItem,
-            this.handsToolStripMenuItem,
-            this.contactLensesToolStripMenuItem,
-            this.eyeTextureSwapToolStripMenuItem});
-            this.itemPresetsToolStripMenuItem.Name = "itemPresetsToolStripMenuItem";
-            this.itemPresetsToolStripMenuItem.Size = new System.Drawing.Size(103, 24);
-            this.itemPresetsToolStripMenuItem.Text = "Item Presets";
-            // 
-            // headAccessoryToolStripMenuItem
-            // 
-            this.headAccessoryToolStripMenuItem.Name = "headAccessoryToolStripMenuItem";
-            this.headAccessoryToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
-            this.headAccessoryToolStripMenuItem.Text = "Head Accessory";
-            this.headAccessoryToolStripMenuItem.Click += new System.EventHandler(this.headAccessoryToolStripMenuItem_Click);
-            // 
-            // faceAccessoryToolStripMenuItem
-            // 
-            this.faceAccessoryToolStripMenuItem.Name = "faceAccessoryToolStripMenuItem";
-            this.faceAccessoryToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
-            this.faceAccessoryToolStripMenuItem.Text = "Face Accessory";
-            this.faceAccessoryToolStripMenuItem.Click += new System.EventHandler(this.faceAccessoryToolStripMenuItem_Click);
-            // 
-            // chestAccessoryToolStripMenuItem
-            // 
-            this.chestAccessoryToolStripMenuItem.Name = "chestAccessoryToolStripMenuItem";
-            this.chestAccessoryToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
-            this.chestAccessoryToolStripMenuItem.Text = "Chest Accessory";
-            this.chestAccessoryToolStripMenuItem.Click += new System.EventHandler(this.chestAccessoryToolStripMenuItem_Click);
-            // 
-            // backAccessoryToolStripMenuItem
-            // 
-            this.backAccessoryToolStripMenuItem.Name = "backAccessoryToolStripMenuItem";
-            this.backAccessoryToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
-            this.backAccessoryToolStripMenuItem.Text = "Back Accessory";
-            this.backAccessoryToolStripMenuItem.Click += new System.EventHandler(this.backAccessoryToolStripMenuItem_Click);
-            // 
-            // hairToolStripMenuItem
-            // 
-            this.hairToolStripMenuItem.Name = "hairToolStripMenuItem";
-            this.hairToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
-            this.hairToolStripMenuItem.Text = "Hair";
-            this.hairToolStripMenuItem.Click += new System.EventHandler(this.hairToolStripMenuItem_Click);
-            // 
-            // bodyToolStripMenuItem
-            // 
-            this.bodyToolStripMenuItem.Name = "bodyToolStripMenuItem";
-            this.bodyToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
-            this.bodyToolStripMenuItem.Text = "Body";
-            this.bodyToolStripMenuItem.Click += new System.EventHandler(this.bodyToolStripMenuItem_Click);
-            // 
-            // handsToolStripMenuItem
-            // 
-            this.handsToolStripMenuItem.Name = "handsToolStripMenuItem";
-            this.handsToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
-            this.handsToolStripMenuItem.Text = "Hands";
-            this.handsToolStripMenuItem.Click += new System.EventHandler(this.handsToolStripMenuItem_Click);
-            // 
-            // contactLensesToolStripMenuItem
-            // 
-            this.contactLensesToolStripMenuItem.Name = "contactLensesToolStripMenuItem";
-            this.contactLensesToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
-            this.contactLensesToolStripMenuItem.Text = "Contact Lenses";
-            this.contactLensesToolStripMenuItem.Click += new System.EventHandler(this.contactLensesToolStripMenuItem_Click);
-            // 
-            // eyeTextureSwapToolStripMenuItem
-            // 
-            this.eyeTextureSwapToolStripMenuItem.Name = "eyeTextureSwapToolStripMenuItem";
-            this.eyeTextureSwapToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
-            this.eyeTextureSwapToolStripMenuItem.Text = "Eye Texture Swap";
-            this.eyeTextureSwapToolStripMenuItem.Click += new System.EventHandler(this.eyeTextureSwapToolStripMenuItem_Click);
-            // 
-            // deleteShortcutToolStripMenuItem
-            // 
-            this.deleteShortcutToolStripMenuItem.Enabled = false;
-            this.deleteShortcutToolStripMenuItem.Name = "deleteShortcutToolStripMenuItem";
-            this.deleteShortcutToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.Delete)));
-            this.deleteShortcutToolStripMenuItem.Size = new System.Drawing.Size(256, 26);
-            this.deleteShortcutToolStripMenuItem.Text = "DeleteShortcut";
-            this.deleteShortcutToolStripMenuItem.Visible = false;
-            this.deleteShortcutToolStripMenuItem.Click += new System.EventHandler(this.deleteShortcutToolStripMenuItem_Click);
-            // 
-            // multiDeleteToolStripMenuItem
-            // 
-            this.multiDeleteToolStripMenuItem.Name = "multiDeleteToolStripMenuItem";
-            this.multiDeleteToolStripMenuItem.Size = new System.Drawing.Size(145, 26);
-            this.multiDeleteToolStripMenuItem.Text = "Multi Delete Items";
-            this.multiDeleteToolStripMenuItem.Click += new System.EventHandler(this.multiDeleteToolStripMenuItem_Click);
-            // 
             // chritm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -891,6 +892,14 @@ namespace DivaTableManager
             this.Text = "Character Item Properties";
             this.Load += new System.EventHandler(this.chritm_Load);
             this.groupBox3.ResumeLayout(false);
+            this.groupBox9.ResumeLayout(false);
+            this.groupBox15.ResumeLayout(false);
+            this.groupBox14.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.typeNum)).EndInit();
+            this.groupBox13.ResumeLayout(false);
+            this.groupBox12.ResumeLayout(false);
+            this.groupBox11.ResumeLayout(false);
+            this.groupBox10.ResumeLayout(false);
             this.groupBox8.ResumeLayout(false);
             this.groupBox8.PerformLayout();
             this.groupBox7.ResumeLayout(false);
@@ -907,14 +916,6 @@ namespace DivaTableManager
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown3)).EndInit();
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
-            this.groupBox10.ResumeLayout(false);
-            this.groupBox11.ResumeLayout(false);
-            this.groupBox12.ResumeLayout(false);
-            this.groupBox13.ResumeLayout(false);
-            this.groupBox14.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.typeNum)).EndInit();
-            this.groupBox15.ResumeLayout(false);
-            this.groupBox9.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 

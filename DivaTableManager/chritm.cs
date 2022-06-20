@@ -477,16 +477,6 @@ namespace DivaTableManager
             }
         }
 
-        private void textBox4_TextChanged(object sender, EventArgs e) // Change Name
-        {
-            if(curItem.name != textBox4.Text)
-            {
-                curItem.name = textBox4.Text;
-                KeyValuePair<string, chritmFile> found = Code.chritms.ElementAt(chrSel.SelectedIndex);
-                loadBoxes(found.Key, false);
-            }
-        }
-
         private void button4_Click(object sender, EventArgs e) // Add Tex Swap
         {
             dataSetTex tex = new dataSetTex();
@@ -663,6 +653,16 @@ namespace DivaTableManager
             curItem.orgItm = 0;
             curItem.face_depth = 0;
             updateItem();
+        }
+
+        private void textBox4_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                curItem.name = textBox4.Text;
+                KeyValuePair<string, chritmFile> found = Code.chritms.ElementAt(chrSel.SelectedIndex);
+                loadBoxes(found.Key, false);
+            }
         }
     }
 }
