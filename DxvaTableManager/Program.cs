@@ -1,14 +1,14 @@
 ﻿using System;
 using System.Windows.Forms;
 
-namespace DivaTableManager
+namespace DxvaTableManager
 {
     static class Program
     {
         [STAThread]
         static void Main()
         {
-            // ***this line is added***
+            // ***this line is added*** // Thank you to the stackoverflow post i took this from, muchas gracias for your awesome work
             if (Environment.OSVersion.Version.Major >= 6)
                 SetProcessDPIAware();
 

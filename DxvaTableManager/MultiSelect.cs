@@ -11,7 +11,7 @@ using MikuMikuLibrary.IO;
 using MikuMikuLibrary.Archives;
 using MikuMikuLibrary.Databases;
 
-namespace DivaTableManager
+namespace DxvaTableManager
 {
     public partial class MultiSelect : Form
     {
@@ -29,7 +29,7 @@ namespace DivaTableManager
         List<int> oldIds = new List<int>();
         private void MultiSelect_Load(object sender, EventArgs e)
         {
-            if (Code.Modules.Count != 0)
+            if (Form1.isModule)
             {
                 var dummy = new List<string>();
                 for (int i = 0; i < Code.Modules.Count; i++)
@@ -40,19 +40,40 @@ namespace DivaTableManager
                 }
                 multiListBox.DataSource = dummy;
             }
-            else { MessageBox.Show("You'll need to open a module table first.", "Error"); this.Close(); }
+            else
+            {
+                var dummy = new List<string>();
+                for (int i = 0; i < Code.Items.Count; i++)
+                {
+                    var x = Code.Items[i];
+                    string finalItemName = x.name + " " + "(" + x.chara + ")";
+                    dummy.Add(finalItemName);
+                }
+                multiListBox.DataSource = dummy;
+            }
         }
 
         private void batchSortButton_Click(object sender, EventArgs e)
         {
-            batchSort(multiListBox.SelectedIndices, Convert.ToInt32(numericUpDown1.Value));
+            batchSort(multiListBox.SelectedIndices, Convert.ToInt32(numericUpDown1.Value), Form1.isModule);
         }
-        private void batchSort(ListBox.SelectedIndexCollection selected, int startAt)
+        private void batchSort(ListBox.SelectedIndexCollection selected, int startAt, bool isModule)
         {
-            for (int i=0; i < selected.Count; i++)
+            if (isModule)
             {
-                Code.Modules[selected[i]].sort_index = startAt;
-                startAt++;
+                for (int i = 0; i < selected.Count; i++)
+                {
+                    Code.Modules[selected[i]].sort_index = startAt;
+                    startAt++;
+                }
+            }
+            else
+            {
+                for (int i = 0; i < selected.Count; i++)
+                {
+                    Code.Items[selected[i]].sort_index = startAt;
+                    startAt++;
+                }
             }
             MessageBox.Show("Done!");
             this.Close();
@@ -65,7 +86,7 @@ namespace DivaTableManager
             if (ofd.ShowDialog() == DialogResult.OK)
             {
                 sprdbpath = ofd.FileName;
-                fbd.Description = "Select folder with your module preview sprite files (.farc)";
+                fbd.Description = "Select folder with your sprite files (.farc)";
                 fbd.SelectedPath = ofd.InitialDirectory;
                 if(fbd.ShowDialog() == DialogResult.OK)
                 {
@@ -90,35 +111,81 @@ namespace DivaTableManager
             {
                 db = BinaryFile.Load<SpriteDatabase>(sprdbpath);
             }
-            // Get Old IDs for farc renaming
             oldIds.Clear();
-            for (int i = 0; i < selected.Count; i++)
+            // Get Old IDs for farc renaming
+            if (Form1.isModule)
             {
-                oldIds.Add(Code.Modules[selected[i]].id);
-            }
-            for (int i = 0; i < selected.Count; i++)
-            {
-                module checkFirst = Code.Modules.Find(x => x.id == startAt);
-                while (checkFirst != null)
+                for (int i = 0; i < selected.Count; i++)
                 {
-                    startAt++;
-                    checkFirst = Code.Modules.Find(x => x.id == startAt);
+                    oldIds.Add(Code.Modules[selected[i]].id);
                 }
-                if (checkFirst == null)
+            }
+            else
+            {
+                for (int i = 0; i < selected.Count; i++)
+                {
+                    oldIds.Add(Code.Items[selected[i]].id);
+                }
+            }
+
+            for (int i = 0; i < selected.Count; i++)
+            {
+                bool isOk = false;
+                if (Form1.isModule)
+                {
+                    module checkFirst = Code.Modules.Find(x => x.id == startAt);
+                    while (checkFirst != null)
+                    {
+                        startAt++;
+                        checkFirst = Code.Modules.Find(x => x.id == startAt);
+                        isOk = false;
+                    }
+                    if (checkFirst == null)
+                    {
+                        isOk = true;
+                    }
+                }
+                else
+                {
+                    cstm_item checkFirst = Code.Items.Find(x => x.id == startAt);
+                    while (checkFirst != null)
+                    {
+                        startAt++;
+                        checkFirst = Code.Items.Find(x => x.id == startAt);
+                        isOk = false;
+                    }
+                    if (checkFirst == null)
+                    {
+                        isOk = true;
+                    }
+                }
+                if (isOk)
                 {
                     SpriteSetInfo sprite = new SpriteSetInfo();
                     SpriteInfo info = new SpriteInfo();
                     SpriteTextureInfo texture = new SpriteTextureInfo();
-                    Code.Modules[selected[i]].id = startAt;
+                    if (Form1.isModule)
+                    {
+                        Code.Modules[selected[i]].id = startAt;
+                        sprite.Name = "SPR_SEL_MD" + startAt + "CMN";
+                        info.Name = "SPR_SEL_MD" + startAt + "CMN_MD_IMG";
+                        sprite.FileName = "spr_sel_md" + startAt + "cmn.bin";
+                        texture.Name = "SPRTEX_SEL_MD" + startAt + "CMN_MERGE_BC5COMP_0";
+                    }
+                    else
+                    {
+                        Code.Items[selected[i]].id = startAt;
+                        sprite.Name = "SPR_CMNITM_THMB" + startAt.ToString();
+                        sprite.FileName = "spr_cmnitm_thmb" + startAt + ".bin";
+                        info.Name = "SPR_CMNITM_THMB" + startAt + "_ITM_IMG";
+                        texture.Name = "SPRTEX_CMNITM_THMB" + startAt + "_MERGE_BC5COMP_0";
+                    }
                     if (db.SpriteSets.Count == 0)
                     {
-                        sprite.Name = "SPR_SEL_MD" + startAt + "CMN";
-                        sprite.FileName = "spr_sel_md" + startAt + "cmn.bin";
-                        sprite.Id = (uint)startAt*3939;
+                        sprite.Id = (uint)startAt * 3939;
                         info.Id = sprite.Id + 1;
                         texture.Id = info.Id + 1;
                         texture.Index = 0;
-                        texture.Name = "SPRTEX_SEL_MD" + startAt + "CMN_MERGE_BC5COMP_0";
                         sprite.Sprites.Add(info);
                         sprite.Textures.Add(texture);
                         db.SpriteSets.Add(sprite);
@@ -126,14 +193,10 @@ namespace DivaTableManager
                     }
                     else
                     {
-                        sprite.Name = "SPR_SEL_MD" + startAt + "CMN";
-                        sprite.FileName = "spr_sel_md" + startAt + "cmn.bin";
                         sprite.Id = (db.SpriteSets[db.SpriteSets.Count - 1].Id) + 1;
                         info.Index = 0;
-                        info.Name = "SPR_SEL_MD" + startAt + "CMN_MD_IMG";
                         info.Id = db.SpriteSets[db.SpriteSets.Count - 1].Textures[db.SpriteSets[db.SpriteSets.Count - 1].Textures.Count - 1].Id + 1;
                         texture.Id = info.Id + 1;
-                        texture.Name = "SPRTEX_SEL_MD" + startAt + "CMN_MERGE_BC5COMP_0";
                         texture.Index = 0;
                         sprite.Sprites.Add(info);
                         sprite.Textures.Add(texture);
@@ -152,28 +215,58 @@ namespace DivaTableManager
 
         private void renameFarcs(List<int> ids, int count, int startAt, string folderPath)
         {
-            for (int i = 0; i < count; i++)
+            if (Form1.isModule)
             {
-                string file = "spr_sel_md" + ids[i] + "cmn";
-                try
+                for (int i = 0; i < count; i++)
                 {
-                    var farc = BinaryFile.Load<FarcArchive>(folderPath + @"\" + file + ".farc");
-                    foreach (var fileName in farc)
+                    string file = "spr_sel_md" + ids[i] + "cmn";
+                    try
                     {
-                        var source = farc.Open(fileName, EntryStreamMode.MemoryStream);
-                        farc.Add("spr_sel_md" + startAt + "cmn.bin", source, true);
-                        farc.IsCompressed = true;
-                        farc.Remove(file + ".bin");
-                        farc.Save(folderPath + @"\" + "spr_sel_md" + startAt + "cmn.farc");
-                        break;
+                        var farc = BinaryFile.Load<FarcArchive>(folderPath + @"\" + file + ".farc");
+                        foreach (var fileName in farc)
+                        {
+                            var source = farc.Open(fileName, EntryStreamMode.MemoryStream);
+                            farc.Add("spr_sel_md" + startAt + "cmn.bin", source, true);
+                            farc.IsCompressed = true;
+                            farc.Remove(file + ".bin");
+                            farc.Save(folderPath + @"\" + "spr_sel_md" + startAt + "cmn.farc");
+                            break;
+                        }
+                        farc.Dispose();
+                        File.Delete(folderPath + @"\" + file + ".farc");
+                        startAt++;
                     }
-                    farc.Dispose();
-                    File.Delete(folderPath + @"\" + file + ".farc");
-                    startAt++;
+                    catch (Exception)
+                    {
+                        startAt++;
+                    }
                 }
-                catch (Exception)
+            }
+            else
+            {
+                for (int i = 0; i < count; i++)
                 {
-                    startAt++;
+                    string file = "spr_cmnitm_thmb" + ids[i].ToString();
+                    try
+                    {
+                        var farc = BinaryFile.Load<FarcArchive>(folderPath + @"\" + file + ".farc");
+                        foreach (var fileName in farc)
+                        {
+                            var source = farc.Open(fileName, EntryStreamMode.MemoryStream);
+                            farc.Add("spr_cmnitm_thmb" + startAt + ".bin", source, true);
+                            farc.IsCompressed = true;
+                            farc.Remove(file + ".bin");
+                            farc.Save(folderPath + @"\" + "spr_cmnitm_thmb" + startAt + ".farc");
+                            break;
+                        }
+                        farc.Dispose();
+                        File.Delete(folderPath + @"\" + file + ".farc");
+                        startAt++;
+                    }
+                    catch (Exception)
+                    {
+                        startAt++;
+                    }
                 }
             }
         }

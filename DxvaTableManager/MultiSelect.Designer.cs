@@ -1,5 +1,5 @@
 ﻿
-namespace DivaTableManager
+namespace DxvaTableManager
 {
     partial class MultiSelect
     {
@@ -52,7 +52,7 @@ namespace DivaTableManager
             // 
             this.numericUpDown1.Location = new System.Drawing.Point(12, 29);
             this.numericUpDown1.Maximum = new decimal(new int[] {
-            999,
+            5000,
             0,
             0,
             0});

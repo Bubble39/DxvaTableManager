@@ -104,11 +104,11 @@
     <Compile Include="Form1.Designer.cs">
       <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
-    <Compile Include="MultiDeteleItem.cs">
+    <Compile Include="MultiDeleteItem.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="MultiDeteleItem.Designer.cs">
-      <DependentUpon>MultiDeteleItem.cs</DependentUpon>
+    <Compile Include="MultiDeleteItem.Designer.cs">
+      <DependentUpon>MultiDeleteItem.cs</DependentUpon>
     </Compile>
     <Compile Include="MultiSelect.cs">
       <SubType>Form</SubType>
@@ -127,8 +127,8 @@
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="MultiDeteleItem.resx">
-      <DependentUpon>MultiDeteleItem.cs</DependentUpon>
+    <EmbeddedResource Include="MultiDeleteItem.resx">
+      <DependentUpon>MultiDeleteItem.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="MultiSelect.resx">
       <DependentUpon>MultiSelect.cs</DependentUpon>
@@ -141,6 +141,7 @@
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
     </Compile>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>

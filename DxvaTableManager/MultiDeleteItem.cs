@@ -8,7 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace DivaTableManager
+namespace DxvaTableManager
 {
     public partial class MultiDeteleItem : Form
     {

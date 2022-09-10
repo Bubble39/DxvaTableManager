@@ -117,6 +117,43 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="label11.ToolTip" xml:space="preserve">
+    <value>The ID used for this module.
+This ID will be used when loading module select preview images.
+Please avoid using the same ID for multiple modules.
+The ID detector will show when you are changing the ID to help you
+choose an unused one.</value>
+  </data>
+  <data name="label4.ToolTip" xml:space="preserve">
+    <value>The placement of the module in the shop list.
+The list is in ascending order. (0 to 100, etc.)
+You may use clashing numbers although it may cause
+unwanted sorting results.
+Sort Index numbers vary by 'Character' setting so 0 for MIKU
+will not impact 0 for SAKINE, for example.</value>
+  </data>
+  <metadata name="toolTip1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>152, 17</value>
+  </metadata>
+  <data name="label6.ToolTip" xml:space="preserve">
+    <value>The name of the module.
+This is the name that will appear in module select.
+Bare in mind unsupported character sets will not display correctly in-game.
+Please note that you must press the ENTER key to save the name.</value>
+  </data>
+  <data name="label7.ToolTip" xml:space="preserve">
+    <value>The ID used for this module.
+This ID will be used when loading module select preview images.
+Please avoid using the same ID for multiple modules.
+The ID detector will show when you are changing the ID to help you
+choose an unused one.</value>
+  </data>
+  <data name="label8.ToolTip" xml:space="preserve">
+    <value>The COS_XXX to be used for this module.
+The 'Character' set in the box above will control which xxxitm_tbl.txt the COS_XXX is read from.
+(For Example: Setting Character to MIKU will load the COS_XXX from mikitm_tbl.txt)
+Please make sure you have a matching COS entry in the Character Item Table before setting this value.</value>
+  </data>
   <metadata name="toolTip1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>152, 17</value>
   </metadata>
@@ -142,40 +179,6 @@ The ID detector will show when you are changing the ID to help you
 choose an unused one.</value>
   </data>
   <data name="CosLabel.ToolTip" xml:space="preserve">
-    <value>The COS_XXX to be used for this module.
-The 'Character' set in the box above will control which xxxitm_tbl.txt the COS_XXX is read from.
-(For Example: Setting Character to MIKU will load the COS_XXX from mikitm_tbl.txt)
-Please make sure you have a matching COS entry in the Character Item Table before setting this value.</value>
-  </data>
-  <data name="label11.ToolTip" xml:space="preserve">
-    <value>The ID used for this module.
-This ID will be used when loading module select preview images.
-Please avoid using the same ID for multiple modules.
-The ID detector will show when you are changing the ID to help you
-choose an unused one.</value>
-  </data>
-  <data name="label4.ToolTip" xml:space="preserve">
-    <value>The placement of the module in the shop list.
-The list is in ascending order. (0 --&gt; 100, etc.)
-You may use clashing numbers although it may cause
-unwanted sorting results.
-Sort Index numbers vary by 'Character' setting so 0 for MIKU
-will not impact 0 for SAKINE, for example.</value>
-  </data>
-  <data name="label6.ToolTip" xml:space="preserve">
-    <value>The name of the module.
-This is the name that will appear in module select.
-Bare in mind unsupported character sets will not display correctly in-game.
-Please note that you must press the ENTER key to save the name.</value>
-  </data>
-  <data name="label7.ToolTip" xml:space="preserve">
-    <value>The ID used for this module.
-This ID will be used when loading module select preview images.
-Please avoid using the same ID for multiple modules.
-The ID detector will show when you are changing the ID to help you
-choose an unused one.</value>
-  </data>
-  <data name="label8.ToolTip" xml:space="preserve">
     <value>The COS_XXX to be used for this module.
 The 'Character' set in the box above will control which xxxitm_tbl.txt the COS_XXX is read from.
 (For Example: Setting Character to MIKU will load the COS_XXX from mikitm_tbl.txt)

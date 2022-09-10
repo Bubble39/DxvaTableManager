@@ -1,5 +1,5 @@
 ﻿
-namespace DivaTableManager
+namespace DxvaTableManager
 {
     partial class Form1
     {
@@ -96,6 +96,7 @@ namespace DivaTableManager
             this.deleteToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.batchToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.moduleBatchIndexToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.customiseItemManagementToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.characterItemchritmToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.aboutToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
@@ -213,7 +214,7 @@ namespace DivaTableManager
             // 
             this.idUpDown.Location = new System.Drawing.Point(6, 109);
             this.idUpDown.Maximum = new decimal(new int[] {
-            999,
+            4999,
             0,
             0,
             0});
@@ -630,9 +631,9 @@ namespace DivaTableManager
             this.label5.AutoSize = true;
             this.label5.Location = new System.Drawing.Point(270, 189);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(72, 17);
+            this.label5.Size = new System.Drawing.Size(93, 17);
             this.label5.TabIndex = 18;
-            this.label5.Text = "Price (VP)";
+            this.label5.Text = "Price (Points)";
             this.toolTip1.SetToolTip(this.label5, "The price of the module, in Vocaloid Points, in the module shop.\r\nFor consistency" +
         ", it is advised to use different values when working \r\nwith FT/M39 and when work" +
         "ing with AFT.");
@@ -845,7 +846,8 @@ namespace DivaTableManager
             // batchToolStripMenuItem
             // 
             this.batchToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.moduleBatchIndexToolStripMenuItem});
+            this.moduleBatchIndexToolStripMenuItem,
+            this.customiseItemManagementToolStripMenuItem});
             this.batchToolStripMenuItem.Name = "batchToolStripMenuItem";
             this.batchToolStripMenuItem.Size = new System.Drawing.Size(119, 24);
             this.batchToolStripMenuItem.Text = "Multi-Function";
@@ -853,9 +855,16 @@ namespace DivaTableManager
             // moduleBatchIndexToolStripMenuItem
             // 
             this.moduleBatchIndexToolStripMenuItem.Name = "moduleBatchIndexToolStripMenuItem";
-            this.moduleBatchIndexToolStripMenuItem.Size = new System.Drawing.Size(235, 26);
+            this.moduleBatchIndexToolStripMenuItem.Size = new System.Drawing.Size(286, 26);
             this.moduleBatchIndexToolStripMenuItem.Text = "Module Management";
             this.moduleBatchIndexToolStripMenuItem.Click += new System.EventHandler(this.moduleBatchIndexToolStripMenuItem_Click);
+            // 
+            // customiseItemManagementToolStripMenuItem
+            // 
+            this.customiseItemManagementToolStripMenuItem.Name = "customiseItemManagementToolStripMenuItem";
+            this.customiseItemManagementToolStripMenuItem.Size = new System.Drawing.Size(286, 26);
+            this.customiseItemManagementToolStripMenuItem.Text = "Customise Item Management";
+            this.customiseItemManagementToolStripMenuItem.Click += new System.EventHandler(this.customiseItemManagementToolStripMenuItem_Click);
             // 
             // characterItemchritmToolStripMenuItem
             // 
@@ -885,7 +894,7 @@ namespace DivaTableManager
             this.MaximumSize = new System.Drawing.Size(660, 415);
             this.MinimumSize = new System.Drawing.Size(660, 415);
             this.Name = "Form1";
-            this.Text = "DivaTableManager";
+            this.Text = "DxvaTableManager";
             this.Load += new System.EventHandler(this.Form1_Load);
             this.tabControl1.ResumeLayout(false);
             this.tabPage1.ResumeLayout(false);
@@ -976,6 +985,7 @@ namespace DivaTableManager
         private System.Windows.Forms.ToolStripMenuItem checkIDToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem newToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem deleteToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem customiseItemManagementToolStripMenuItem;
     }
 }
 

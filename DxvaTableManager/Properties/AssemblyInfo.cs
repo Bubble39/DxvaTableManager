@@ -5,11 +5,11 @@ using System.Runtime.InteropServices;
 // General Information about an assembly is controlled through the following
 // set of attributes. Change these attribute values to modify the information
 // associated with an assembly.
-[assembly: AssemblyTitle("DivaTableManager")]
+[assembly: AssemblyTitle("DxvaTableManager")]
 [assembly: AssemblyDescription("")]
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("")]
-[assembly: AssemblyProduct("DivaTableManager")]
+[assembly: AssemblyProduct("DxvaTableManager")]
 [assembly: AssemblyCopyright("Copyright © Bubble39 2022")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]

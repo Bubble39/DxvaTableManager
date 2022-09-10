@@ -8,7 +8,7 @@ using MikuMikuLibrary;
 using MikuMikuLibrary.IO;
 using MikuMikuLibrary.Archives;
 
-namespace DivaTableManager
+namespace DxvaTableManager
 {
     public partial class chritm : Form
     {
@@ -61,6 +61,8 @@ namespace DivaTableManager
 
         private void loadBoxes(string chara, bool posZero)
         {
+            MikuItemBox.BeginUpdate();
+            MikuCosBox.BeginUpdate();
             if (Code.chritms.Count > 0)
             {
                 int index = MikuItemBox.SelectedIndex;
@@ -70,7 +72,7 @@ namespace DivaTableManager
                     data.Add("COS: " + x.id);
                 }
                 MikuCosBox.DataSource = data;
-                if (posZero & MikuCosBox.Items.Count > 0)
+                if (posZero && MikuCosBox.Items.Count > 0)
                 {
                     MikuCosBox.SelectedIndex = 0;
                 }
@@ -80,15 +82,21 @@ namespace DivaTableManager
                     data.Add(x.no + ": " + x.name);
                 }
                 MikuItemBox.DataSource = data;
-                if(index != 0 & !posZero)
+                if(index != 0 && !posZero && index < MikuItemBox.Items.Count)
                 {
                     MikuItemBox.SelectedIndex = index;
+                }
+                else if (index != 0 && !posZero && index == MikuItemBox.Items.Count)
+                {
+                    MikuItemBox.SelectedIndex = index-1;
                 }
                 else
                 {
                     MikuItemBox.SelectedIndex = 0;
                 }
             }
+            MikuItemBox.EndUpdate();
+            MikuCosBox.EndUpdate();
         }
 
         private void MikuCosBox_SelectedIndexChanged(object sender, EventArgs e)
@@ -663,6 +671,11 @@ namespace DivaTableManager
                 KeyValuePair<string, chritmFile> found = Code.chritms.ElementAt(chrSel.SelectedIndex);
                 loadBoxes(found.Key, false);
             }
+        }
+
+        private void generateObjectDatabaseToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

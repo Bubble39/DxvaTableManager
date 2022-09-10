@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Windows.Forms;
 
 
-namespace DivaTableManager
+namespace DxvaTableManager
 {
     public partial class Form1 : Form
     {
@@ -14,6 +14,7 @@ namespace DivaTableManager
         OpenFileDialog ofd = new OpenFileDialog();
         public static module curModule;
         public static cstm_item curCustom;
+        public static bool isModule;
         bool moduleExists;
         public void refreshModuleList()
         {
@@ -274,8 +275,13 @@ namespace DivaTableManager
 
         private void moduleBatchIndexToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            MultiSelect ms = new MultiSelect();
-            ms.ShowDialog();
+            if (Code.Modules.Count != 0)
+            {
+                isModule = true;
+                MultiSelect ms = new MultiSelect();
+                ms.ShowDialog();
+            }
+            else { MessageBox.Show("You'll need to open a module table first.", "Error"); this.Close(); }
         }
 
         private void characterItemchritmToolStripMenuItem_Click(object sender, EventArgs e)
@@ -401,12 +407,18 @@ namespace DivaTableManager
 
         private void button2_Click(object sender, EventArgs e)
         {
-            Code.addDummyEntryCstm(listBox2.SelectedIndex + 1);
+            if (Code.Items.Count > 0)
+            {
+                int prev = listBox2.SelectedIndex;
+                Code.addDummyEntryCstm(listBox2.SelectedIndex + 1);
+                refreshCustomList();
+                listBox2.SelectedIndex = prev + 1;
+            }
         }
 
         private void aboutToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            MessageBox.Show("DivaTableManager by Bubble39" + Environment.NewLine + "Thanks to all who helped me with learning C#!" + Environment.NewLine + "NOT FOR COMMERCIAL OR FINANCIALLY SUPPORTED USE" + Environment.NewLine + "Current Version: v1.6 (20/06/2022)", "About DTM");
+            MessageBox.Show("DxvaTableManager by Bubble39" + Environment.NewLine + "Thanks to all who helped me with learning C#!" + Environment.NewLine + "NOT FOR COMMERCIAL OR FINANCIALLY SUPPORTED USE - RIP BOZO!!" + Environment.NewLine + "Current Version: v1.6b (10/09/2022)", "About DTM");
         }
 
         private void Form1_Load(object sender, EventArgs e)
@@ -535,6 +547,18 @@ namespace DivaTableManager
             {
                 curModule.sort_index = (int)indexTextBox.Value;
             }
+        }
+
+        private void customiseItemManagementToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            if(Code.Items.Count > 0)
+            {
+                isModule = false;
+                MultiSelect ms = new MultiSelect();
+                ms.ShowDialog();
+            }
+            else { MessageBox.Show("You'll need to open a customise item table first.", "Error"); this.Close(); }
+
         }
     }
 }

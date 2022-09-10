@@ -1,5 +1,5 @@
 ﻿
-namespace DivaTableManager
+namespace DxvaTableManager
 {
     partial class chritm
     {
@@ -100,6 +100,7 @@ namespace DivaTableManager
             this.multiDeleteToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
             this.chrSel = new System.Windows.Forms.ComboBox();
+            this.generateObjectDatabaseToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.groupBox3.SuspendLayout();
             this.groupBox9.SuspendLayout();
             this.groupBox15.SuspendLayout();
@@ -713,7 +714,8 @@ namespace DivaTableManager
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.fileToolStripMenuItem,
             this.itemPresetsToolStripMenuItem,
-            this.multiDeleteToolStripMenuItem});
+            this.multiDeleteToolStripMenuItem,
+            this.generateObjectDatabaseToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
             this.menuStrip1.Size = new System.Drawing.Size(1096, 28);
@@ -785,63 +787,63 @@ namespace DivaTableManager
             // headAccessoryToolStripMenuItem
             // 
             this.headAccessoryToolStripMenuItem.Name = "headAccessoryToolStripMenuItem";
-            this.headAccessoryToolStripMenuItem.Size = new System.Drawing.Size(207, 26);
+            this.headAccessoryToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
             this.headAccessoryToolStripMenuItem.Text = "Head Accessory";
             this.headAccessoryToolStripMenuItem.Click += new System.EventHandler(this.headAccessoryToolStripMenuItem_Click);
             // 
             // faceAccessoryToolStripMenuItem
             // 
             this.faceAccessoryToolStripMenuItem.Name = "faceAccessoryToolStripMenuItem";
-            this.faceAccessoryToolStripMenuItem.Size = new System.Drawing.Size(207, 26);
+            this.faceAccessoryToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
             this.faceAccessoryToolStripMenuItem.Text = "Face Accessory";
             this.faceAccessoryToolStripMenuItem.Click += new System.EventHandler(this.faceAccessoryToolStripMenuItem_Click);
             // 
             // chestAccessoryToolStripMenuItem
             // 
             this.chestAccessoryToolStripMenuItem.Name = "chestAccessoryToolStripMenuItem";
-            this.chestAccessoryToolStripMenuItem.Size = new System.Drawing.Size(207, 26);
+            this.chestAccessoryToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
             this.chestAccessoryToolStripMenuItem.Text = "Chest Accessory";
             this.chestAccessoryToolStripMenuItem.Click += new System.EventHandler(this.chestAccessoryToolStripMenuItem_Click);
             // 
             // backAccessoryToolStripMenuItem
             // 
             this.backAccessoryToolStripMenuItem.Name = "backAccessoryToolStripMenuItem";
-            this.backAccessoryToolStripMenuItem.Size = new System.Drawing.Size(207, 26);
+            this.backAccessoryToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
             this.backAccessoryToolStripMenuItem.Text = "Back Accessory";
             this.backAccessoryToolStripMenuItem.Click += new System.EventHandler(this.backAccessoryToolStripMenuItem_Click);
             // 
             // hairToolStripMenuItem
             // 
             this.hairToolStripMenuItem.Name = "hairToolStripMenuItem";
-            this.hairToolStripMenuItem.Size = new System.Drawing.Size(207, 26);
+            this.hairToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
             this.hairToolStripMenuItem.Text = "Hair";
             this.hairToolStripMenuItem.Click += new System.EventHandler(this.hairToolStripMenuItem_Click);
             // 
             // bodyToolStripMenuItem
             // 
             this.bodyToolStripMenuItem.Name = "bodyToolStripMenuItem";
-            this.bodyToolStripMenuItem.Size = new System.Drawing.Size(207, 26);
+            this.bodyToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
             this.bodyToolStripMenuItem.Text = "Body";
             this.bodyToolStripMenuItem.Click += new System.EventHandler(this.bodyToolStripMenuItem_Click);
             // 
             // handsToolStripMenuItem
             // 
             this.handsToolStripMenuItem.Name = "handsToolStripMenuItem";
-            this.handsToolStripMenuItem.Size = new System.Drawing.Size(207, 26);
+            this.handsToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
             this.handsToolStripMenuItem.Text = "Hands";
             this.handsToolStripMenuItem.Click += new System.EventHandler(this.handsToolStripMenuItem_Click);
             // 
             // contactLensesToolStripMenuItem
             // 
             this.contactLensesToolStripMenuItem.Name = "contactLensesToolStripMenuItem";
-            this.contactLensesToolStripMenuItem.Size = new System.Drawing.Size(207, 26);
+            this.contactLensesToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
             this.contactLensesToolStripMenuItem.Text = "Contact Lenses";
             this.contactLensesToolStripMenuItem.Click += new System.EventHandler(this.contactLensesToolStripMenuItem_Click);
             // 
             // eyeTextureSwapToolStripMenuItem
             // 
             this.eyeTextureSwapToolStripMenuItem.Name = "eyeTextureSwapToolStripMenuItem";
-            this.eyeTextureSwapToolStripMenuItem.Size = new System.Drawing.Size(207, 26);
+            this.eyeTextureSwapToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
             this.eyeTextureSwapToolStripMenuItem.Text = "Eye Texture Swap";
             this.eyeTextureSwapToolStripMenuItem.Click += new System.EventHandler(this.eyeTextureSwapToolStripMenuItem_Click);
             // 
@@ -872,6 +874,13 @@ namespace DivaTableManager
             this.chrSel.Size = new System.Drawing.Size(185, 24);
             this.chrSel.TabIndex = 14;
             this.chrSel.SelectedIndexChanged += new System.EventHandler(this.chrSel_SelectedIndexChanged);
+            // 
+            // generateObjectDatabaseToolStripMenuItem
+            // 
+            this.generateObjectDatabaseToolStripMenuItem.Name = "generateObjectDatabaseToolStripMenuItem";
+            this.generateObjectDatabaseToolStripMenuItem.Size = new System.Drawing.Size(198, 24);
+            this.generateObjectDatabaseToolStripMenuItem.Text = "Generate Object Database";
+            this.generateObjectDatabaseToolStripMenuItem.Click += new System.EventHandler(this.generateObjectDatabaseToolStripMenuItem_Click);
             // 
             // chritm
             // 
@@ -993,5 +1002,6 @@ namespace DivaTableManager
         private System.Windows.Forms.ToolStripMenuItem eyeTextureSwapToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem deleteShortcutToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem multiDeleteToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem generateObjectDatabaseToolStripMenuItem;
     }
 }

@@ -1,5 +1,5 @@
 ﻿
-namespace DivaTableManager
+namespace DxvaTableManager
 {
     partial class BindModule
     {
