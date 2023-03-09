@@ -359,11 +359,11 @@ namespace DxvaTableManager
             this.groupBox7.TabStop = false;
             this.groupBox7.Text = "No.";
             // 
-            // numericUpDown2
+            // numericUpDown2: Item Number
             // 
             this.numericUpDown2.Location = new System.Drawing.Point(6, 21);
             this.numericUpDown2.Maximum = new decimal(new int[] {
-            5000,
+            2147483647,
             0,
             0,
             0});
@@ -626,11 +626,11 @@ namespace DxvaTableManager
             this.label4.TabIndex = 10;
             this.label4.Text = "Available Items:";
             // 
-            // numericUpDown3
+            // numericUpDown3: COS ID
             // 
             this.numericUpDown3.Location = new System.Drawing.Point(200, 38);
             this.numericUpDown3.Maximum = new decimal(new int[] {
-            5000,
+            2147483647,
             0,
             0,
             0});
