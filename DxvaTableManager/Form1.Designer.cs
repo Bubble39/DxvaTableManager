@@ -214,7 +214,7 @@ namespace DxvaTableManager
             // 
             this.idUpDown.Location = new System.Drawing.Point(6, 109);
             this.idUpDown.Maximum = new decimal(new int[] {
-            5000,
+            2147483647,
             0,
             0,
             0});
@@ -506,7 +506,7 @@ namespace DxvaTableManager
             // 
             this.numericUpDown3.Location = new System.Drawing.Point(6, 22);
             this.numericUpDown3.Maximum = new decimal(new int[] {
-            5000,
+            2147483647,
             0,
             0,
             0});
@@ -563,7 +563,7 @@ namespace DxvaTableManager
             // 
             this.numericUpDown2.Location = new System.Drawing.Point(6, 81);
             this.numericUpDown2.Maximum = new decimal(new int[] {
-            5000,
+            2147483647,
             0,
             0,
             0});
