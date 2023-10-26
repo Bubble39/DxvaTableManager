@@ -513,7 +513,7 @@ namespace DxvaTableManager
             item.type = 0;
             item.desID = 0;
             item.face_depth = 0;
-            item.uid = "ENTER UID HERE";
+            item.uid = "ENTERUIDHERE";
             item.rpk = -1;
             item.objset.Add("tempitm001");
             KeyValuePair<string, chritmFile> found = Code.chritms.ElementAt(chrSel.SelectedIndex);
@@ -658,6 +658,19 @@ namespace DxvaTableManager
             curItem.flag = 0;
             curItem.attr = 1;
             curItem.type = 0;
+            curItem.orgItm = 0;
+            curItem.face_depth = 0;
+            updateItem();
+        }
+
+        private void customHeadToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            curItem.subID = 24;
+            curItem.desID = 0;
+            curItem.rpk = 1;
+            curItem.uid = "ENTERUIDHERE";
+            curItem.attr = 2085;
+            curItem.type = 1;
             curItem.orgItm = 0;
             curItem.face_depth = 0;
             updateItem();

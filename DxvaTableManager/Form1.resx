@@ -125,26 +125,27 @@ The ID detector will show when you are changing the ID to help you
 choose an unused one.</value>
   </data>
   <data name="label4.ToolTip" xml:space="preserve">
-    <value>The placement of the module in the shop list.
-The list is in ascending order. (0 to 100, etc.)
-You may use clashing numbers although it may cause
-unwanted sorting results.
+    <value>The placement of the customization item in the shop list.
+The list is in ascending order. (0 --&gt; 100, etc.)
+You may use clashing numbers, but when you do, the game will default to sorting by the ID. 
 Sort Index numbers vary by 'Character' setting so 0 for MIKU
 will not impact 0 for SAKINE, for example.</value>
   </data>
-  <metadata name="toolTip1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+  <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
+  <data name="toolTip1.TrayLocation" type="System.Drawing.Point, System.Drawing">
     <value>152, 17</value>
-  </metadata>
+  </data>
   <data name="label6.ToolTip" xml:space="preserve">
-    <value>The name of the module.
-This is the name that will appear in module select.
+    <value>The name of the customization item.
+When you're playing in Japanese, this will always be the name that is loaded for the customization item.
+This cannot be overriden by mod_str_array.toml; therefore, the name here should always be in Japanese.
 Bare in mind unsupported character sets will not display correctly in-game.
 Please note that you must press the ENTER key to save the name.</value>
   </data>
   <data name="label7.ToolTip" xml:space="preserve">
-    <value>The ID used for this module.
+    <value>The ID used for this customization item.
 This ID will be used when loading module select preview images.
-Please avoid using the same ID for multiple modules.
+Please avoid using the same ID for multiple customization items.
 The ID detector will show when you are changing the ID to help you
 choose an unused one.</value>
   </data>
@@ -154,20 +155,17 @@ The 'Character' set in the box above will control which xxxitm_tbl.txt the COS_X
 (For Example: Setting Character to MIKU will load the COS_XXX from mikitm_tbl.txt)
 Please make sure you have a matching COS entry in the Character Item Table before setting this value.</value>
   </data>
-  <metadata name="toolTip1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>152, 17</value>
-  </metadata>
   <data name="IndexLabel.ToolTip" xml:space="preserve">
     <value>The placement of the module in the shop list.
 The list is in ascending order. (0 --&gt; 100, etc.)
-You may use clashing numbers although it may cause
-unwanted sorting results.
+You may use clashing numbers, but when you do, the game will default to sorting by the ID. 
 Sort Index numbers vary by 'Character' setting so 0 for MIKU
 will not impact 0 for SAKINE, for example.</value>
   </data>
   <data name="NameLabel.ToolTip" xml:space="preserve">
     <value>The name of the module.
-This is the name that will appear in module select.
+When you're playing in Japanese, this will always be the name that is loaded for the module.
+This cannot be overriden by mod_str_array.toml; therefore, the name here should always be in Japanese.
 Bare in mind unsupported character sets will not display correctly in-game.
 Please note that you must press the ENTER key to save the name.</value>
   </data>
@@ -182,12 +180,12 @@ choose an unused one.</value>
     <value>The COS_XXX to be used for this module.
 The 'Character' set in the box above will control which xxxitm_tbl.txt the COS_XXX is read from.
 (For Example: Setting Character to MIKU will load the COS_XXX from mikitm_tbl.txt)
-Please make sure you have a matching COS entry in the Character Item Table before setting this value.</value>
+Please make sure you have a matching COS entry in the Character Item Table before setting this value.
+Keep in mind that COS entries in the module table is one more than the entry in the xxxitm_tbl.txt; for example, COS_350 in the xxxitm_tbl.txt would be COS_351 in the module table.</value>
   </data>
-  <metadata name="menuStrip1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+  <data name="menuStrip1.TrayLocation" type="System.Drawing.Point, System.Drawing">
     <value>17, 17</value>
-  </metadata>
-  <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
+  </data>
   <data name="$this.Icon" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         AAABAAYAAAAAAAEAIABYPAAAZgAAAICAAAABACAAKAgBAL48AABAQAAAAQAgAChCAADmRAEAMDAAAAEA

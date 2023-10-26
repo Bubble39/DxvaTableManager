@@ -351,7 +351,7 @@ public class Code
         dummyEntry.shop_price = "0";
         dummyEntry.attr = Attr.Default_N;
         dummyEntry.ng = false;
-        dummyEntry.sort_index = 999;
+        dummyEntry.sort_index = 800;
         Modules.Insert(index ,dummyEntry);
     }
     public static void addDummyEntryCstm(int index)
