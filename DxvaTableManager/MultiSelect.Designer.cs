@@ -52,7 +52,7 @@ namespace DxvaTableManager
             // 
             this.numericUpDown1.Location = new System.Drawing.Point(12, 29);
             this.numericUpDown1.Maximum = new decimal(new int[] {
-            5000,
+            2147483647,
             0,
             0,
             0});

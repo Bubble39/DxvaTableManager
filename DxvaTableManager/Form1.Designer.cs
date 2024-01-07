@@ -178,7 +178,7 @@ namespace DxvaTableManager
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Module Properties";
             // 
-            // indexTextBox
+            // indexTextBox: Sort Index
             // 
             this.indexTextBox.Location = new System.Drawing.Point(6, 192);
             this.indexTextBox.Maximum = new decimal(new int[] {
@@ -210,11 +210,11 @@ namespace DxvaTableManager
             this.modCount.TabIndex = 29;
             this.modCount.Text = "Modules:";
             // 
-            // idUpDown
+            // idUpDown: Module ID
             // 
             this.idUpDown.Location = new System.Drawing.Point(6, 109);
             this.idUpDown.Maximum = new decimal(new int[] {
-            4999,
+            2147483647,
             0,
             0,
             0});
@@ -454,11 +454,11 @@ namespace DxvaTableManager
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Customise Item Properties";
             // 
-            // numericUpDown4
+            // numericUpDown4: Object ID
             // 
             this.numericUpDown4.Location = new System.Drawing.Point(6, 133);
             this.numericUpDown4.Maximum = new decimal(new int[] {
-            5000,
+            2147483647,
             0,
             0,
             0});
@@ -502,11 +502,11 @@ namespace DxvaTableManager
             this.button3.UseVisualStyleBackColor = true;
             this.button3.Click += new System.EventHandler(this.button3_Click);
             // 
-            // numericUpDown3
+            // numericUpDown3: Customization Bind Module
             // 
             this.numericUpDown3.Location = new System.Drawing.Point(6, 22);
             this.numericUpDown3.Maximum = new decimal(new int[] {
-            5000,
+            2147483647,
             0,
             0,
             0});
@@ -532,7 +532,7 @@ namespace DxvaTableManager
             this.checkBox2.UseVisualStyleBackColor = true;
             this.checkBox2.CheckedChanged += new System.EventHandler(this.checkBox2_CheckedChanged);
             // 
-            // numericUpDown1
+            // numericUpDown1: Customization Sort Index
             // 
             this.numericUpDown1.Location = new System.Drawing.Point(6, 214);
             this.numericUpDown1.Maximum = new decimal(new int[] {
@@ -559,11 +559,11 @@ namespace DxvaTableManager
             this.label1.TabIndex = 29;
             this.label1.Text = "Items:";
             // 
-            // numericUpDown2
+            // numericUpDown2: Customization ID
             // 
             this.numericUpDown2.Location = new System.Drawing.Point(6, 81);
             this.numericUpDown2.Maximum = new decimal(new int[] {
-            5000,
+            2147483647,
             0,
             0,
             0});

@@ -97,6 +97,7 @@ namespace DxvaTableManager
             this.handsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.contactLensesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.eyeTextureSwapToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.customHeadToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.multiDeleteToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
             this.chrSel = new System.Windows.Forms.ComboBox();
@@ -247,7 +248,7 @@ namespace DxvaTableManager
             this.attrBox.Name = "attrBox";
             this.attrBox.Size = new System.Drawing.Size(92, 24);
             this.attrBox.TabIndex = 13;
-            this.toolTip1.SetToolTip(this.attrBox, "1 - No Texture Swaps\r\n5 - Has Texture Swaps\r\n37 - Eye/Face Texture Swaps\r\n2085 - " +
+            this.toolTip1.SetToolTip(this.attrBox, "1 - No Texture Swaps\r\n5 - Has Texture Swaps\r\n37 - Eye/Face Texture Swaps\r\n2085 - Custom Head Model" +
         "Head Swaps");
             this.attrBox.SelectedIndexChanged += new System.EventHandler(this.attrBox_SelectedIndexChanged);
             // 
@@ -359,11 +360,11 @@ namespace DxvaTableManager
             this.groupBox7.TabStop = false;
             this.groupBox7.Text = "No.";
             // 
-            // numericUpDown2
+            // numericUpDown2: Item Number
             // 
             this.numericUpDown2.Location = new System.Drawing.Point(6, 21);
             this.numericUpDown2.Maximum = new decimal(new int[] {
-            5000,
+            2147483647,
             0,
             0,
             0});
@@ -626,11 +627,11 @@ namespace DxvaTableManager
             this.label4.TabIndex = 10;
             this.label4.Text = "Available Items:";
             // 
-            // numericUpDown3
+            // numericUpDown3: COS ID
             // 
             this.numericUpDown3.Location = new System.Drawing.Point(200, 38);
             this.numericUpDown3.Maximum = new decimal(new int[] {
-            5000,
+            2147483647,
             0,
             0,
             0});
@@ -779,7 +780,8 @@ namespace DxvaTableManager
             this.bodyToolStripMenuItem,
             this.handsToolStripMenuItem,
             this.contactLensesToolStripMenuItem,
-            this.eyeTextureSwapToolStripMenuItem});
+            this.eyeTextureSwapToolStripMenuItem,
+            this.customHeadToolStripMenuItem});
             this.itemPresetsToolStripMenuItem.Name = "itemPresetsToolStripMenuItem";
             this.itemPresetsToolStripMenuItem.Size = new System.Drawing.Size(103, 24);
             this.itemPresetsToolStripMenuItem.Text = "Item Presets";
@@ -846,6 +848,13 @@ namespace DxvaTableManager
             this.eyeTextureSwapToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
             this.eyeTextureSwapToolStripMenuItem.Text = "Eye Texture Swap";
             this.eyeTextureSwapToolStripMenuItem.Click += new System.EventHandler(this.eyeTextureSwapToolStripMenuItem_Click);
+            // 
+            // customHeadToolStripMenuItem
+            // 
+            this.customHeadToolStripMenuItem.Name = "customHeadToolStripMenuItem";
+            this.customHeadToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
+            this.customHeadToolStripMenuItem.Text = "Custom Head Model";
+            this.customHeadToolStripMenuItem.Click += new System.EventHandler(this.customHeadToolStripMenuItem_Click);
             // 
             // multiDeleteToolStripMenuItem
             // 
@@ -1000,6 +1009,7 @@ namespace DxvaTableManager
         private System.Windows.Forms.ToolStripMenuItem handsToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem contactLensesToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem eyeTextureSwapToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem customHeadToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem deleteShortcutToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem multiDeleteToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem generateObjectDatabaseToolStripMenuItem;
